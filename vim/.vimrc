@@ -9,13 +9,13 @@ set ignorecase
 set tabstop=2
 set shiftwidth=2
 set guifont=Droid_Sans_Mono:h10:cANSI
-	set number
+set number
 set diffexpr=MyDiff()
-	color morning 
-	set lines=50
-	set columns=120
-	set viminfo+=!
-	map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+color morning 
+set lines=50
+set columns=120
+set viminfo+=!
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 function MyDiff()
 	let opt = '-a --binary '
 	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
@@ -28,15 +28,15 @@ function MyDiff()
 	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
 	let eq = ''
 	if $VIMRUNTIME =~ ' '
-	if &sh =~ '\<cmd'
-	let cmd = '""' . $VIMRUNTIME . '\diff"'
-	let eq = '"'
+		if &sh =~ '\<cmd'
+			let cmd = '""' . $VIMRUNTIME . '\diff"'
+			let eq = '"'
+		else
+			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+		endif
 	else
-	let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-			endif
-			else
-			let cmd = $VIMRUNTIME . '\diff'
-			endif
-			silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-			endfunction
+		let cmd = $VIMRUNTIME . '\diff'
+	endif
+	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
 
