@@ -1,0 +1,11 @@
+[user]
+	name = "Chris O'Neil"
+	email = chris.oneil@gmail.com
+[core]
+	editor = vim
+[web]
+	browser = google-chrome
+[color]
+	ui = true
+[github]
+	user = jacderida
