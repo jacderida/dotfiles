@@ -1,0 +1,3 @@
+#!/usr/env/bash
+
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
