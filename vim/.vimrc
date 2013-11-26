@@ -1,5 +1,4 @@
 set nocompatible
-
 set nowrap
 set nobackup
 set ignorecase
@@ -12,3 +11,5 @@ color morning
 set lines=50
 set columns=120
 set viminfo+=!
+
+au FileType gitcommit set tw=72
