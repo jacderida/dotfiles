@@ -1,1 +1,5 @@
-ln ./git/.gitconfig ~/.gitconfig
+#!/usr/bin/env bash
+
+if [ ! -f ~/.gitconfig ]; then
+	ln ./git/.gitconfig ~/.gitconfig
+fi
