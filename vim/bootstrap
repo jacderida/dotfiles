@@ -1,1 +1,5 @@
-ln ./vim/.vimrc ~/.vimrc
+#!/usr/bin/env bash
+
+if [ ! -f ~/.vimrc ]; then
+	ln ./vim/.vimrc ~/.vimrc
+fi
