@@ -8,7 +8,7 @@ set nobackup
 set ignorecase
 set tabstop=2
 set shiftwidth=2
-set guifont=Droid_Sans_Mono:h10:cANSI
+set guifont=Monospace
 set number
 set diffexpr=MyDiff()
 color morning 
