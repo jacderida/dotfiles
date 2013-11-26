@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source ./gnome-terminal/solarized/set_dark.sh
+cp ./gnome-terminal/dircolors.ansi-dark ~/.dircolors
+eval `dircolors ~/.dircolors`
