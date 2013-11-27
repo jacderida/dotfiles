@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
+if [ ! -d "~./.vim/colors" ]; then
+	mkdir -p ~/.vim/colors
+fi
 rm ~/.vimrc
+cp ./vim/colors/solarized.vim ~/.vim/colors
 ln ./vim/.vimrc ~/.vimrc
