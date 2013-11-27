@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo rm /usr/local/netbeans-7.4/etc/netbeans.conf
+sudo ln ./netbeans/netbeans.conf /usr/local/netbeans-7.4/etc/netbeans.conf
