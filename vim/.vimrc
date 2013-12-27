@@ -27,3 +27,10 @@ set autoread "Reloads the file when a change has been made in another editor
 set nobackup
 set nowritebackup
 set noswapfile
+
+set encoding=utf-8
+set ruler
+set showmode
+set relativenumber
+set cursorline
+set backspace=indent,eol,start
