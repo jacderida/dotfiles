@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm ~/.bashrc
+ln ./bash/.bashrc ~/.bashrc
