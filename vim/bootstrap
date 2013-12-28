@@ -7,6 +7,7 @@ if [ ! -d "~./.vim/autoload" ]; then
 	mkdir -p ~/.vim/autoload
 fi
 
+pip install --user git+git://github.com/Lokaltog/powerline
 rm ~/.vimrc
 cp ./vim/colors/*.* ~/.vim/colors
 cp ./vim/pathogen.vim ~/.vim/autoload
