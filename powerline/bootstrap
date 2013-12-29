@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+pip install --user git+git://github.com/Lokaltog/powerline
+if [ ! -d "~/.config/powerline" ]; then
+	mkdir -p ~/.config/powerline
+	cp -R ~/.local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/powerline
+fi
