@@ -8,7 +8,9 @@ if [ ! -d "~./.vim/autoload" ]; then
 fi
 
 pip install --user git+git://github.com/Lokaltog/powerline
-rm ~/.vimrc
+if [ -f "~/.vimrc" ]; then
+	rm ~/.vimrc
+fi
 cp ./vim/colors/*.* ~/.vim/colors
 cp ./vim/pathogen.vim ~/.vim/autoload
 ln ./vim/.vimrc ~/.vimrc
