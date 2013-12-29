@@ -7,12 +7,7 @@ if [ ! -d "~/.vim/autoload" ]; then
 	mkdir -p ~/.vim/autoload
 fi
 
-if [ -f "~/.vimrc" ]
-then
-	rm ~/.vimrc
-	ln ./vim/.vimrc ~/.vimrc
-else
-	ln ./vim/.vimrc ~/.vimrc
-fi
+rm -f ~/.vimrc
+ln -f ./vim/.vimrc ~/.vimrc
 cp ./vim/colors/*.* ~/.vim/colors
 cp ./vim/pathogen.vim ~/.vim/autoload
