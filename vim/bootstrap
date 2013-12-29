@@ -7,10 +7,12 @@ if [ ! -d "~./.vim/autoload" ]; then
 	mkdir -p ~/.vim/autoload
 fi
 
-pip install --user git+git://github.com/Lokaltog/powerline
-if [ -f "~/.vimrc" ]; then
+if [ -f "~/.vimrc" ]
+then
 	rm ~/.vimrc
+	ln ./vim/.vimrc ~/.vimrc
+else
+	ln ./vim/.vimrc ~/.vimrc
 fi
 cp ./vim/colors/*.* ~/.vim/colors
 cp ./vim/pathogen.vim ~/.vim/autoload
-ln ./vim/.vimrc ~/.vimrc
