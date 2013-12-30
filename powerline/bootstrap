@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-pip install --user git+git://github.com/Lokaltog/powerline
-if [ ! -d "~/.config/powerline" ]; then
+if [ ! -d "/home/jacderida/.config/powerline" ]; then
+	pip install --user git+git://github.com/Lokaltog/powerline
 	mkdir -p ~/.config/powerline
 	cp -R ~/.local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/powerline
 	rm -f ~/.config/powerline/config.json
