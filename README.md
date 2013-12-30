@@ -26,7 +26,6 @@ git (Install my gitconfig)
 * Sets my github username
 
 netbeans
-* Install netbeans
 * Copy my configuration
 * Maintains a copy of the solarized colour scheme
 
@@ -34,6 +33,11 @@ powerline
 * Installs powerline (based on an assumption that there's a Python install on the machine)
 * Copies the config files to custom profile directory
 * Symlinks config.json and the custom config for the shell to the profile directory
+
+ruby
+* Installs RVM
+* Installs ruby version 2.0.0
+* Installs rails version 4.0.0
 
 ubuntu
 * Automates custom settings related to Ubuntu
