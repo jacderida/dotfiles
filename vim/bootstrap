@@ -17,3 +17,9 @@ cp ./vim/pathogen.vim ~/.vim/autoload
 if [ ! -d "~/.vim/bundle/vim-json" ]; then
 	git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
 fi
+if [ ! -d "~/.vim/bundle/vim-rails" ]; then
+	git clone git://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
+fi
+if [ ! -d "~/.vim/bundle/vim-bundler" ]; then
+	git clone git://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
+fi
