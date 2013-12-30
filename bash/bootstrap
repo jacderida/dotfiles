@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-rm ~/.bashrc
-ln ./bash/.bashrc ~/.bashrc
+rm -f ~/.bashrc
+ln -f ./bash/.bashrc ~/.bashrc
+rm -f ~/.bash_profile
+ln -f ./bash/.bash_profile ~/.bash_profile
+rm -f ~/.profile
+ln -f ./bash/.profile ~/.profile
