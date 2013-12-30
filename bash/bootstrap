@@ -6,3 +6,14 @@ rm -f ~/.bash_profile
 ln -f ./bash/.bash_profile ~/.bash_profile
 rm -f ~/.profile
 ln -f ./bash/.profile ~/.profile
+
+if [ ! -d "/home/jacderida/dev/stderred" ]; then
+	# Makes error output red in the console
+	present_directory=`pwd`
+	sudo apt-get -y install cmake
+	cd ~/dev
+	git clone git://github.com/sickill/stderred.git
+	cd stderred
+	make
+	cd $present_directory
+fi
