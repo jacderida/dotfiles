@@ -33,6 +33,7 @@ netbeans
 powerline
 * Installs powerline (based on an assumption that there's a Python install on the machine)
 * Copies the config files to custom profile directory
+* Symlinks config.json and the custom config for the shell to the profile directory
 
 ubuntu
 * Automates custom settings related to Ubuntu
