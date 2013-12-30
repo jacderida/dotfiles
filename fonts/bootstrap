@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-mkdir ~/.fonts
-cp ./fonts/AndaleMono.ttf ~/.fonts
-sudo apt-get -y install xfonts-terminus console-terminus
+if [ ! -d "$USER_HOME/.fonts" ]; then
+	mkdir ~/.fonts
+	cp ./fonts/AndaleMono.ttf ~/.fonts
+	sudo apt-get -y install xfonts-terminus console-terminus
+fi
