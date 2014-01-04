@@ -9,6 +9,12 @@ fi
 if [ ! -d "$USER_HOME/.vim/bundle" ]; then
 	mkdir -p ~/.vim/bundle
 fi
+if [ ! -d "$USER_HOME/.vim/backup" ]; then
+	mkdir -p ~/.vim/backup
+fi
+if [ ! -d "$USER_HOME/.vim/tmp" ]; then
+	mkdir -p ~/.vim/tmp
+fi
 
 rm -f ~/.vimrc
 ln -f ./vim/.vimrc ~/.vimrc
