@@ -29,9 +29,8 @@ color wombat256mod
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
 
-set nobackup
-set nowritebackup
-set noswapfile
+set directory=~/.vim/backup
+set backupdir=~/.vim/tmp//
 
 set encoding=utf-8
 set ruler
