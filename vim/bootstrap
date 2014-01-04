@@ -14,6 +14,9 @@ rm -f ~/.vimrc
 ln -f ./vim/.vimrc ~/.vimrc
 cp ./vim/colors/*.* ~/.vim/colors
 cp ./vim/pathogen.vim ~/.vim/autoload
+if [ ! -d "$USER_HOME/.vim/bundle/vundle" ]; then
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
 if [ ! -d "$USER_HOME/.vim/bundle/vim-json" ]; then
 	git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
 fi

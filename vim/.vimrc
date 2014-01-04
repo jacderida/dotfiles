@@ -2,6 +2,11 @@ filetype off
 call pathogen#infect()
 filetype plugin indent on
 
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
 set nocompatible
 set nowrap
 set nobackup
