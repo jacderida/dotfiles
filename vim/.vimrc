@@ -4,7 +4,6 @@ filetype plugin indent on
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-
 Bundle 'gmarik/vundle'
 
 set nocompatible
@@ -39,12 +38,16 @@ set cursorline
 set backspace=indent,eol,start
 set laststatus=2
 set noshowmode
+set ttyfast
+nnoremap j gj
+nnoremap k gk
 
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+" Resize windows with the arrow keys
 noremap <up> :set lines-=5<CR>
 noremap <down> :set lines+=5<CR>
 noremap <left> :set columns-=5<CR>
