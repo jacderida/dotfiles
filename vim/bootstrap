@@ -27,8 +27,8 @@ if [ ! -d "$USER_HOME/.vim/bundle/vim-json" ]; then
 	git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
 fi
 if [ ! -d "$USER_HOME/.vim/bundle/vim-rails" ]; then
-	git clone git://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
+	git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
 fi
 if [ ! -d "$USER_HOME/.vim/bundle/vim-bundler" ]; then
-	git clone git://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
+	git clone https://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
 fi
