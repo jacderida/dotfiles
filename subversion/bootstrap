@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if [ ! -d "$HOME/.subversion" ]; then
+	mkdir -p $HOME/.subversion
+	ln -f ./subversion/config ~/.subversion/config
+fi

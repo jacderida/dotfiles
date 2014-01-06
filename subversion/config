@@ -1,0 +1,147 @@
+[miscellany]
+enable-auto-props = yes
+
+# Note: you may wish to add svn:keywords as well, depending on your project requirements
+# E.g. svn:keywords=Id Revision
+# If you use dates in your keywords, release artifacts may depend on the
+# timezone in the rolling environment.  It might be useful to set TZ=UTC in
+# the environment to facilitate pre-release review.
+
+# Do not default any file types to svn:executable=*.
+# This should only be done on an individual basis as required.
+
+# Please do not use svn:mime-type=application/xml for xml files as that causes
+# SVN to treat them as binary - use text/xml or omit the setting entirely
+
+[auto-props]
+INSTALL = svn:eol-style=CRLF
+KEYS = svn:eol-style=CRLF
+Makefile = svn:eol-style=CRLF
+LICENSE = svn:eol-style=CRLF
+NOTICE = svn:eol-style=CRLF
+README = svn:eol-style=CRLF
+abs-linkmap = svn:eol-style=CRLF
+abs-menulinks = svn:eol-style=CRLF
+*.aart = svn:eol-style=CRLF
+*.ac = svn:eol-style=CRLF
+*.am = svn:eol-style=CRLF
+*.apt = svn:eol-style=CRLF
+*.as = svn:eol-style=CRLF
+*.bat = svn:eol-style=CRLF
+*.bsh = svn:eol-style=CRLF
+*.c = svn:eol-style=CRLF
+*.cat = svn:eol-style=CRLF
+*.cgi = svn:eol-style=CRLF
+*.classpath = svn:eol-style=CRLF
+*.cmd = svn:eol-style=CRLF
+*.cnd = svn:eol-style=CRLF
+*.conf = svn:eol-style=CRLF
+*.config = svn:eol-style=CRLF
+*.cpp = svn:eol-style=CRLF
+*.css = svn:eol-style=CRLF
+*.cwiki = svn:eol-style=CRLF
+*.data = svn:eol-style=CRLF
+*.dcl = svn:eol-style=CRLF
+*.doc = svn:mime-type=application/msword
+*.dsp = svn:eol-style=CRLF
+*.dsw = svn:eol-style=CRLF
+*.dtd = svn:eol-style=CRLF
+*.egrm = svn:eol-style=CRLF
+*.ent = svn:eol-style=CRLF
+*.ft = svn:eol-style=CRLF
+*.fn = svn:eol-style=CRLF
+*.fv = svn:eol-style=CRLF
+*.g = svn:eol-style=CRLF
+*.gif = svn:mime-type=image/gif
+*.grm = svn:eol-style=CRLF
+*.gz = svn:mime-type=application/x-gzip
+*.h = svn:eol-style=CRLF
+*.htc = svn:eol-style=CRLF
+.htaccess = svn:eol-style=CRLF
+*.handlers = svn:eol-style=CRLF
+*.html = svn:eol-style=CRLF
+*.ico = svn:mime-type=image/x-icon
+*.ihtml = svn:eol-style=CRLF
+*.in = svn:eol-style=CRLF
+*.java = svn:eol-style=CRLF
+*.jmx = svn:eol-style=LF
+*.jpg = svn:mime-type=image/jpeg
+*.jsp = svn:eol-style=CRLF
+*.js = svn:eol-style=CRLF
+*.junit = svn:eol-style=CRLF
+*.jx = svn:eol-style=CRLF
+*.m = svn:eol-style=CRLF
+*.m4 = svn:eol-style=CRLF
+*.manifest = svn:eol-style=CRLF
+*.mdo = svn:eol-style=CRLF
+# markdown (CMS)
+*.mdtext = svn:eol-style=CRLF
+*.meta = svn:eol-style=CRLF
+*.mf = svn:eol-style=CRLF
+*.MF = svn:eol-style=CRLF
+*.mod = svn:eol-style=CRLF
+*.ms = svn:eol-style=CRLF
+*.mxml = svn:eol-style=CRLF
+*.n3 = svn:eol-style=CRLF
+*.nroff = svn:eol-style=CRLF
+*.patch = svn:eol-style=CRLF
+*.pdf = svn:mime-type=application/pdf
+*.pen = svn:eol-style=CRLF
+*.php = svn:eol-style=CRLF
+*.pl = svn:eol-style=CRLF
+*.pm = svn:eol-style=CRLF
+*.png = svn:mime-type=image/png
+*.pod = svn:eol-style=CRLF
+*.pom = svn:eol-style=CRLF
+*.pro = svn:eol-style=CRLF
+*.project = svn:eol-style=CRLF
+*.properties = svn:eol-style=CRLF
+*.py = svn:eol-style=CRLF
+*.rb = svn:eol-style=CRLF
+*.rdf = svn:eol-style=CRLF
+*.rnc = svn:eol-style=CRLF
+*.rng = svn:eol-style=CRLF
+*.rnx = svn:eol-style=CRLF
+*.roles = svn:eol-style=CRLF
+*.rss = svn:eol-style=CRLF
+# Restructured text (CMS)
+*.rst = svn:eol-style=CRLF
+*.scala = svn:eol-style=CRLF
+*.schemas = svn:eol-style=CRLF
+*.sh = svn:eol-style=CRLF
+*.sql = svn:eol-style=CRLF
+*.svg = svn:eol-style=CRLF
+*.swc = svn:mime-type=application/octet-stream 
+*.tar = svn:mime-type=application/octet-stream
+*.tgz = svn:mime-type=application/octet-stream
+*.tif = svn:mime-type=image/tiff
+*.tiff = svn:mime-type=image/tiff
+*.tld = svn:eol-style=CRLF
+*.txt = svn:eol-style=CRLF
+*.types = svn:eol-style=CRLF
+*.vm = svn:eol-style=CRLF
+*.vsl = svn:eol-style=CRLF
+*.wsdd = svn:eol-style=CRLF
+*.wsdl = svn:eol-style=CRLF
+*.xargs = svn:eol-style=CRLF
+*.xcat = svn:eol-style=CRLF
+*.xconf = svn:eol-style=CRLF
+*.xegrm = svn:eol-style=CRLF
+*.xgrm = svn:eol-style=CRLF
+*.xhtml = svn:eol-style=CRLF
+*.xhtml2 = svn:eol-style=CRLF
+*.xlex = svn:eol-style=CRLF
+*.xlog = svn:eol-style=CRLF
+*.xmap = svn:eol-style=CRLF
+*.xml = svn:eol-style=CRLF
+*.xpm = svn:eol-style=CRLF
+*.xroles = svn:eol-style=CRLF
+*.xsamples = svn:eol-style=CRLF
+*.xsd = svn:eol-style=CRLF
+*.xsl = svn:eol-style=CRLF
+*.xslt = svn:eol-style=CRLF
+*.xsp = svn:eol-style=CRLF
+*.xtest = svn:eol-style=CRLF
+*.xul = svn:eol-style=CRLF
+*.xweb = svn:eol-style=CRLF
+*.xwelcome = svn:eol-style=CRLF
