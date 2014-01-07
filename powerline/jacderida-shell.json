@@ -42,7 +42,7 @@
 			},
 			{
 				"name": "user",
-				"before": "\n(",
+				"before": "(",
 				"after": ")$"
 			}
 		]
