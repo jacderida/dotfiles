@@ -42,6 +42,8 @@ set ttyfast
 nnoremap j gj
 nnoremap k gk
 
+let mapleader=","
+noremap <Leader>g gg=G<CR>
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
 map <c-k> <c-w>k
