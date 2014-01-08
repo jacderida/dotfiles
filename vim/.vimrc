@@ -40,6 +40,10 @@ set laststatus=2
 set noshowmode
 set ttyfast
 
+set incsearch
+set hlsearch
+nnoremap <Leader>h :nohl<CR>
+
 let mapleader=","
 nnoremap <Leader>g gg=G<CR>
 " Window navigation with ctrl+jkhl
