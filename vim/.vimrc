@@ -39,11 +39,9 @@ set backspace=indent,eol,start
 set laststatus=2
 set noshowmode
 set ttyfast
-nnoremap j gj
-nnoremap k gk
 
 let mapleader=","
-noremap <Leader>g gg=G<CR>
+nnoremap <Leader>g gg=G<CR>
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -54,6 +52,8 @@ noremap <up> :set lines-=5<CR>
 noremap <down> :set lines+=5<CR>
 noremap <left> :set columns-=5<CR>
 noremap <right> :set columns+=5<CR>
+nnoremap j gj
+nnoremap k gk
 
 " Powerline stuff
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
