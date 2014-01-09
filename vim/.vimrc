@@ -11,8 +11,9 @@ set nowrap
 set nobackup
 set ignorecase
 set smartindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set guifont=Monospace
 set number
 set diffexpr=MyDiff()
