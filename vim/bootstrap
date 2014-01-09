@@ -3,6 +3,9 @@
 if [ ! -d "$USER_HOME/.vim/colors" ]; then
 	mkdir -p ~/.vim/colors
 fi
+if [ ! -d "$USER_HOME/.vim/syntax" ]; then
+	mkdir -p ~/.vim/syntax
+fi
 if [ ! -d "$USER_HOME/.vim/autoload" ]; then
 	mkdir -p ~/.vim/autoload
 fi
@@ -20,6 +23,7 @@ rm -f ~/.vimrc
 ln -f ./vim/.vimrc ~/.vimrc
 cp ./vim/colors/*.* ~/.vim/colors
 cp ./vim/pathogen.vim ~/.vim/autoload
+cp ./vim/sh.vim ~/.vim/syntax
 if [ ! -d "$USER_HOME/.vim/bundle/vundle" ]; then
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
