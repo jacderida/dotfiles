@@ -45,7 +45,7 @@ set incsearch
 set hlsearch
 
 let mapleader=","
-nnoremap <Leader>g gg=G<CR>
+nnoremap <Leader>g mzgg=G`z<CR>
 nnoremap <Leader>h :set hlsearch!<CR>
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
