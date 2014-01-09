@@ -42,10 +42,10 @@ set ttyfast
 
 set incsearch
 set hlsearch
-nnoremap <Leader>h :nohl<CR>
 
 let mapleader=","
 nnoremap <Leader>g gg=G<CR>
+nnoremap <Leader>h :set hlsearch!<CR>
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
 map <c-k> <c-w>k
