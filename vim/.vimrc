@@ -45,7 +45,7 @@ set incsearch
 set hlsearch
 
 let mapleader=","
-nnoremap <Leader>g mzgg=G`z<CR>
+nnoremap <Leader>g mzgg=G`z<CR> " Indents the file and returns you to the current line
 nnoremap <Leader>h :set hlsearch!<CR>
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
@@ -59,6 +59,10 @@ noremap <left> :set columns-=5<CR>
 noremap <right> :set columns+=5<CR>
 nnoremap j gj
 nnoremap k gk
+
+" Execute shell scripts from within Vim
+nnoremap <F2> :!./%<CR>
+nnoremap <F3> :!sudo ./%<CR>
 
 " Powerline stuff
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
