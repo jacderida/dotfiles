@@ -1,0 +1,13 @@
+#!usr/bin/env bash
+
+if [ ! -d "$USER_HOME/dev/aws-cli" ]; then
+    mkdir ~/dev/aws-cli
+    git clone https://github.com/aws/aws-cli.git ~/dev/aws-cli
+fi
+
+present_directory=`pwd`
+cd ~/dev/aws-cli
+git pull origin master
+sudo python setup.py install
+complete -C aws_completer aws
+cd $present_directory
