@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 DOTFILES_ROOT="`pwd`"
 USER_HOME=`eval echo ~$USER`
 
