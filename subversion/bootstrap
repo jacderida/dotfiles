@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-if [ ! -d "$HOME/.subversion" ]; then
+if [ ! -d "$HOME/.subversion" ]
+then
 	mkdir -p $HOME/.subversion
 	ln -f ./subversion/config ~/.subversion/config
+else
+    echo -e "Already bootstrapped subversion config"
 fi

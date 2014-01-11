@@ -19,20 +19,39 @@ if [ ! -d "$USER_HOME/.vim/tmp" ]; then
 	mkdir -p ~/.vim/tmp
 fi
 
+echo -e "${green}Removing .vimrc and linking from dotfiles${nc}"
 rm -f ~/.vimrc
 ln -f ./vim/.vimrc ~/.vimrc
+echo -e "${green}Installing vim colours from dotfiles${nc}"
 cp ./vim/colors/*.* ~/.vim/colors
+echo -e "${green}Installing pathogen from dotfiles${nc}"
 cp ./vim/pathogen.vim ~/.vim/autoload
 cp ./vim/sh.vim ~/.vim/syntax
-if [ ! -d "$USER_HOME/.vim/bundle/vundle" ]; then
+
+if [ ! -d "$USER_HOME/.vim/bundle/vundle" ]
+then
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+else
+    echo -e "${green}Already installed vundle${nc}"
 fi
-if [ ! -d "$USER_HOME/.vim/bundle/vim-json" ]; then
+
+if [ ! -d "$USER_HOME/.vim/bundle/vim-json" ]
+then
 	git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
+else
+    echo -e "${green}Already installed vim-json${nc}"
 fi
-if [ ! -d "$USER_HOME/.vim/bundle/vim-rails" ]; then
+
+if [ ! -d "$USER_HOME/.vim/bundle/vim-rails" ]
+then
 	git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
+else
+    echo -e "${green}Already installed vim-rails${nc}"
 fi
-if [ ! -d "$USER_HOME/.vim/bundle/vim-bundler" ]; then
+
+if [ ! -d "$USER_HOME/.vim/bundle/vim-bundler" ]
+then
 	git clone https://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
+else
+    echo -e "${green}Already installed vim-bundler${nc}"
 fi

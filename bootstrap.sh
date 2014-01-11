@@ -26,8 +26,8 @@ USER_HOME=`eval echo ~$USER`
 echo $USER_HOME
 for bootstrap in `find $DOTFILES_ROOT -name "bootstrap" -not -path ./*.sh` 
 do
-	echo -e "${purple}=================================================================${nc}"
-	echo -e "${purple}Running $bootstrap${nc}"
-	echo -e "${purple}=================================================================${nc}"
+	echo -e "${blue}=================================================================${nc}"
+	echo -e "${blue}Running $bootstrap${nc}"
+	echo -e "${blue}=================================================================${nc}"
 	source $bootstrap
 done

@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-if [ ! -d "$HOME/.rvm" ]; then
+if [ ! -d "$HOME/.rvm" ]
+then
 	curl -sSL https://get.rvm.io | bash -s stable --ignore-dotfiles
 	source $HOME/.rvm/scripts/rvm
 	rvm requirements --autolibs=enable
 	rvm install 2.0.0
 	rvm use 2.0.0
 	gem install rails --version 4.0.0 --no-ri --no-rdoc
+else
+    echo -e "${green}Already bootstrapped ruby with RVM${nc}"
 fi

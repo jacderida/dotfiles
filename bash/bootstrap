@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo -e "${green}Removing current .bashrc, .bash_profile and .profile, and linking from dotfiles.${nc}"
 rm -f ~/.bashrc
 ln -f ./bash/.bashrc ~/.bashrc
 rm -f ~/.bash_profile
@@ -7,7 +8,8 @@ ln -f ./bash/.bash_profile ~/.bash_profile
 rm -f ~/.profile
 ln -f ./bash/.profile ~/.profile
 
-if [ ! -d "/home/jacderida/dev/stderred" ]; then
+if [ ! -d "/home/jacderida/dev/stderred" ]
+then
 	# Makes error output red in the console
 	present_directory=`pwd`
 	sudo apt-get -y install cmake
@@ -16,4 +18,6 @@ if [ ! -d "/home/jacderida/dev/stderred" ]; then
 	cd stderred
 	make
 	cd $present_directory
+else
+    echo -e "${green}Already bootstrapped stderred plugin"
 fi

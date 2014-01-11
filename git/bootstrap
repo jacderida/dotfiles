@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+echo -e "${green}Removing current .gitconfig and linking from dotfiles${nc}"
 rm ~/.gitconfig
 ln ./git/.gitconfig ~/.gitconfig
