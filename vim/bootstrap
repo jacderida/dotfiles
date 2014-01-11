@@ -1,57 +1,87 @@
 #!/usr/bin/env bash
 
-if [ ! -d "$USER_HOME/.vim/colors" ]; then
-	mkdir -p ~/.vim/colors
-fi
-if [ ! -d "$USER_HOME/.vim/syntax" ]; then
-	mkdir -p ~/.vim/syntax
-fi
-if [ ! -d "$USER_HOME/.vim/autoload" ]; then
-	mkdir -p ~/.vim/autoload
-fi
-if [ ! -d "$USER_HOME/.vim/bundle" ]; then
-	mkdir -p ~/.vim/bundle
-fi
-if [ ! -d "$USER_HOME/.vim/backup" ]; then
-	mkdir -p ~/.vim/backup
-fi
-if [ ! -d "$USER_HOME/.vim/tmp" ]; then
-	mkdir -p ~/.vim/tmp
-fi
+function init_directories
+{
+    if [ ! -d "$USER_HOME/.vim/colors" ]; then
+        mkdir -p ~/.vim/colors
+    fi
+    if [ ! -d "$USER_HOME/.vim/syntax" ]; then
+        mkdir -p ~/.vim/syntax
+    fi
+    if [ ! -d "$USER_HOME/.vim/autoload" ]; then
+        mkdir -p ~/.vim/autoload
+    fi
+    if [ ! -d "$USER_HOME/.vim/bundle" ]; then
+        mkdir -p ~/.vim/bundle
+    fi
+    if [ ! -d "$USER_HOME/.vim/backup" ]; then
+        mkdir -p ~/.vim/backup
+    fi
+    if [ ! -d "$USER_HOME/.vim/tmp" ]; then
+        mkdir -p ~/.vim/tmp
+    fi
+}
 
-echo -e "${green}Removing .vimrc and linking from dotfiles${nc}"
-rm -f ~/.vimrc
-ln -f ./vim/.vimrc ~/.vimrc
-echo -e "${green}Installing vim colours from dotfiles${nc}"
-cp ./vim/colors/*.* ~/.vim/colors
-echo -e "${green}Installing pathogen from dotfiles${nc}"
-cp ./vim/pathogen.vim ~/.vim/autoload
-cp ./vim/sh.vim ~/.vim/syntax
+function install_vundle_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/vundle" ]
+    then
+        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    else
+        echo -e "${green}Already installed vundle${nc}"
+    fi
+}
 
-if [ ! -d "$USER_HOME/.vim/bundle/vundle" ]
-then
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-else
-    echo -e "${green}Already installed vundle${nc}"
-fi
+function install_json_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/vim-json" ]
+    then
+        git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
+    else
+        echo -e "${green}Already installed vim-json${nc}"
+    fi
+}
 
-if [ ! -d "$USER_HOME/.vim/bundle/vim-json" ]
-then
-	git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
-else
-    echo -e "${green}Already installed vim-json${nc}"
-fi
+function install_rails_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/vim-rails" ]
+    then
+        git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
+    else
+        echo -e "${green}Already installed vim-rails${nc}"
+    fi
+}
 
-if [ ! -d "$USER_HOME/.vim/bundle/vim-rails" ]
-then
-	git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
-else
-    echo -e "${green}Already installed vim-rails${nc}"
-fi
+function install_bundler_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/vim-bundler" ]
+    then
+        git clone https://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
+    else
+        echo -e "${green}Already installed vim-bundler${nc}"
+    fi
+}
 
-if [ ! -d "$USER_HOME/.vim/bundle/vim-bundler" ]
-then
-	git clone https://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
-else
-    echo -e "${green}Already installed vim-bundler${nc}"
-fi
+function install_plugins
+{
+    install_vundle_plugin
+    install_json_plugin
+    install_rails_plugin
+    install_bundler_plugin
+}
+
+function install_files
+{
+    echo -e "${green}Removing .vimrc and linking from dotfiles${nc}"
+    rm -f ~/.vimrc
+    ln -f ./vim/.vimrc ~/.vimrc
+    echo -e "${green}Installing vim colours from dotfiles${nc}"
+    cp ./vim/colors/*.* ~/.vim/colors
+    echo -e "${green}Installing pathogen from dotfiles${nc}"
+    cp ./vim/pathogen.vim ~/.vim/autoload
+    cp ./vim/sh.vim ~/.vim/syntax
+}
+
+init_directories
+install_plugins
+install_files
