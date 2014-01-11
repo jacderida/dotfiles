@@ -1,5 +1,7 @@
 #!usr/bin/env bash
 
+set -e
+
 if [ ! -e "/usr/local/bin/aws" ]
 then
     mkdir ~/dev/aws-cli
@@ -12,4 +14,17 @@ then
     cd $present_directory
 else
     echo -e "${green}Already bootstrapped aws-cli${nc}"
+fi
+
+if [[ -n "$AWS_ACCESS_KEY" && -n "$AWS_SECRET_ACCESS_KEY" ]]
+then
+    echo -e "${green}Setting up config for aws-cli${nc}"
+    if [ ! -d "$HOME/.aws/" ]; then
+        mkdir ~/.aws
+    fi
+    cp ./aws/config ~/.aws/config
+    # It's more common to use / as the delimiting character with sed, but this causes
+    # problems, because the aws secret key contains a / character.
+    sed -i ~/.aws/config -e "s#AWS_ACCESS_KEY#$AWS_ACCESS_KEY#g"
+    sed -i ~/.aws/config -e "s#AWS_SECRET_ACCESS_KEY#$AWS_SECRET_ACCESS_KEY#g"
 fi
