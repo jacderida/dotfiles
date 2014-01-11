@@ -5,5 +5,5 @@ then
 	mkdir -p $HOME/.subversion
 	ln -f ./subversion/config ~/.subversion/config
 else
-    echo -e "Already bootstrapped subversion config"
+    echo -e "${green}Already bootstrapped subversion config${nc}"
 fi
