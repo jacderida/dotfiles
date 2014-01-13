@@ -3,3 +3,6 @@
 echo -e "${green}Removing current .gitconfig and linking from dotfiles${nc}"
 rm -f ~/.gitconfig
 ln ./git/.gitconfig ~/.gitconfig
+echo -e "${green}Removing current .githelpers and linking from dotfiles${nc}"
+rm -f ~/.githelpers
+ln ./git/.githelpers ~/.githelpers
