@@ -1,3 +1,4 @@
 #!/usr/env/bash
 
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
+gsettings set org.gnome.desktop.sound event-sounds false

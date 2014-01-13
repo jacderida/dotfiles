@@ -16,7 +16,7 @@
     di = diff
     dc = diff --cached
     amend = commit --amend
-    aa = add -all
+    aa = add --all
     ff = merge --ff-only
     pullff = pull --ff-only
     noff = megrge --no-ff
