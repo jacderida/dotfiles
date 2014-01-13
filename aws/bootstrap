@@ -2,13 +2,25 @@
 
 set -e
 
+function install_botocore
+{
+    mdkir ~/dev/botocore
+    git clone https://github.com/boto/botocore.git
+    present_directory=`pwd`
+    cd ~/dev/botocore
+    git pull origin develop
+    sudo python setup.py install
+    cd $present_directory
+}
+
 if [ ! -e "/usr/local/bin/aws" ]
 then
+    install_botocore
     mkdir ~/dev/aws-cli
     git clone https://github.com/aws/aws-cli.git ~/dev/aws-cli
     present_directory=`pwd`
     cd ~/dev/aws-cli
-    git pull origin master
+    git pull origin develop
     sudo python setup.py install
     complete -C aws_completer aws
     cd $present_directory
