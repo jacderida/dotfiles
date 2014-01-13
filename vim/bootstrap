@@ -62,12 +62,31 @@ function install_bundler_plugin
     fi
 }
 
+function install_command_t_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/command-t" ]
+    then
+        echo -e "${green}Installing command-t plugin${nc}"
+        git clone git://git.wincent.com/command-t.git ~/.vim/bundle/command-t
+        present_directory=`pwd`
+        cd ~/.vim/bundle/command-t/ruby/command-t
+        [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+        rvm use 1.8.7
+        ruby extconf.rb
+        make
+        cd $present_directory
+    else
+        echo -e "${green}Already installed command-t${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_vundle_plugin
     install_json_plugin
     install_rails_plugin
     install_bundler_plugin
+    install_command_t_plugin
 }
 
 function install_files
