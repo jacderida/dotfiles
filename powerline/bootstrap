@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+function fix_vim_plugin_structure
+{
+    # It seems powerline have changed their plugin structure but not actually updated their installer.
+    # Hopefully it won't be necessary to include this step in the future.
+    mkdir ~/.config/powerline/themes/vim/plugin
+    present_directory=`pwd`
+    cd ~/.config/powerline/themes/vim/plugin
+    cp plugin_ctrlp.json plugin/ctrlp.json
+    cp plugin_gundo.json plugin/gundo.json
+    cp plugin_gundo-preview.json plugin/gundo-preview.json
+    cp plugin_nerdtree.json plugin/nerdtree.json
+    cd $present_directory
+}
+
 if [ ! -d "$USER_HOME/.config/powerline" ]
 then
 	pip install --user git+https://github.com/Lokaltog/powerline
@@ -8,6 +22,7 @@ then
 	rm -f ~/.config/powerline/config.json
 	ln -f ./powerline/config.json ~/.config/powerline/config.json
 	ln -f ./powerline/jacderida-shell.json ~/.config/powerline/themes/shell/jacderida.json
+    fix_vim_plugin_structure
 else
     echo -e "${green}Already bootstrapped powerline${nc}"
 fi
