@@ -111,3 +111,8 @@ export PATH=$PATH:~/.local/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+
+# This fixes a permissions issue with using git aliases.
+# See here: http://stackoverflow.com/questions/7997700/git-aliases-causing-permission-denied-error
+PATH=$(for d in ${PATH//:/ } ; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
+PATH=${PATH%?}
