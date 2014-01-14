@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm -f ~/.tmux.conf
+ln ./tmux/.tmux.conf ~/.tmux.conf

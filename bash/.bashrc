@@ -116,3 +116,5 @@ export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD
 # See here: http://stackoverflow.com/questions/7997700/git-aliases-causing-permission-denied-error
 PATH=$(for d in ${PATH//:/ } ; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
 PATH=${PATH%?}
+
+alias tmux="TERM=screen-256color-bce tmux"
