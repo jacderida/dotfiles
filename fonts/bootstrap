@@ -2,6 +2,12 @@
 
 if [ ! -d "$USER_HOME/.fonts" ]; then
 	mkdir ~/.fonts
-	cp ./fonts/AndaleMono.ttf ~/.fonts
-	sudo apt-get -y install xfonts-terminus console-terminus
 fi
+
+find ./fonts -type f -iname "*.ttf" -print0 | while IFS= read -r -d $'\0' line; do
+    cp $line ~/.fonts
+done
+
+find ./fonts -type f -iname "*.otf" -print0 | while IFS= read -r -d $'\0' line; do
+    cp $line ~/.fonts
+done
