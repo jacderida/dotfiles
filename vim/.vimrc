@@ -24,10 +24,8 @@ syntax on
 au FileType gitcommit set tw=72
 
 set term=screen-256color
-"let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
-"colorscheme solarized
 color wombat256mod
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
