@@ -117,4 +117,4 @@ export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD
 PATH=$(for d in ${PATH//:/ } ; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
 PATH=${PATH%?}
 
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color tmux -2"

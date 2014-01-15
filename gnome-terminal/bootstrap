@@ -3,4 +3,5 @@
 echo -e "${green}Setting up solarized for gnome-terminal${nc}"
 source ./gnome-terminal/solarized/set_dark.sh
 cp ./gnome-terminal/dircolors.ansi-dark ~/.dircolors
+cp ./gnome-terminal/dircolors.ansi-light ~/.dircolors
 eval `dircolors ~/.dircolors`
