@@ -23,11 +23,12 @@ set viminfo+=!
 syntax on
 au FileType gitcommit set tw=72
 
-set term=screen-256color-bce
-let g:solarized_termcolors=256
+set term=screen-256color
+"let g:solarized_termcolors=256
 set t_Co=256
-set background=light
-colorscheme solarized
+set background=dark
+"colorscheme solarized
+color wombat256mod
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
