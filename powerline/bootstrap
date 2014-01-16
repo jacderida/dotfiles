@@ -6,7 +6,7 @@ function fix_vim_plugin_structure
     # Hopefully it won't be necessary to include this step in the future.
     mkdir ~/.config/powerline/themes/vim/plugin
     present_directory=`pwd`
-    cd ~/.config/powerline/themes/vim/plugin
+    cd ~/.config/powerline/themes/vim
     cp plugin_ctrlp.json plugin/ctrlp.json
     cp plugin_gundo.json plugin/gundo.json
     cp plugin_gundo-preview.json plugin/gundo-preview.json
