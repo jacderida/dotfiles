@@ -108,7 +108,7 @@ abs-menulinks = svn:eol-style=CRLF
 *.rst = svn:eol-style=CRLF
 *.scala = svn:eol-style=CRLF
 *.schemas = svn:eol-style=CRLF
-*.sh = svn:eol-style=CRLF
+*.sh = svn:eol-style=LF
 *.sql = svn:eol-style=CRLF
 *.svg = svn:eol-style=CRLF
 *.swc = svn:mime-type=application/octet-stream 
