@@ -67,7 +67,7 @@ function install_command_t_plugin
     if [ ! -d "$USER_HOME/.vim/bundle/command-t" ]
     then
         echo -e "${green}Installing command-t plugin${nc}"
-        git clone git://git.wincent.com/command-t.git ~/.vim/bundle/command-t
+        git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/command-t
         present_directory=`pwd`
         cd ~/.vim/bundle/command-t/ruby/command-t
         [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
