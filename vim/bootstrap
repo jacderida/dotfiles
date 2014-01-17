@@ -80,6 +80,17 @@ function install_command_t_plugin
     fi
 }
 
+function install_nerdtree_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/nerdtree" ]
+    then
+        echo -e "${green}Installing nerdtree plugin${nc}"
+        git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+    else
+        echo -e "${green}Already installed nerdtree${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_vundle_plugin
@@ -87,6 +98,7 @@ function install_plugins
     install_rails_plugin
     install_bundler_plugin
     install_command_t_plugin
+    install_nerdtree_plugin
 }
 
 function install_files
