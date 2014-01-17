@@ -42,6 +42,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set noshowmode
 set ttyfast
+set lazyredraw
 
 set incsearch
 set hlsearch
