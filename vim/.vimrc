@@ -22,6 +22,7 @@ set columns=120
 set viminfo+=!
 syntax on
 au FileType gitcommit set tw=72
+set mouse=a
 
 set term=screen-256color
 set t_Co=256
