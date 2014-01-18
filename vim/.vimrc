@@ -48,6 +48,8 @@ set lazyredraw
 set incsearch
 set hlsearch
 
+let NERDTreeWinSize=40
+
 let mapleader=","
 nnoremap <Leader>g mzgg=G`z<CR> " Indents the file and returns you to the current line
 nnoremap <Leader>h :set hlsearch!<CR>
@@ -59,9 +61,9 @@ map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
 
-" Execute shell scripts from within Vim
-nnoremap <F2> :!./%<CR>
-nnoremap <F3> :!sudo ./%<CR>
+nnoremap <F2> :!./%<CR> " Execute current shell script
+nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
+nnoremap <F4> :NERDTree<CR> 
 
 " Powerline stuff
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
