@@ -56,11 +56,6 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" Resize windows with the arrow keys
-noremap <up> :set lines-=5<CR>
-noremap <down> :set lines+=5<CR>
-noremap <left> :set columns-=5<CR>
-noremap <right> :set columns+=5<CR>
 nnoremap j gj
 nnoremap k gk
 
