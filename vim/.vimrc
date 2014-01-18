@@ -22,6 +22,7 @@ set columns=120
 set viminfo+=!
 syntax on
 au FileType gitcommit set tw=72
+au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 
 set term=screen-256color
 set t_Co=256
