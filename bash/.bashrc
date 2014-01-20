@@ -118,4 +118,5 @@ PATH=$(for d in ${PATH//:/ } ; do [ -x $d ] && printf "$d\n"; done | uniq | tr '
 PATH=${PATH%?}
 
 alias tmux="TERM=screen-256color tmux -2"
+alias mci="mvn clean install"
 stty -ixon -ixoff # See here: http://stackoverflow.com/questions/8616843/ctrl-s-is-not-working-as-a-horizontal-split-in-vim-when-using-commandt
