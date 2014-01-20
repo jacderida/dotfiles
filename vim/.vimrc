@@ -27,8 +27,7 @@ au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set term=screen-256color
 set t_Co=256
 set background=dark
-let g:molokai_original = 1
-color molokai
+color jellybeans
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
