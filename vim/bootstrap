@@ -91,6 +91,28 @@ function install_nerdtree_plugin
     fi
 }
 
+function install_nerdcommenter_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/nerdcommenter" ]
+    then
+        echo -e "${green}Installing nerdcommenter plugin${nc}"
+        git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
+    else
+        echo -e "${green}Already installed nerdcommenter${nc}"
+    fi
+}
+
+function install_syntastic_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/syntastic" ]
+    then
+        echo -e "${green}Installing syntastic plugin${nc}"
+        git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic
+    else
+        echo -e "${green}Already installed syntastic${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_vundle_plugin
@@ -99,6 +121,8 @@ function install_plugins
     install_bundler_plugin
     install_command_t_plugin
     install_nerdtree_plugin
+    install_nerdcommenter_plugin
+    install_syntastic_plugin
 }
 
 function install_files

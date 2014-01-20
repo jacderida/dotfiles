@@ -23,11 +23,12 @@ set viminfo+=!
 syntax on
 au FileType gitcommit set tw=72
 set mouse=a
+au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 
 set term=screen-256color
 set t_Co=256
 set background=dark
-color wombat256mod
+color jellybeans
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
@@ -48,6 +49,8 @@ set lazyredraw
 set incsearch
 set hlsearch
 
+let NERDTreeWinSize=40
+
 let mapleader=","
 nnoremap <Leader>g mzgg=G`z<CR> " Indents the file and returns you to the current line
 nnoremap <Leader>h :set hlsearch!<CR>
@@ -56,17 +59,12 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" Resize windows with the arrow keys
-noremap <up> :set lines-=5<CR>
-noremap <down> :set lines+=5<CR>
-noremap <left> :set columns-=5<CR>
-noremap <right> :set columns+=5<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Execute shell scripts from within Vim
-nnoremap <F2> :!./%<CR>
-nnoremap <F3> :!sudo ./%<CR>
+nnoremap <F2> :!./%<CR> " Execute current shell script
+nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
+nnoremap <F4> :NERDTree<CR>
 
 " Powerline stuff
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
@@ -80,3 +78,18 @@ if ! has('gui_running')
 		au InsertLeave * set timeoutlen=1000
 	augroup END
 endif
+
+" Toggle between absolute/relative line numbers. It'll also be changed
+" automatically when entering and leaving insert mode.
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<CR>
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
