@@ -120,3 +120,9 @@ PATH=${PATH%?}
 alias tmux="TERM=screen-256color tmux -2"
 alias mci="mvn clean install"
 stty -ixon -ixoff # See here: http://stackoverflow.com/questions/8616843/ctrl-s-is-not-working-as-a-horizontal-split-in-vim-when-using-commandt
+
+function createscript
+{
+    printf "#!/usr/bin/env bash" >> $1
+    vim $1
+}
