@@ -64,7 +64,7 @@ nnoremap k gk
 
 nnoremap <F2> :!./%<CR> " Execute current shell script
 nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
-nnoremap <F4> :NERDTree<CR>
+nnoremap <F4> :NERDTreeToggle<CR>
 
 " Powerline stuff
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
