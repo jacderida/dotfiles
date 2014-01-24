@@ -25,16 +25,10 @@ au FileType gitcommit set tw=72
 set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 
-function SetSolarizedLight()
-    set background=light
-    colorscheme solarized
-endfunction
-
 set term=screen-256color
 set t_Co=256
 set background=dark
 color jellybeans
-au BufReadPost *.java call SetSolarizedLight()
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
