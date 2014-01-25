@@ -12,31 +12,40 @@ function install_botocore
     cd $present_directory
 }
 
-if [ ! -e "/usr/local/bin/aws" ]
-then
-    install_botocore
-    git clone https://github.com/aws/aws-cli.git ~/dev/aws-cli
-    present_directory=`pwd`
-    cd ~/dev/aws-cli
-    git pull origin develop
-    sudo python setup.py install
-    complete -C aws_completer aws
-    cd doc
-    make html
-    cd $present_directory
-else
-    echo -e "${green}Already bootstrapped aws-cli${nc}"
-fi
-
-if [[ -n "$AWS_ACCESS_KEY" && -n "$AWS_SECRET_ACCESS_KEY" ]]
-then
-    echo -e "${green}Setting up config for aws-cli${nc}"
-    if [ ! -d "$HOME/.aws/" ]; then
-        mkdir ~/.aws
+function install_aws_cli
+{
+    if [ ! -e "/usr/local/bin/aws" ]
+    then
+        install_botocore
+        git clone https://github.com/aws/aws-cli.git ~/dev/aws-cli
+        present_directory=`pwd`
+        cd ~/dev/aws-cli
+        git pull origin develop
+        sudo python setup.py install
+        complete -C aws_completer aws
+        cd doc
+        make html
+        cd $present_directory
+    else
+        echo -e "${green}Already bootstrapped aws-cli${nc}"
     fi
-    cp ./aws/config ~/.aws/config
-    # It's more common to use / as the delimiting character with sed, but this causes
-    # problems, because the aws secret key contains a / character.
-    sed -i ~/.aws/config -e "s#AWS_ACCESS_KEY#$AWS_ACCESS_KEY#g"
-    sed -i ~/.aws/config -e "s#AWS_SECRET_ACCESS_KEY#$AWS_SECRET_ACCESS_KEY#g"
-fi
+}
+
+function set_aws_cli_credentials
+{
+    if [[ -n "$AWS_ACCESS_KEY" && -n "$AWS_SECRET_ACCESS_KEY" ]]
+    then
+        echo -e "${green}Setting up config for aws-cli${nc}"
+        if [ ! -d "$HOME/.aws/" ]; then
+            mkdir ~/.aws
+        fi
+        cp ./aws/config ~/.aws/config
+        # It's more common to use / as the delimiting character with sed, but this causes
+        # problems, because the aws secret key contains a / character.
+        sed -i ~/.aws/config -e "s#AWS_ACCESS_KEY#$AWS_ACCESS_KEY#g"
+        sed -i ~/.aws/config -e "s#AWS_SECRET_ACCESS_KEY#$AWS_SECRET_ACCESS_KEY#g"
+    fi
+}
+
+install_aws_cli
+set_aws_cli_credentials
