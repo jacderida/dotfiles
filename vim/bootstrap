@@ -124,6 +124,17 @@ function install_endwise_plugin
     fi
 }
 
+function install_fugitive_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/vim-fugitive" ]
+    then
+        echo -e "${green}Installing vim-fugitive plugin${nc}"
+        git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+    else
+        echo -e "${green}Already installed vim-fugitive${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_vundle_plugin
@@ -135,6 +146,7 @@ function install_plugins
     install_nerdcommenter_plugin
     install_syntastic_plugin
     install_endwise_plugin
+    install_fugitive_plugin
 }
 
 function install_files
