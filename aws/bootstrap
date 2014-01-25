@@ -47,5 +47,16 @@ function set_aws_cli_credentials
     fi
 }
 
+function set_s3cmd_credentials
+{
+    if [[ -n "$AWS_ACCESS_KEY" && -n "$AWS_SECRET_ACCESS_KEY" ]]; then
+        echo -e "${green}Setting up config for s3cmd${nc}"
+        cp ./aws/s3cfg ~/.s3cfg
+        sed -i ~/.s3cfg -e "s#AWS_ACCESS_KEY#$AWS_ACCESS_KEY#g"
+        sed -i ~/.s3cfg -e "s#AWS_SECRET_ACCESS_KEY#$AWS_SECRET_ACCESS_KEY#g"
+    fi
+}
+
 install_aws_cli
 set_aws_cli_credentials
+set_s3cmd_credentials
