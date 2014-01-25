@@ -29,6 +29,8 @@ function install_manual_plugins
         echo -e "${green}Installing manual plugin $plugin ${nc}"
         cp -r $plugin/* ~/.vim
     done
+    # Unfortunately, yavdb requires this manual step.
+    mv ~/.vim/plugin/yavdb ~/.local/bin
 }
 
 function install_vundle_plugin
