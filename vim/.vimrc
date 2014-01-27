@@ -24,6 +24,7 @@ syntax on
 au FileType gitcommit set tw=72
 set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
+set tags=~/.tags/tags
 
 set term=screen-256color
 set t_Co=256
