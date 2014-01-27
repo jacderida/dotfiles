@@ -71,12 +71,12 @@ set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 " In terminal mode, prevent the delay in transitioning from insert mode to
 " normal mode.
 if ! has('gui_running')
-	set ttimeoutlen=10
-	augroup FastEscape
-		autocmd!
-		au InsertEnter * set timeoutlen=0
-		au InsertLeave * set timeoutlen=1000
-	augroup END
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
 endif
 
 " Toggle between absolute/relative line numbers. It'll also be changed
@@ -93,3 +93,16 @@ nnoremap <C-n> :call NumberToggle()<CR>
 :au FocusGained * :set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+
+" Stolen from Gary Bernhardt's dotfiles. This makes tab do autocompletion when
+" it's appropriate.
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
