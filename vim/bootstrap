@@ -157,6 +157,17 @@ function install_asynccommand_plugin
     fi
 }
 
+function install_vjde_plugin
+{
+    if [ ! -d "$USER_HOME/.vim/bundle/vjde" ]
+    then
+        echo -e "${green}Installing vjde plugin${nc}"
+        git clone https://github.com/cespare/vjde.git ~/.vim/bundle/vjde
+    else
+        echo -e "${green}Already installed vjde${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -171,6 +182,7 @@ function install_plugins
     install_endwise_plugin
     install_fugitive_plugin
     install_asynccommand_plugin
+    install_vjde_plugin
 }
 
 function install_files
