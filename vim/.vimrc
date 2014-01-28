@@ -55,6 +55,7 @@ let NERDTreeWinSize=40
 let mapleader=","
 nnoremap <Leader>g mzgg=G`z<CR> " Indents the file and returns you to the current line
 nnoremap <Leader>h :set hlsearch!<CR>
+nnoremap <Leader>s vi{
 " Window navigation with ctrl+jkhl
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -66,6 +67,7 @@ nnoremap k gk
 nnoremap <F2> :!./%<CR> " Execute current shell script
 nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
 nnoremap <F4> :NERDTreeToggle<CR>
+nnoremap <F5> :!mvn test<CR>
 
 " Powerline stuff
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
