@@ -26,6 +26,11 @@ set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set tags=~/.tags/tags
 
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
 set term=screen-256color
 set t_Co=256
 set background=dark
