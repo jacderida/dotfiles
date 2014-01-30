@@ -31,6 +31,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
+set shellcmdflag=-ic
 set term=screen-256color
 set t_Co=256
 set background=dark
