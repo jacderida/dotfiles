@@ -126,3 +126,10 @@ function createscript
     printf "#!/usr/bin/env bash" >> $1
     vim $1
 }
+
+operating_system=`uname -s`
+if [ "$operating_system" -eq "Darwin" ]; then
+    vim() {
+        (unset GEM_PATH GEM_HOME; command vim "$@")
+    }
+fi

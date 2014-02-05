@@ -1,0 +1,11 @@
+#!usr/bin/env bash
+
+operating_system=`uname -s`
+if [ $operating_system = "Darwin" ]; then
+    echo -e "${green}Removing current default key bindings and linking from dotfiles"
+    if [ ! -d "$HOME/Library/KeyBindings" ]; then
+        mkdir ~/Library/KeyBindings
+    fi
+    rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
+    ln -f ./osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+fi
