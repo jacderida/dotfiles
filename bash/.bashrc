@@ -128,7 +128,7 @@ function createscript
 }
 
 operating_system=`uname -s`
-if [ "$operating_system" -eq "Darwin" ]; then
+if [ "$operating_system" = "Darwin" ]; then
     vim() {
         (unset GEM_PATH GEM_HOME; command vim "$@")
     }
