@@ -1,7 +1,14 @@
 #!usr/bin/env bash
 
 operating_system=`uname -s`
+keyboard_layouts="\"Keyboard Layouts\""
+keyboard_layouts_directory="$HOME/Library/$keyboard_layouts"
 if [ $operating_system = "Darwin" ]; then
+    if [ ! -d "$keyboard_layouts_directory" ]; then
+        echo -e "${green}Installing British Keyboard Layouts"
+        mkdir -v "$keyboard_layouts_directory"
+        cp ./osx/KeyboardLayouts/* $keyboard_layouts_directory
+    fi
     echo -e "${green}Removing current default key bindings and linking from dotfiles"
     if [ ! -d "$HOME/Library/KeyBindings" ]; then
         mkdir ~/Library/KeyBindings
