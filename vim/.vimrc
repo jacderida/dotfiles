@@ -26,6 +26,8 @@ set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set tags=~/.tags/tags
 
+autocmd FileType pp setlocal shiftwidth=2 tabstop=2
+
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
