@@ -159,6 +159,17 @@ function install_asynccommand_plugin
     fi
 }
 
+function install_tabular_plugin
+{
+    if [ ! -d "$HOME/.vim/bundle/tabular" ]
+    then
+        echo -e "${green}Installing tabular plugin${nc}"
+        git clone https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
+    else
+        echo -e "${green}Already installed tabular${nc}"
+    fi
+}
+
 function install_vjde_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vjde" ]
@@ -184,6 +195,7 @@ function install_plugins
     install_endwise_plugin
     install_fugitive_plugin
     install_asynccommand_plugin
+    install_tabular_plugin
     install_vjde_plugin
 }
 
