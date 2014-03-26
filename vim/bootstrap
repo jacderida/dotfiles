@@ -170,6 +170,17 @@ function install_tabular_plugin
     fi
 }
 
+function install_vim-puppet_plugin
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-puppet" ]
+    then
+        echo -e "${green}Installing vim-puppet plugin${nc}"
+        git clone https://github.com/rodjek/vim-puppet.git ~/.vim/bundle/vim-puppet
+    else
+        echo -e "${green}Already installed vim-puppet${nc}"
+    fi
+}
+
 function install_vjde_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vjde" ]
@@ -196,6 +207,7 @@ function install_plugins
     install_fugitive_plugin
     install_asynccommand_plugin
     install_tabular_plugin
+    install_vim-puppet_plugin
     install_vjde_plugin
 }
 
