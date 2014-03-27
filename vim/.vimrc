@@ -74,6 +74,9 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
+noremap H ^
+noremap L $
+vnoremap L g_
 
 nnoremap <F2> :!./%<CR> " Execute current shell script
 nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
