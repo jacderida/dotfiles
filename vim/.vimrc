@@ -76,6 +76,7 @@ nnoremap j gj
 nnoremap k gk
 noremap H ^
 noremap L $
+noremap <space> ;
 vnoremap L g_
 
 nnoremap <F2> :!./%<CR> " Execute current shell script
