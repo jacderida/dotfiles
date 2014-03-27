@@ -20,6 +20,7 @@ set diffexpr=MyDiff()
 set lines=50
 set columns=120
 set viminfo+=!
+set showcmd
 syntax on
 au FileType gitcommit set tw=72
 set mouse=a
