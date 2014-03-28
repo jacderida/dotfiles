@@ -74,8 +74,6 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
-noremap H ^
-noremap L $
 noremap <space> ;
 vnoremap L g_
 
