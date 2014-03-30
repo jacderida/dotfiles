@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo -e "${green}Installing solarized colour scheme for cygwin.{nc}"
+rm -f ~/.minttyrc
+ln -f ./cygwin/mintty-colors-solarized-dark ~/.minttyrc
