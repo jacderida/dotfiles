@@ -205,10 +205,8 @@ function install_plugins
     install_syntastic_plugin
     install_endwise_plugin
     install_fugitive_plugin
-    install_asynccommand_plugin
     install_tabular_plugin
     install_vim-puppet_plugin
-    install_vjde_plugin
 }
 
 function install_files
