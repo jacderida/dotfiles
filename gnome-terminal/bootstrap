@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-echo -e "${green}Setting up solarized for gnome-terminal${nc}"
-source ./gnome-terminal/solarized/set_dark.sh
-cp ./gnome-terminal/dircolors.ansi-dark ~/.dircolors
-cp ./gnome-terminal/dircolors.ansi-light ~/.dircolors
-eval `dircolors ~/.dircolors`
+operating_system=$(uname -s)
+if [[ $operating_system != "Darwin" && $operating_system != "CYGWIN_NT-6.1" ]]; then
+    echo -e "${green}Setting up solarized for gnome-terminal${nc}"
+    source ./gnome-terminal/solarized/set_dark.sh
+    cp ./gnome-terminal/dircolors.ansi-dark ~/.dircolors
+    cp ./gnome-terminal/dircolors.ansi-light ~/.dircolors
+    eval `dircolors ~/.dircolors`
+fi
