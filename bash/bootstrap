@@ -10,11 +10,10 @@ ln -f ./bash/.bash_aliases ~/.bash_aliases
 rm -f ~/.profile
 ln -f ./bash/.profile ~/.profile
 
-if [ ! -d "/home/jacderida/dev/stderred" ]
+if [ ! -d "$HOME/dev/stderred" ]
 then
 	# Makes error output red in the console
 	present_directory=`pwd`
-	sudo apt-get -y install cmake
 	cd ~/dev
 	git clone https://github.com/sickill/stderred.git
 	cd stderred
