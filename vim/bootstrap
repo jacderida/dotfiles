@@ -89,6 +89,15 @@ function install_command_t_plugin
             rvm use 1.8.7
         fi
         ruby extconf.rb
+        if [ $(uname -s) = "CYGWIN_NT-6.1" ]; then
+            # On Cygwin, replace
+            # CFLAGS += -Wall -Wextra -Wno-unused-parameter
+            # with
+            # CFLAGS += -Wextra -Wno-unused-parameter
+            # This switches off all warnings as errors. For some reason, on Cygwin, there's a weird 64 bit integer
+            # warning that prevents successful compilation.
+            sed -i 's/^CFLAGS +=.*/CFLAGS += -Wextra -Wno-unused-parameter/g' Makefile
+        fi
         make
         cd $present_directory
     else
