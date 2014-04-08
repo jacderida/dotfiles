@@ -35,6 +35,7 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -106,8 +107,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH=$PATH:~/.local/bin
-. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+if [ -d "$HOME/.local/lib/python2.7/site-packages/powerline" ]; then
+    export PATH=$PATH:~/.local/bin
+    . ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ $(uname -s) != "CYGWIN_NT-6.1" ]] && export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
