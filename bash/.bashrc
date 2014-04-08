@@ -110,7 +110,7 @@ export PATH=$PATH:~/.local/bin
 . ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+[[ $(uname -s) != "CYGWIN_NT-6.1" ]] && export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 
 # This fixes a permissions issue with using git aliases.
 # See here: http://stackoverflow.com/questions/7997700/git-aliases-causing-permission-denied-error
