@@ -30,6 +30,9 @@ function install_manual_plugins
         cp -r $plugin/* ~/.vim
     done
     # Unfortunately, yavdb requires this manual step.
+    if [ ! -d "$HOME/.local" ]; then
+        mkdir -p $HOME/.local/bin
+    fi
     mv ~/.vim/plugin/yavdb ~/.local/bin
 }
 
@@ -181,6 +184,17 @@ function install_vim-puppet_plugin
     fi
 }
 
+function install_vim-msbuild_plugin
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-msbuild" ]
+    then
+        echo -e "${green}Installing vim-msbuild plugin${nc}"
+        git clone https://github.com/heaths/vim-msbuild.git ~/.vim/bundle/vim-msbuild
+    else
+        echo -e "${green}Already installed vim-msbuild${nc}"
+    fi
+}
+
 function install_vjde_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vjde" ]
@@ -207,6 +221,7 @@ function install_plugins
     install_fugitive_plugin
     install_tabular_plugin
     install_vim-puppet_plugin
+    install_vim-msbuild_plugin
 }
 
 function install_files
