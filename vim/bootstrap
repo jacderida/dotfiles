@@ -221,6 +221,17 @@ function install_airline
     fi
 }
 
+function install_bufferline
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-bufferline" ]
+    then
+        echo -e "${green}Installing bufferline plugin${nc}"
+        git clone https://github.com/bling/vim-bufferline.git ~/.vim/bundle/vim-bufferline
+    else
+        echo -e "${green}Already installed bufferline${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -238,6 +249,7 @@ function install_plugins
     install_vim-puppet_plugin
     install_vim-msbuild_plugin
     install_airline
+    install_bufferline
 }
 
 function install_files
