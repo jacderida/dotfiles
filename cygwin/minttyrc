@@ -24,3 +24,5 @@ CursorType=block
 Font=Ubuntu Mono
 FontHeight=12
 FontSmoothing=full
+Locale=en_GB
+Charset=UTF-8
