@@ -82,8 +82,6 @@ nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
 nnoremap <F4> :NERDTreeToggle<CR>
 nnoremap <F5> :!mvn test<CR>
 
-" Powerline stuff
-set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 " In terminal mode, prevent the delay in transitioning from insert mode to
 " normal mode.
 if ! has('gui_running')
