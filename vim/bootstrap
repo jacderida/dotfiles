@@ -210,6 +210,17 @@ function install_vjde_plugin
     fi
 }
 
+function install_airline
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-airline" ]
+    then
+        echo -e "${green}Installing airline plugin${nc}"
+        git clone https://github.com/bling/vim-airline.git ~/.vim/bundle/vim-airline
+    else
+        echo -e "${green}Already installed airline${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -226,6 +237,7 @@ function install_plugins
     install_tabular_plugin
     install_vim-puppet_plugin
     install_vim-msbuild_plugin
+    install_airline
 }
 
 function install_files
