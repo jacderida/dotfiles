@@ -232,6 +232,17 @@ function install_gitgutter
     fi
 }
 
+function install_base16
+{
+    if [ ! -d "$HOME/.vim/bundle/base16-vim" ]
+    then
+        echo -e "${green}Installing base16 plugin${nc}"
+        git clone https://github.com/chriskempson/base16-vim.git ~/.vim/bundle/base16-vim
+    else
+        echo -e "${green}Already installed base16${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -250,6 +261,7 @@ function install_plugins
     install_vim-msbuild_plugin
     install_airline
     install_gitgutter
+    install_base16
 }
 
 function install_files
