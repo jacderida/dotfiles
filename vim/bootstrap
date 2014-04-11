@@ -221,6 +221,17 @@ function install_airline
     fi
 }
 
+function install_gitgutter
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-gitgutter" ]
+    then
+        echo -e "${green}Installing gitgutter plugin${nc}"
+        git clone https://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
+    else
+        echo -e "${green}Already installed gitgutter${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -238,6 +249,7 @@ function install_plugins
     install_vim-puppet_plugin
     install_vim-msbuild_plugin
     install_airline
+    install_gitgutter
 }
 
 function install_files
