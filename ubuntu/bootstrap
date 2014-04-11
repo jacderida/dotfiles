@@ -1,7 +1,7 @@
 #!/usr/env/bash
 
 operating_system=$(uname -s)
-if [[ $operating_system != "Darwin" && $operating_system != "CYGWIN_NT-6.1" ]]; then
+if [[ $operating_system != "Darwin" && $operating_system != CYGWIN_NT-* ]]; then
     gsettings set org.gnome.nautilus.preferences show-hidden-files true
     gsettings set org.gnome.desktop.sound event-sounds false
 fi

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 operating_system=$(uname -s)
-if [[ $operating_system != "Darwin" && $operating_system != "CYGWIN_NT-6.1" ]]; then
+if [[ $operating_system != "Darwin" && $operating_system != CYGWIN_NT-* ]]; then
     echo -e "${green}Setting up solarized for gnome-terminal${nc}"
     source ./gnome-terminal/solarized/set_dark.sh
     cp ./gnome-terminal/dircolors.ansi-dark ~/.dircolors

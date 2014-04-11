@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $operating_system != "Darwin" && $operating_system != "CYGWIN_NT-6.1" ]]; then
+if [[ $operating_system != "Darwin" && $operating_system != CYGWIN_NT-* ]]; then
     echo -e "${green}Removing netbeans.conf and linking from dotfiles${nc}"
     sudo rm /usr/local/netbeans-7.4/etc/netbeans.conf
     sudo ln ./netbeans/netbeans.conf /usr/local/netbeans-7.4/etc/netbeans.conf
