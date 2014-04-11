@@ -39,7 +39,8 @@ set foldlevel=1
 set shellcmdflag=-ic
 set term=screen-256color
 set t_Co=256
-color badwolf
+set background=light
+color solarized
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
