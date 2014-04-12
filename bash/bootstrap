@@ -11,7 +11,7 @@ rm -f ~/.profile
 ln -f ./bash/.profile ~/.profile
 
 # It turns out this won't work at all on Cygwin, as it doesn't have full glibc emulation (or something along those lines), nor can it use LD_PRELOAD.
-if [ $(uname -s) != CYGWIN_NT-* ]; then
+if [[ $(uname -s) != CYGWIN_NT-* ]]; then
     if [ ! -d "$HOME/dev/stderred" ]
     then
         # Makes error output red in the console
