@@ -49,7 +49,6 @@ set backupdir=~/.vim/tmp//
 
 set encoding=utf-8
 set ruler
-set relativenumber
 set cursorline
 set backspace=indent,eol,start
 set laststatus=2
