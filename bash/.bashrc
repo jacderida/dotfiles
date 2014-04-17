@@ -95,7 +95,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ $(uname -s) != CYGWIN_NT-* ]] && export LD_PRELOAD="/home/jacderida/dev/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+libstderr_red="/home/jacderida/dev/stderred/build/libstderred.so"
+[[ $(uname -s) != CYGWIN_NT-* && -f "$libstderr_red" ]] && export LD_PRELOAD="$libstderr_red${LD_PRELOAD:+:$LD_PRELOAD}"
 
 # This fixes a permissions issue with using git aliases.
 # See here: http://stackoverflow.com/questions/7997700/git-aliases-causing-permission-denied-error
