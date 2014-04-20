@@ -90,18 +90,3 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-" Toggle between absolute/relative line numbers. It'll also be changed
-" automatically when entering and leaving insert mode.
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<CR>
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
