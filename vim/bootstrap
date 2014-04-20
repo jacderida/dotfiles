@@ -243,6 +243,17 @@ function install_base16
     fi
 }
 
+function install_supertab
+{
+    if [ ! -d "$HOME/.vim/bundle/supertab" ]
+    then
+        echo -e "${green}Installing supertab plugin${nc}"
+        git clone https://github.com/ervandew/supertab.git ~/.vim/bundle/supertab
+    else
+        echo -e "${green}Already installed base16${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -262,6 +273,7 @@ function install_plugins
     install_airline
     install_gitgutter
     install_base16
+    install_supertab
 }
 
 function install_files
