@@ -250,7 +250,19 @@ function install_supertab
         echo -e "${green}Installing supertab plugin${nc}"
         git clone https://github.com/ervandew/supertab.git ~/.vim/bundle/supertab
     else
-        echo -e "${green}Already installed base16${nc}"
+        echo -e "${green}Already installed supertab${nc}"
+    fi
+}
+
+function install_jedi
+{
+    if [ ! -d "$HOME/.vim/bundle/jedi-vim" ]
+    then
+        echo -e "${green}Installing jedi-vim plugin${nc}"
+        pip install jedi
+        git clone https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+    else
+        echo -e "${green}Already installed jedi-vim${nc}"
     fi
 }
 
@@ -274,6 +286,7 @@ function install_plugins
     install_gitgutter
     install_base16
     install_supertab
+    install_jedi
 }
 
 function install_files
