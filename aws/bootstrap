@@ -8,7 +8,12 @@ function install_botocore
     present_directory=`pwd`
     cd ~/dev/botocore
     git pull origin develop
-    sudo python setup.py install
+    if [[ $(uname -s) == CYGWIN_NT-* ]]
+    then
+        python setup.py install
+    else
+        sudo python setup.py install
+    fi
     cd $present_directory
 }
 
@@ -21,7 +26,12 @@ function install_aws_cli
         present_directory=`pwd`
         cd ~/dev/aws-cli
         git pull origin develop
-        sudo python setup.py install
+        if [[ $(uname -s) == CYGWIN_NT-* ]]
+        then
+            python setup.py install
+        else
+            sudo python setup.py install
+        fi
         complete -C aws_completer aws
         cd doc
         make html
