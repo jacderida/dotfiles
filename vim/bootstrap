@@ -288,6 +288,17 @@ function install_ack
     fi
 }
 
+function install_surround
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-surround" ]
+    then
+        echo -e "${green}Installing surround plugin${nc}"
+        git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
+    else
+        echo -e "${green}Already installed surround plugin${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -311,6 +322,7 @@ function install_plugins
     install_jedi
     install_trailing_whitespace
     install_ack
+    install_surround
 }
 
 function install_files
