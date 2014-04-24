@@ -262,7 +262,18 @@ function install_jedi
         pip install jedi
         git clone https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
     else
-        echo -e "${green}Already installed jedi-vim${nc}"
+        echo -e "${green}Already installed jedi-vim plugin${nc}"
+    fi
+}
+
+function install_trailing_whitespace
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-trailing-whitespace" ]
+    then
+        echo -e "${green}Installing trailing whitespace plugin${nc}"
+        git clone https://github.com/bronson/vim-trailing-whitespace.git ~/.vim/bundle/vim-trailing-whitespace
+    else
+        echo -e "${green}Already installed trailing whitespace plugin${nc}"
     fi
 }
 
@@ -287,6 +298,7 @@ function install_plugins
     install_base16
     install_supertab
     install_jedi
+    install_trailing_whitespace
 }
 
 function install_files
