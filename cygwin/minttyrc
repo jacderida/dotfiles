@@ -27,3 +27,4 @@ FontSmoothing=full
 Locale=en_GB
 Charset=UTF-8
 Transparency=low
+FontIsBold=yes
