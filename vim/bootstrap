@@ -277,6 +277,17 @@ function install_trailing_whitespace
     fi
 }
 
+function install_ack
+{
+    if [ ! -d "$HOME/.vim/bundle/ack.vim" ]
+    then
+        echo -e "${green}Installing ack plugin${nc}"
+        git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
+    else
+        echo -e "${green}Already installed ack plugin${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -299,6 +310,7 @@ function install_plugins
     install_supertab
     install_jedi
     install_trailing_whitespace
+    install_ack
 }
 
 function install_files
