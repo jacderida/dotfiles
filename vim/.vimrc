@@ -91,3 +91,5 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+autocmd FileType python set completeopt-=preview
