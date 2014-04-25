@@ -119,3 +119,5 @@ if [ "$operating_system" = "Darwin" ]; then
         (unset GEM_PATH GEM_HOME; command vim "$@")
     }
 fi
+
+[[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
