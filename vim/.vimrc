@@ -75,6 +75,9 @@ nnoremap j gj
 nnoremap k gk
 noremap <space> ;
 vnoremap L g_
+" This is for surround.vim to work as expected. I never used the s command
+" anyway.
+vmap s S
 
 nnoremap <F2> :!./%<CR> " Execute current shell script
 nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
