@@ -5,7 +5,6 @@ filetype plugin indent on
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'christoomey/vim-tmux-navigator'
 
 set nocompatible
 set nowrap
@@ -66,11 +65,6 @@ let mapleader=","
 nnoremap <Leader>g mzgg=G`z<CR> " Indents the file and returns you to the current line
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>s vi{
-" Window navigation with ctrl+jkhl
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
 noremap <space> ;

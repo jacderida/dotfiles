@@ -299,6 +299,17 @@ function install_surround
     fi
 }
 
+function install_tmux_navigator
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-tmux-navigator" ]
+    then
+        echo -e "${green}Installing tmux navigator plugin${nc}"
+        git clone https://github.com/christoomey/vim-tmux-navigator.git ~/.vim/bundle/vim-tmux-navigator
+    else
+        echo -e "${green}Already installed tmux navigator plugin${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -323,6 +334,7 @@ function install_plugins
     install_trailing_whitespace
     install_ack
     install_surround
+    install_tmux_navigator
 }
 
 function install_files
