@@ -310,6 +310,17 @@ function install_tmux_navigator
     fi
 }
 
+function install_easymotion
+{
+    if [ ! -d "$HOME/.vim/bundle/vim-easymotion" ]
+    then
+        echo -e "${green}Installing easy motion plugin${nc}"
+        git clone https://github.com/Lokaltog/vim-easymotion.git ~/.vim/bundle/vim-easymotion
+    else
+        echo -e "${green}Already installed easy motion plugin${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -335,6 +346,7 @@ function install_plugins
     install_ack
     install_surround
     install_tmux_navigator
+    install_easymotion
 }
 
 function install_files

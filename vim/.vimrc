@@ -16,7 +16,6 @@ set shiftwidth=4
 set expandtab
 set guifont=Monospace
 set number
-set diffexpr=MyDiff()
 set lines=50
 set columns=120
 set viminfo+=!
