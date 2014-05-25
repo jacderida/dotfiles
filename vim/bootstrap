@@ -321,6 +321,17 @@ function install_easymotion
     fi
 }
 
+function install_xml
+{
+    if [ ! -d "$HOME/.vim/bundle/xmledit" ]
+    then
+        echo -e "${green}Installing xmledit plugin${nc}"
+        git clone https://github.com/sukima/xmledit.git ~/.vim/bundle/xmledit
+    else
+        echo -e "${green}Already installed xmledit plugin${nc}"
+    fi
+}
+
 function install_plugins
 {
     install_manual_plugins
@@ -347,6 +358,7 @@ function install_plugins
     install_surround
     install_tmux_navigator
     install_easymotion
+    install_xml
 }
 
 function install_files
