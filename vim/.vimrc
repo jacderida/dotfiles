@@ -1,12 +1,14 @@
+set nocompatible
 filetype off
-call pathogen#infect()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
 filetype plugin indent on
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
-set nocompatible
+call pathogen#infect()
 set nowrap
 set nobackup
 set ignorecase
