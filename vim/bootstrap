@@ -22,15 +22,6 @@ function init_directories
     fi
 }
 
-function install_manual_plugins
-{
-    for plugin in `find ./vim/plugins -maxdepth 1 -type d`
-    do
-        echo -e "${green}Installing manual plugin $plugin ${nc}"
-        cp -r $plugin/* ~/.vim
-    done
-}
-
 function install_vundle_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]
@@ -40,6 +31,67 @@ function install_vundle_plugin
         echo -e "${green}Already installed vundle${nc}"
     fi
 }
+
+function download_libclang()
+{
+    local present_path=$(pwd)
+    local destination=$1
+    if [ -d $destination ]; then
+        rm -rf $destination
+    fi
+    mkdir -p $destination
+    cd "/tmp"
+    case $(uname -a) in
+        *Ubuntu*)
+            curl -O http://llvm.org/releases/3.4.1/clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
+            tar xvf clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
+            cp -r /tmp/clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04/** $destination
+            rm -f clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
+            rm -rf clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04
+            ;;
+        *)
+            echo "Setting up dependencies for YouCompleteMe: Unsupported OS encountered. Update get_libclang to support the current OS."
+            exit 1
+    esac
+    cd $present_path
+}
+
+function install_cmake()
+{
+    case $(uname -a) in
+        *Ubuntu*)
+            sudo apt-get install -y cmake
+            ;;
+        *)
+            echo "Setting up dependencies for YouCompleteMe: Unsupported OS encountered. Update install_cmake to support the current OS."
+            exit 1
+    esac
+}
+
+function setup_you_complete_me()
+{
+    install_cmake
+    local libclang_path="/tmp/libclang"
+    local you_complete_me_path=$HOME/.vim/bundle/YouCompleteMe
+    download_libclang $libclang_path
+    local present_path=$(pwd)
+    local ycm_build_path="$HOME/dev/ycm_build"
+    mkdir -p $ycm_build_path
+    cd $ycm_build_path
+    cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=$libclang_path . $you_complete_me_path/third_party/ycmd/cpp
+    make ycm_support_libs
+    cd $present_path
+}
+
+function install_manual_plugins
+{
+    for plugin in `find ./vim/plugins -maxdepth 1 -type d`
+    do
+        echo -e "${green}Installing manual plugin $plugin ${nc}"
+        cp -r $plugin/* ~/.vim
+    done
+}
+
 
 function install_json_plugin
 {
@@ -351,8 +403,6 @@ function install_plugins
     install_airline
     install_gitgutter
     install_base16
-    install_supertab
-    install_jedi
     install_trailing_whitespace
     install_ack
     install_surround
@@ -374,5 +424,8 @@ function install_files
 }
 
 init_directories
-install_plugins
 install_files
+install_vundle_plugin
+vim +PluginInstall +qall
+setup_you_complete_me
+install_plugins
