@@ -60,6 +60,7 @@ function install_cmake()
 {
     case $(uname -a) in
         *Ubuntu*)
+            sudo apt-get install -y python-dev
             sudo apt-get install -y cmake
             ;;
         *)
