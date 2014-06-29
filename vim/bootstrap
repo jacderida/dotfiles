@@ -92,17 +92,6 @@ function install_manual_plugins
     done
 }
 
-
-function install_json_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-json" ]
-    then
-        git clone https://github.com/elzr/vim-json.git ~/.vim/bundle/vim-json
-    else
-        echo -e "${green}Already installed vim-json${nc}"
-    fi
-}
-
 function install_rails_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vim-rails" ]
@@ -388,7 +377,6 @@ function install_plugins
 {
     install_manual_plugins
     install_vundle_plugin
-    install_json_plugin
     install_rails_plugin
     install_bundler_plugin
     install_command_t_plugin
