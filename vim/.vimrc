@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-rails'
 call vundle#end()
 filetype plugin indent on
 

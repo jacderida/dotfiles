@@ -92,16 +92,6 @@ function install_manual_plugins
     done
 }
 
-function install_rails_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-rails" ]
-    then
-        git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
-    else
-        echo -e "${green}Already installed vim-rails${nc}"
-    fi
-}
-
 function install_bundler_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vim-bundler" ]
@@ -377,7 +367,6 @@ function install_plugins
 {
     install_manual_plugins
     install_vundle_plugin
-    install_rails_plugin
     install_bundler_plugin
     install_command_t_plugin
     install_nerdtree_plugin
