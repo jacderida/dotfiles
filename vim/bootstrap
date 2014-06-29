@@ -102,14 +102,11 @@ function install_bundler_plugin
     fi
 }
 
-function install_command_t_plugin
+function setup_command_t_plugin
 {
-    if [ ! -d "$HOME/.vim/bundle/command-t" ]
-    then
-        echo -e "${green}Installing command-t plugin${nc}"
-        git clone https://github.com/wincent/Command-T.git ~/.vim/bundle/command-t
+    
         present_directory=`pwd`
-        cd ~/.vim/bundle/command-t/ruby/command-t
+        cd ~/.vim/bundle/Command-T/ruby/command-t
         if [[ $(uname -s) != CYGWIN_NT-* ]]; then
             [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
             rvm use 1.8.7
@@ -126,9 +123,6 @@ function install_command_t_plugin
         fi
         make
         cd $present_directory
-    else
-        echo -e "${green}Already installed command-t${nc}"
-    fi
 }
 
 function install_nerdtree_plugin
@@ -368,7 +362,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_command_t_plugin
     install_nerdtree_plugin
     install_nerdcommenter_plugin
     install_syntastic_plugin
@@ -404,5 +397,6 @@ init_directories
 install_files
 install_vundle_plugin
 vim +PluginInstall +qall
+setup_command_t_plugin
 setup_you_complete_me
 install_plugins
