@@ -104,36 +104,24 @@ function install_bundler_plugin
 
 function setup_command_t_plugin
 {
-    
-        present_directory=`pwd`
-        cd ~/.vim/bundle/Command-T/ruby/command-t
-        if [[ $(uname -s) != CYGWIN_NT-* ]]; then
-            [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-            rvm use 1.8.7
-        fi
-        ruby extconf.rb
-        if [[ $(uname -s) = CYGWIN_NT-* ]]; then
-            # On Cygwin, replace
-            # CFLAGS += -Wall -Wextra -Wno-unused-parameter
-            # with
-            # CFLAGS += -Wextra -Wno-unused-parameter
-            # This switches off all warnings as errors. For some reason, on Cygwin, there's a weird 64 bit integer
-            # warning that prevents successful compilation.
-            sed -i 's/^CFLAGS +=.*/CFLAGS += -Wextra -Wno-unused-parameter/g' Makefile
-        fi
-        make
-        cd $present_directory
-}
-
-function install_nerdtree_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/nerdtree" ]
-    then
-        echo -e "${green}Installing nerdtree plugin${nc}"
-        git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-    else
-        echo -e "${green}Already installed nerdtree${nc}"
+    present_directory=`pwd`
+    cd ~/.vim/bundle/Command-T/ruby/command-t
+    if [[ $(uname -s) != CYGWIN_NT-* ]]; then
+        [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+        rvm use 1.8.7
     fi
+    ruby extconf.rb
+    if [[ $(uname -s) = CYGWIN_NT-* ]]; then
+        # On Cygwin, replace
+        # CFLAGS += -Wall -Wextra -Wno-unused-parameter
+        # with
+        # CFLAGS += -Wextra -Wno-unused-parameter
+        # This switches off all warnings as errors. For some reason, on Cygwin, there's a weird 64 bit integer
+        # warning that prevents successful compilation.
+        sed -i 's/^CFLAGS +=.*/CFLAGS += -Wextra -Wno-unused-parameter/g' Makefile
+    fi
+    make
+    cd $present_directory
 }
 
 function install_nerdcommenter_plugin
@@ -362,7 +350,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_nerdtree_plugin
     install_nerdcommenter_plugin
     install_syntastic_plugin
     install_endwise_plugin

@@ -8,6 +8,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-rails'
 Plugin 'wincent/Command-T'
+Plugin 'scrooloose/NERDTree'
 call vundle#end()
 filetype plugin indent on
 
