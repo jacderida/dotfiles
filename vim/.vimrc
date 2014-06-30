@@ -12,6 +12,7 @@ Plugin 'scrooloose/NERDTree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
