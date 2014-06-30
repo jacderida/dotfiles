@@ -20,6 +20,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
