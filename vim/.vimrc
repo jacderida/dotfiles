@@ -23,6 +23,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sukima/xmledit'
+Plugin 'tomasr/molokai'
 call vundle#end()
 filetype plugin indent on
 
@@ -58,7 +59,8 @@ set foldlevel=1
 set shellcmdflag=-ic
 set term=screen-256color
 set t_Co=256
-color distinguished
+color molokai
+let g:molokai_original = 1
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
