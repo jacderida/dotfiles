@@ -125,17 +125,6 @@ function setup_command_t_plugin
     cd $present_directory
 }
 
-function install_endwise_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-endwise" ]
-    then
-        echo -e "${green}Installing vim-endwise plugin${nc}"
-        git clone https://github.com/tpope/vim-endwise.git ~/.vim/bundle/vim-endwise
-    else
-        echo -e "${green}Already installed vim-endwise${nc}"
-    fi
-}
-
 function install_fugitive_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vim-fugitive" ]
@@ -329,7 +318,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_endwise_plugin
     install_fugitive_plugin
     install_tabular_plugin
     install_vim-puppet_plugin
