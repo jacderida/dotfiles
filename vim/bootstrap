@@ -170,17 +170,6 @@ function install_jedi
     fi
 }
 
-function install_surround
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-surround" ]
-    then
-        echo -e "${green}Installing surround plugin${nc}"
-        git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
-    else
-        echo -e "${green}Already installed surround plugin${nc}"
-    fi
-}
-
 function install_tmux_navigator
 {
     if [ ! -d "$HOME/.vim/bundle/vim-tmux-navigator" ]
@@ -219,7 +208,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_surround
     install_tmux_navigator
     install_easymotion
     install_xml

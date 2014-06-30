@@ -19,6 +19,7 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 filetype plugin indent on
 
