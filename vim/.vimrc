@@ -15,6 +15,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/tabular'
 Plugin 'rodjek/vim-puppet'
+Plugin 'bling/vim-airline'
 call vundle#end()
 filetype plugin indent on
 

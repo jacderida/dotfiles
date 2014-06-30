@@ -147,17 +147,6 @@ function install_vjde_plugin
     fi
 }
 
-function install_airline
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-airline" ]
-    then
-        echo -e "${green}Installing airline plugin${nc}"
-        git clone https://github.com/bling/vim-airline.git ~/.vim/bundle/vim-airline
-    else
-        echo -e "${green}Already installed airline${nc}"
-    fi
-}
-
 function install_gitgutter
 {
     if [ ! -d "$HOME/.vim/bundle/vim-gitgutter" ]
@@ -274,7 +263,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_airline
     install_gitgutter
     install_base16
     install_trailing_whitespace
