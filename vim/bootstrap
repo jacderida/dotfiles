@@ -125,51 +125,6 @@ function setup_command_t_plugin
     cd $present_directory
 }
 
-function install_asynccommand_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/AsyncCommand" ]
-    then
-        echo -e "${green}Installing AsyncCommand plugin${nc}"
-        git clone https://github.com/pydave/AsyncCommand.git ~/.vim/bundle/AsyncCommand
-    else
-        echo -e "${green}Already installed AsyncCommand${nc}"
-    fi
-}
-
-function install_vjde_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/vjde" ]
-    then
-        echo -e "${green}Installing vjde plugin${nc}"
-        git clone https://github.com/cespare/vjde.git ~/.vim/bundle/vjde
-    else
-        echo -e "${green}Already installed vjde${nc}"
-    fi
-}
-
-function install_supertab
-{
-    if [ ! -d "$HOME/.vim/bundle/supertab" ]
-    then
-        echo -e "${green}Installing supertab plugin${nc}"
-        git clone https://github.com/ervandew/supertab.git ~/.vim/bundle/supertab
-    else
-        echo -e "${green}Already installed supertab${nc}"
-    fi
-}
-
-function install_jedi
-{
-    if [ ! -d "$HOME/.vim/bundle/jedi-vim" ]
-    then
-        echo -e "${green}Installing jedi-vim plugin${nc}"
-        pip install jedi
-        git clone https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
-    else
-        echo -e "${green}Already installed jedi-vim plugin${nc}"
-    fi
-}
-
 function install_plugins
 {
     install_manual_plugins
