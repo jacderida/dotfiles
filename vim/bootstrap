@@ -170,35 +170,11 @@ function install_jedi
     fi
 }
 
-function install_easymotion
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-easymotion" ]
-    then
-        echo -e "${green}Installing easy motion plugin${nc}"
-        git clone https://github.com/Lokaltog/vim-easymotion.git ~/.vim/bundle/vim-easymotion
-    else
-        echo -e "${green}Already installed easy motion plugin${nc}"
-    fi
-}
-
-function install_xml
-{
-    if [ ! -d "$HOME/.vim/bundle/xmledit" ]
-    then
-        echo -e "${green}Installing xmledit plugin${nc}"
-        git clone https://github.com/sukima/xmledit.git ~/.vim/bundle/xmledit
-    else
-        echo -e "${green}Already installed xmledit plugin${nc}"
-    fi
-}
-
 function install_plugins
 {
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_easymotion
-    install_xml
 }
 
 function install_files

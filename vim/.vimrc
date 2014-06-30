@@ -21,6 +21,8 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'sukima/xmledit'
 call vundle#end()
 filetype plugin indent on
 
