@@ -124,17 +124,6 @@ function setup_command_t_plugin
     cd $present_directory
 }
 
-function install_nerdcommenter_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/nerdcommenter" ]
-    then
-        echo -e "${green}Installing nerdcommenter plugin${nc}"
-        git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
-    else
-        echo -e "${green}Already installed nerdcommenter${nc}"
-    fi
-}
-
 function install_syntastic_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/syntastic" ]
@@ -350,7 +339,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_nerdcommenter_plugin
     install_syntastic_plugin
     install_endwise_plugin
     install_fugitive_plugin
