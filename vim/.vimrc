@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'godlygeek/tabular'
 call vundle#end()
 filetype plugin indent on
 
