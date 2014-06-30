@@ -10,6 +10,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'wincent/Command-T'
 Plugin 'scrooloose/NERDTree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 filetype plugin indent on
 
