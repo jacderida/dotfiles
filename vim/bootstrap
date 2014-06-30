@@ -170,17 +170,6 @@ function install_jedi
     fi
 }
 
-function install_ack
-{
-    if [ ! -d "$HOME/.vim/bundle/ack.vim" ]
-    then
-        echo -e "${green}Installing ack plugin${nc}"
-        git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
-    else
-        echo -e "${green}Already installed ack plugin${nc}"
-    fi
-}
-
 function install_surround
 {
     if [ ! -d "$HOME/.vim/bundle/vim-surround" ]
@@ -230,7 +219,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_ack
     install_surround
     install_tmux_navigator
     install_easymotion
