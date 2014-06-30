@@ -136,17 +136,6 @@ function install_asynccommand_plugin
     fi
 }
 
-function install_vim-puppet_plugin
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-puppet" ]
-    then
-        echo -e "${green}Installing vim-puppet plugin${nc}"
-        git clone https://github.com/rodjek/vim-puppet.git ~/.vim/bundle/vim-puppet
-    else
-        echo -e "${green}Already installed vim-puppet${nc}"
-    fi
-}
-
 function install_vim-msbuild_plugin
 {
     if [ ! -d "$HOME/.vim/bundle/vim-msbuild" ]
@@ -296,7 +285,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_vim-puppet_plugin
     install_vim-msbuild_plugin
     install_airline
     install_gitgutter
