@@ -170,17 +170,6 @@ function install_jedi
     fi
 }
 
-function install_trailing_whitespace
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-trailing-whitespace" ]
-    then
-        echo -e "${green}Installing trailing whitespace plugin${nc}"
-        git clone https://github.com/bronson/vim-trailing-whitespace.git ~/.vim/bundle/vim-trailing-whitespace
-    else
-        echo -e "${green}Already installed trailing whitespace plugin${nc}"
-    fi
-}
-
 function install_ack
 {
     if [ ! -d "$HOME/.vim/bundle/ack.vim" ]
@@ -241,7 +230,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_trailing_whitespace
     install_ack
     install_surround
     install_tmux_navigator
