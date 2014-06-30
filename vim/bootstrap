@@ -71,17 +71,20 @@ function install_cmake()
 
 function setup_you_complete_me()
 {
-    install_cmake
-    local libclang_path="/tmp/libclang"
-    local you_complete_me_path=$HOME/.vim/bundle/YouCompleteMe
-    download_libclang $libclang_path
-    local present_path=$(pwd)
-    local ycm_build_path="$HOME/dev/ycm_build"
-    mkdir -p $ycm_build_path
-    cd $ycm_build_path
-    cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=$libclang_path . $you_complete_me_path/third_party/ycmd/cpp
-    make ycm_support_libs
-    cd $present_path
+    if [ ! -e "$HOME/.vim/you_complete_me_is_setup" ]; then
+        install_cmake
+        local libclang_path="/tmp/libclang"
+        local you_complete_me_path=$HOME/.vim/bundle/YouCompleteMe
+        download_libclang $libclang_path
+        local present_path=$(pwd)
+        local ycm_build_path="$HOME/dev/ycm_build"
+        mkdir -p $ycm_build_path
+        cd $ycm_build_path
+        cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=$libclang_path . $you_complete_me_path/third_party/ycmd/cpp
+        make ycm_support_libs
+        touch $HOME/.vim/you_complete_me_is_setup
+        cd $present_path
+    fi
 }
 
 function install_manual_plugins
@@ -105,24 +108,27 @@ function install_bundler_plugin
 
 function setup_command_t_plugin
 {
-    present_directory=`pwd`
-    cd ~/.vim/bundle/Command-T/ruby/command-t
-    if [[ $(uname -s) != CYGWIN_NT-* ]]; then
-        [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-        rvm use 1.8.7
+    if [ ! -e  "$HOME/.vim/command_t_is_setup" ]; then
+        present_directory=`pwd`
+        cd ~/.vim/bundle/Command-T/ruby/command-t
+        if [[ $(uname -s) != CYGWIN_NT-* ]]; then
+            [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+            rvm use 1.8.7
+        fi
+        ruby extconf.rb
+        if [[ $(uname -s) = CYGWIN_NT-* ]]; then
+            # On Cygwin, replace
+            # CFLAGS += -Wall -Wextra -Wno-unused-parameter
+            # with
+            # CFLAGS += -Wextra -Wno-unused-parameter
+            # This switches off all warnings as errors. For some reason, on Cygwin, there's a weird 64 bit integer
+            # warning that prevents successful compilation.
+            sed -i 's/^CFLAGS +=.*/CFLAGS += -Wextra -Wno-unused-parameter/g' Makefile
+        fi
+        make
+        touch $HOME/.vim/command_t_is_setup
+        cd $present_directory
     fi
-    ruby extconf.rb
-    if [[ $(uname -s) = CYGWIN_NT-* ]]; then
-        # On Cygwin, replace
-        # CFLAGS += -Wall -Wextra -Wno-unused-parameter
-        # with
-        # CFLAGS += -Wextra -Wno-unused-parameter
-        # This switches off all warnings as errors. For some reason, on Cygwin, there's a weird 64 bit integer
-        # warning that prevents successful compilation.
-        sed -i 's/^CFLAGS +=.*/CFLAGS += -Wextra -Wno-unused-parameter/g' Makefile
-    fi
-    make
-    cd $present_directory
 }
 
 function install_plugins
