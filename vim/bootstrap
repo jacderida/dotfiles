@@ -147,28 +147,6 @@ function install_vjde_plugin
     fi
 }
 
-function install_gitgutter
-{
-    if [ ! -d "$HOME/.vim/bundle/vim-gitgutter" ]
-    then
-        echo -e "${green}Installing gitgutter plugin${nc}"
-        git clone https://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
-    else
-        echo -e "${green}Already installed gitgutter${nc}"
-    fi
-}
-
-function install_base16
-{
-    if [ ! -d "$HOME/.vim/bundle/base16-vim" ]
-    then
-        echo -e "${green}Installing base16 plugin${nc}"
-        git clone https://github.com/chriskempson/base16-vim.git ~/.vim/bundle/base16-vim
-    else
-        echo -e "${green}Already installed base16${nc}"
-    fi
-}
-
 function install_supertab
 {
     if [ ! -d "$HOME/.vim/bundle/supertab" ]
@@ -263,8 +241,6 @@ function install_plugins
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_gitgutter
-    install_base16
     install_trailing_whitespace
     install_ack
     install_surround
