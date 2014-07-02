@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/ListToggle'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-rails'
 Plugin 'wincent/Command-T'
