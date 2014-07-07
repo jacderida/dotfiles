@@ -25,6 +25,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sukima/xmledit'
 Plugin 'tomasr/molokai'
+Plugin 'Keithbsmiley/tmux.vim'
 call vundle#end()
 filetype plugin indent on
 
