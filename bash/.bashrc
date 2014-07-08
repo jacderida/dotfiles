@@ -121,3 +121,4 @@ if [ "$operating_system" = "Darwin" ]; then
 fi
 
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
+PATH=$PATH:$HOME/bin
