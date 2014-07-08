@@ -9,3 +9,8 @@ rm -f ~/.bash_aliases
 ln -f ./bash/.bash_aliases ~/.bash_aliases
 rm -f ~/.profile
 ln -f ./bash/.profile ~/.profile
+
+if [[ ! -d "$HOME/bin" ]]; then
+    mkdir "$HOME/bin"
+    cp ./bash/colortest $HOME/bin/colortest
+fi
