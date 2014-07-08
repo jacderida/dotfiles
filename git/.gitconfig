@@ -1,6 +1,10 @@
 [user]
 	name = "Chris O'Neil"
 	email = chris.oneil@gmail.com
+[diff]
+    external = git_diff_wrapper
+[pager]
+    diff =
 [core]
 	editor = vim
 [web]

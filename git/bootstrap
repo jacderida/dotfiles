@@ -6,3 +6,6 @@ ln ./git/.gitconfig ~/.gitconfig
 echo -e "${green}Removing current .githelpers and linking from dotfiles${nc}"
 rm -f ~/.githelpers
 ln ./git/.githelpers ~/.githelpers
+
+[[ ! -d "$HOME/bin" ]] && mkdir "$HOME/bin"
+cp ./git/git_diff_wrapper "$HOME/bin"
