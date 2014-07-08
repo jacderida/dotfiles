@@ -12,5 +12,5 @@ ln -f ./bash/.profile ~/.profile
 
 if [[ ! -d "$HOME/bin" ]]; then
     mkdir "$HOME/bin"
-    cp ./bash/colortest $HOME/bin/colortest
+    cp ./bash/colourtest $HOME/bin/colourtest
 fi

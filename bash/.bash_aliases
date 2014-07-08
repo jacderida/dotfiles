@@ -35,4 +35,4 @@ function color_maven
 }
 
 alias mvn=color_maven
-alias colortest="perl colortest -w"
+alias colourtest="perl $HOME/bin/colourtest -w"
