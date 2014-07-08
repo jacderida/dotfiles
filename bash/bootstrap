@@ -13,4 +13,5 @@ ln -f ./bash/.profile ~/.profile
 if [[ ! -d "$HOME/bin" ]]; then
     mkdir "$HOME/bin"
     cp ./bash/colourtest $HOME/bin/colourtest
+    cp ./bash/print_colour_palette $HOME/bin/print_colour_palette
 fi
