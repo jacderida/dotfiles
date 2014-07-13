@@ -1,7 +1,28 @@
 #!/usr/bin/env bash
 
-function fix_vim_plugin_structure
-{
+function update_font_cache() {
+    operating_system=$(uname -a)
+    case $operating_system in
+        *Ubuntu*)
+            fc-cache -vf $HOME/.fonts
+            ;;
+        *)
+            echo "Updating font cache not supported on $operating_system. Please add a case to update_font_cache for $operating_system"
+            exit 1
+    esac
+}
+
+function install_patched_fonts() {
+    present_directory=$(pwd)
+    cd $HOME/dev
+    git clone https://github.com/Lokaltog/powerline-fonts.git
+    cd $HOME/dev/powerline-fonts
+    find . -name "*.otf" -o -name "*.ttf" -print0 -exec cp {} $HOME/.fonts \;
+    update_font_cache
+    cd $present_directory
+}
+
+function fix_vim_plugin_structure() {
     # It seems powerline have changed their plugin structure but not actually updated their installer.
     # Hopefully it won't be necessary to include this step in the future.
     mkdir ~/.config/powerline/themes/vim/plugin
@@ -23,6 +44,7 @@ then
 	ln -f ./powerline/config.json ~/.config/powerline/config.json
 	ln -f ./powerline/jacderida-shell.json ~/.config/powerline/themes/shell/jacderida.json
     fix_vim_plugin_structure
+    install_patched_fonts
 else
     echo -e "${green}Already bootstrapped powerline${nc}"
 fi
