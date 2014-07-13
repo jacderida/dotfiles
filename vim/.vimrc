@@ -27,6 +27,7 @@ Plugin 'sukima/xmledit'
 Plugin 'tomasr/molokai'
 Plugin 'Keithbsmiley/tmux.vim'
 Plugin 'godlygeek/csapprox'
+Plugin 'junegunn/seoul256.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -61,8 +62,8 @@ set foldlevel=1
 
 set term=screen-256color
 set t_Co=256
-color molokai
-let g:molokai_original = 1
+colorscheme seoul256
+set background=dark
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
