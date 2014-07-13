@@ -29,6 +29,7 @@ Plugin 'Keithbsmiley/tmux.vim'
 Plugin 'godlygeek/csapprox'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 filetype plugin indent on
 
@@ -64,7 +65,7 @@ set foldlevel=1
 
 set term=screen-256color
 set t_Co=256
-colorscheme seoul256
+colorscheme gruvbox
 set background=dark
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
