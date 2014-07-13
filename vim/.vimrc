@@ -28,6 +28,7 @@ Plugin 'tomasr/molokai'
 Plugin 'Keithbsmiley/tmux.vim'
 Plugin 'godlygeek/csapprox'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 filetype plugin indent on
 
@@ -50,6 +51,7 @@ au FileType gitcommit set tw=72
 set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set tags=~/.tags/tags
+let g:indent_guides_guide_size=1
 
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
