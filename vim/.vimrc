@@ -26,6 +26,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sukima/xmledit'
 Plugin 'tomasr/molokai'
 Plugin 'Keithbsmiley/tmux.vim'
+Plugin 'godlygeek/csapprox'
 call vundle#end()
 filetype plugin indent on
 
