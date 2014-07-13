@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -103,7 +103,7 @@ libstderr_red="/home/jacderida/dev/stderred/build/libstderred.so"
 PATH=$(for d in ${PATH//:/ } ; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
 PATH=${PATH%?}
 
-alias tmux="TERM=screen-256color tmux -2"
+alias tmux="TERM=screen-256color tmux -2 -u"
 alias mci="mvn clean install"
 stty -ixon -ixoff # See here: http://stackoverflow.com/questions/8616843/ctrl-s-is-not-working-as-a-horizontal-split-in-vim-when-using-commandt
 
@@ -122,3 +122,4 @@ fi
 
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/.local/bin
