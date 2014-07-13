@@ -30,6 +30,7 @@ Plugin 'godlygeek/csapprox'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'morhetz/gruvbox'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -104,6 +105,7 @@ nnoremap <F2> :!./%<CR> " Execute current shell script
 nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
 nnoremap <F4> :NERDTreeToggle<CR>
 nnoremap <F5> :!mvn test<CR>
+nnoremap <F8> :TagbarToggle<CR>
 
 " In terminal mode, prevent the delay in transitioning from insert mode to
 " normal mode.
