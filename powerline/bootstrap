@@ -13,6 +13,7 @@ function update_font_cache() {
 }
 
 function install_patched_fonts() {
+    [[ ! -d "$HOME/.fonts" ]] && mkdir $HOME/.fonts
     present_directory=$(pwd)
     cd $HOME/dev
     git clone https://github.com/Lokaltog/powerline-fonts.git
