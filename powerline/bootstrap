@@ -18,7 +18,7 @@ function install_patched_fonts() {
     cd $HOME/dev
     git clone https://github.com/Lokaltog/powerline-fonts.git
     cd $HOME/dev/powerline-fonts
-    find . -name "*.otf" -o -name "*.ttf" -print0 -exec cp {} $HOME/.fonts \;
+    find . -name "*.otf" -exec cp {} $HOME/.fonts \; -o -name "*.ttf" -exec cp {} $HOME/.fonts \;
     update_font_cache
     cd $present_directory
 }
