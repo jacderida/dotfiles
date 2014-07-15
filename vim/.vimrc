@@ -31,6 +31,7 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
+Plugin 'oblitum/rainbow'
 call vundle#end()
 filetype plugin indent on
 
@@ -54,6 +55,7 @@ set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set tags=~/.tags/tags
 let g:indent_guides_guide_size=1
+let g:rainbow_active=1
 
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
