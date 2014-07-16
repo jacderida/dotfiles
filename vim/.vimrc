@@ -51,6 +51,7 @@ set viminfo+=!
 set showcmd
 syntax on
 au FileType gitcommit set tw=72
+au FileType gitcommit colorscheme jellybeans
 set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set tags=~/.tags/tags
