@@ -23,6 +23,8 @@ set -e
 DOTFILES_ROOT="`pwd`"
 USER_HOME=`eval echo ~$USER`
 
+# Unfortunately, we have to guarantee that the ruby bootstrap runs before the vim bootstrap.
+source ./ruby/bootstrap
 for bootstrap in `find $DOTFILES_ROOT -name "bootstrap" -not -path ./*.sh` 
 do
 	echo -e "${blue}=================================================================${nc}"
