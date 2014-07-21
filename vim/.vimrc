@@ -32,6 +32,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
 Plugin 'oblitum/rainbow'
+Plugin 'Raimondi/delimitMate'
 call vundle#end()
 filetype plugin indent on
 
