@@ -36,3 +36,5 @@ function color_maven
 
 alias mvn=color_maven
 alias colourtest="perl $HOME/bin/colourtest -w"
+alias vup="vagrant up"
+alias vdest="vagrant destroy -f"
