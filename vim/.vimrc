@@ -105,6 +105,7 @@ vnoremap L g_
 " anyway.
 vmap s S
 
+nnoremap <F1> :source $MYVIMRC<CR>
 nnoremap <F2> :!./%<CR> " Execute current shell script
 nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
 nnoremap <F4> :NERDTreeToggle<CR>
