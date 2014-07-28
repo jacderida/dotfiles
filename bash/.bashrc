@@ -121,5 +121,6 @@ if [ "$operating_system" = "Darwin" ]; then
 fi
 
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
+[[ -s "$HOME/.aws_keys" ]] && source "$HOME/.aws_keys"
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
