@@ -72,6 +72,7 @@ set term=screen-256color
 set t_Co=256
 colorscheme gruvbox
 set background=dark
+let g:airline_powerline_fonts = 1
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
