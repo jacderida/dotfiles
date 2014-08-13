@@ -120,6 +120,7 @@ if [ "$operating_system" = "Darwin" ]; then
     }
 fi
 
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 [[ -s "$HOME/.aws_keys" ]] && source "$HOME/.aws_keys"
 PATH=$PATH:$HOME/bin
