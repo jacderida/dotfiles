@@ -112,6 +112,7 @@ nnoremap <F3> :!sudo ./%<CR> " Execute current shell script as sudo
 nnoremap <F4> :NERDTreeToggle<CR>
 nnoremap <F5> :!mvn test<CR>
 nnoremap <F8> :TagbarToggle<CR>
+imap <C-c> <CR><Esc>O
 
 " In terminal mode, prevent the delay in transitioning from insert mode to
 " normal mode.
