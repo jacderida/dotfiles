@@ -38,5 +38,6 @@ alias mvn=color_maven
 alias colourtest="perl $HOME/bin/colourtest -w"
 alias vup="vagrant up"
 alias vaws="vagrant up --provider=aws"
+alias vrs="vagrant up --provider=rackspace"
 alias vdest="vagrant destroy -f"
 alias vssh="vagrant ssh"
