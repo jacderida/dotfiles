@@ -38,6 +38,7 @@ alias mvn=color_maven
 alias colourtest="perl $HOME/bin/colourtest -w"
 alias vup="vagrant up"
 alias vaws="vagrant up --provider=aws"
+alias vrs="vagrant up --provider=rackspace"
 alias vdest="vagrant destroy -f"
 alias vssh="vagrant ssh"
 alias list_ec2_instances="aws ec2 describe-instances | jq '.[] | .[] | .Instances[] | { image_id: .InstanceId, name: .Tags[][\"Value\"], public_ip: .PublicDnsName }'"
