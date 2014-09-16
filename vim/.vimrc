@@ -33,6 +33,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
 Plugin 'oblitum/rainbow'
 Plugin 'Raimondi/delimitMate'
+Plugin 'jonathanfilip/vim-lucius'
 call vundle#end()
 filetype plugin indent on
 
@@ -70,7 +71,8 @@ set foldlevel=1
 
 set term=screen-256color
 set t_Co=256
-colorscheme gruvbox
+colorscheme lucius
+LuciusBlack
 set background=dark
 let g:airline_powerline_fonts = 1
 
