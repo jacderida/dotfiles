@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function init_directories
+function init_directories()
 {
     [[ ! -d "$HOME/.vim/colors" ]] && mkdir -p ~/.vim/colors
     [[ ! -d "$HOME/.vim/syntax" ]] && mkdir -p ~/.vim/syntax
@@ -10,7 +10,7 @@ function init_directories
     [[ ! -d "$HOME/.vim/tmp" ]] && mkdir -p ~/.vim/tmp
 }
 
-function install_vundle_plugin
+function install_vundle_plugin()
 {
     if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]
     then
@@ -73,7 +73,7 @@ function setup_you_complete_me()
     fi
 }
 
-function install_manual_plugins
+function install_manual_plugins()
 {
     for plugin in `find ./vim/plugins -maxdepth 1 -type d`
     do
@@ -82,7 +82,7 @@ function install_manual_plugins
     done
 }
 
-function install_bundler_plugin
+function install_bundler_plugin()
 {
     if [ ! -d "$HOME/.vim/bundle/vim-bundler" ]
     then
@@ -92,7 +92,7 @@ function install_bundler_plugin
     fi
 }
 
-function setup_command_t_plugin
+function setup_command_t_plugin()
 {
     if [ ! -e  "$HOME/.vim/command_t_is_setup" ]; then
         present_directory=`pwd`
@@ -120,14 +120,14 @@ function setup_command_t_plugin
     fi
 }
 
-function install_plugins
+function install_plugins()
 {
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
 }
 
-function install_files
+function install_files()
 {
     echo -e "${green}Removing .vimrc and linking from dotfiles${nc}"
     rm -f ~/.vimrc
