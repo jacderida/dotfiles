@@ -97,9 +97,12 @@ function setup_command_t_plugin
     if [ ! -e  "$HOME/.vim/command_t_is_setup" ]; then
         present_directory=`pwd`
         cd ~/.vim/bundle/Command-T/ruby/command-t
-        if [[ $(uname -s) != CYGWIN_NT-* ]]; then
+        if [[ $(uname -s) != CYGWIN_NT-* ]]
+        then
             [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
             rvm use 1.8.7
+        else
+            rvm use 1.9.1
         fi
         ruby extconf.rb
         if [[ $(uname -s) = CYGWIN_NT-* ]]; then
