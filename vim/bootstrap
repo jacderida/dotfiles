@@ -8,6 +8,7 @@ function init_directories()
     [[ ! -d "$HOME/.vim/bundle" ]] && mkdir -p ~/.vim/bundle
     [[ ! -d "$HOME/.vim/backup" ]] && mkdir -p ~/.vim/backup
     [[ ! -d "$HOME/.vim/tmp" ]] && mkdir -p ~/.vim/tmp
+    echo "Initialised Vim directories"
 }
 
 function install_vundle_plugin()
