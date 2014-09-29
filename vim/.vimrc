@@ -35,6 +35,7 @@ Plugin 'oblitum/rainbow'
 Plugin 'Raimondi/delimitMate'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'richsoni/vim-ecliptic'
+Plugin 'flazz/vim-colorschemes'
 call vundle#end()
 filetype plugin indent on
 
@@ -72,9 +73,8 @@ set foldlevel=1
 
 set term=screen-256color
 set t_Co=256
-colorscheme lucius
-LuciusBlack
-set background=dark
+colorscheme badwolf
+"set background=dark
 let g:airline_powerline_fonts = 1
 
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
