@@ -36,6 +36,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'richsoni/vim-ecliptic'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-unimpaired'
 call vundle#end()
 filetype plugin indent on
 
