@@ -37,6 +37,7 @@ Plugin 'jonathanfilip/vim-lucius'
 Plugin 'richsoni/vim-ecliptic'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tfnico/vim-gradle'
 call vundle#end()
 filetype plugin indent on
 
