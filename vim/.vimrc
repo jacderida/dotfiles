@@ -38,6 +38,7 @@ Plugin 'richsoni/vim-ecliptic'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tfnico/vim-gradle'
+Plugin 'ekalinin/Dockerfile.vim'
 call vundle#end()
 filetype plugin indent on
 
