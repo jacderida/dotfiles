@@ -52,6 +52,7 @@ set shiftwidth=4
 set expandtab
 set guifont=Monospace
 set number
+set relativenumber
 set lines=50
 set columns=120
 set viminfo+=!
