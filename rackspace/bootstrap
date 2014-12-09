@@ -1,0 +1,10 @@
+#!usr/bin/env bash
+
+if [[ -n "$RACKSPACE_USERNAME" && -n "$RACKSPACE_API_KEY" ]]; then
+    echo -e "${green}Setting up configuration for pyrax${nc}"
+    escaped_username=$(sed 's/[\.]/\\./g' <<< $RACKSPACE_USERNAME)
+    rm -rf $HOME/.rackspace_cloud_credentials
+    cp rackspace/.rackspace_cloud_credentials $HOME/.rackspace_cloud_credentials
+    sed -i "s/USERNAME/$escaped_username/g" $HOME/.rackspace_cloud_credentials
+    sed -i "s/API_KEY/$RACKSPACE_API_KEY/g" $HOME/.rackspace_cloud_credentials
+fi
