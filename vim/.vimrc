@@ -39,6 +39,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tfnico/vim-gradle'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 't9md/vim-choosewin'
+Plugin 'gorkunov/smartpairs.vim'
 call vundle#end()
 filetype plugin indent on
 
