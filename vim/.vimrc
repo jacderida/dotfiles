@@ -38,6 +38,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tfnico/vim-gradle'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 't9md/vim-choosewin'
 call vundle#end()
 filetype plugin indent on
 
@@ -62,6 +63,7 @@ au FileType gitcommit colorscheme jellybeans
 set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 set tags=~/.tags/tags
+let mapleader=","
 let g:indent_guides_guide_size=1
 let g:rainbow_active=1
 
@@ -85,6 +87,9 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 
+nmap <leader>g <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
+
 autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 set autoread "Reloads the file when a change has been made in another editor
 
@@ -105,8 +110,6 @@ set hlsearch
 
 let NERDTreeWinSize=40
 
-let mapleader=","
-nnoremap <Leader>g mzgg=G`z<CR> " Indents the file and returns you to the current line
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>s vi{
 nnoremap j gj
