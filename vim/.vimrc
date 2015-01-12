@@ -80,7 +80,6 @@ set foldlevel=1
 set term=screen-256color
 set t_Co=256
 colorscheme badwolf
-highlight LineNr ctermfg=grey ctermbg=black
 let g:airline_powerline_fonts = 1
 
 let g:indent_guides_auto_colors = 0
