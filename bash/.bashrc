@@ -3,7 +3,6 @@
 
        BLACK="\[\033[0;30m\]"
  LIGHT_BLACK="\[\033[1;30m\]"
-   LIGHT_RED="\[\033[1;31m\]"
          RED="\[\033[0;31m\]"
    LIGHT_RED="\[\033[1;31m\]"
        GREEN="\[\033[0;32m\]"
@@ -156,19 +155,28 @@ function parse_git_dirty() {
     [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
 }
 
+function set_virtualenv () {
+    if test -z "$VIRTUAL_ENV" ; then
+        PYTHON_VIRTUALENV=""
+    else
+        PYTHON_VIRTUALENV="${YELLOW}[${COLOR_NONE}${LIGHT_PURPLE}`basename \"$VIRTUAL_ENV\"`${COLOR_NONE}${YELLOW}]${COLOR_NONE}"
+    fi
+}
+
 function set_prompt() {
     PS1_TIME="${YELLOW}[${COLOR_NONE}${LIGHT_RED}\t${COLOR_NONE}${YELLOW}]${COLOR_NONE}"
     PS1_USER="${CYAN}\u${COLOR_NONE}"
-    PS1_LOCATION="${LIGHT_PURPLE}\h${COLOR_NONE}"
-    PS1_WORKING_DIR="${BLUE}\w${COLOR_NONE}"
+    PS1_LOCATION="${PURPLE}\h${COLOR_NONE}"
+    PS1_WORKING_DIR="${BLUE}\w${COLOR_NONE} "
     PS1_SEPARATOR="${YELLOW}»${COLOR_NONE}"
     PS1_PROMPT_SYMBOL="${LIGHT_RED}\$ ${COLOR_NONE}"
+    set_virtualenv
     if is_git_repository ; then
         set_git_branch
     else
         BRANCH=""
     fi
-    PS1="${PS1_TIME} ${PS1_USER}@${PS1_LOCATION} ${PS1_SEPARATOR} ${PS1_WORKING_DIR} ${BRANCH}${PS1_PROMPT_SYMBOL}"
+    PS1="${PS1_TIME}${PYTHON_VIRTUALENV} ${PS1_USER}@${PS1_LOCATION} ${PS1_SEPARATOR} ${PS1_WORKING_DIR}${BRANCH}${PS1_PROMPT_SYMBOL}"
 }
 
 PROMPT_COMMAND=set_prompt
