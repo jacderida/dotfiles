@@ -1,4 +1,3 @@
-
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -67,19 +66,6 @@ if [ -n "$force_color_prompt" ]; then
         color_prompt=
     fi
 fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1_TIME="${YELLOW}[${COLOR_NONE}${LIGHT_RED}\t${COLOR_NONE}${YELLOW}]${COLOR_NONE}"
-    PS1_USER="${CYAN}\u${COLOR_NONE}"
-    PS1_LOCATION="${LIGHT_PURPLE}\h${COLOR_NONE}"
-    PS1_WORKING_DIR="${BLUE}\w${COLOR_NONE}"
-    PS1_SEPARATOR="${YELLOW}»${COLOR_NONE}"
-    PS1_PROMPT_SYMBOL="${LIGHT_RED}$ ${COLOR_NONE}"
-    PS1="$PS1_TIME $PS1_USER@$PS1_LOCATION $PS1_SEPARATOR $PS1_WORKING_DIR $PS1_PROMPT_SYMBOL"
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -153,3 +139,36 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 [[ -s "$HOME/.rackspace_details" ]] && source "$HOME/.rackspace_details"
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
+
+function is_git_repository() {
+    git branch > /dev/null 2>&1
+}
+
+function parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+function set_git_branch() {
+    BRANCH="${YELLOW}[${COLOR_NONE}${GREEN}$(parse_git_branch)${COLOR_NONE}${YELLOW}]${COLOR_NONE} "
+}
+
+function parse_git_dirty() {
+    [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+}
+
+function set_prompt() {
+    PS1_TIME="${YELLOW}[${COLOR_NONE}${LIGHT_RED}\t${COLOR_NONE}${YELLOW}]${COLOR_NONE}"
+    PS1_USER="${CYAN}\u${COLOR_NONE}"
+    PS1_LOCATION="${LIGHT_PURPLE}\h${COLOR_NONE}"
+    PS1_WORKING_DIR="${BLUE}\w${COLOR_NONE}"
+    PS1_SEPARATOR="${YELLOW}»${COLOR_NONE}"
+    PS1_PROMPT_SYMBOL="${LIGHT_RED}\$ ${COLOR_NONE}"
+    if is_git_repository ; then
+        set_git_branch
+    else
+        BRANCH=""
+    fi
+    PS1="${PS1_TIME} ${PS1_USER}@${PS1_LOCATION} ${PS1_SEPARATOR} ${PS1_WORKING_DIR} ${BRANCH}${PS1_PROMPT_SYMBOL}"
+}
+
+PROMPT_COMMAND=set_prompt
