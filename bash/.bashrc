@@ -2,7 +2,24 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything
+       BLACK="\[\033[0;30m\]"
+ LIGHT_BLACK="\[\033[1;30m\]"
+   LIGHT_RED="\[\033[1;31m\]"
+         RED="\[\033[0;31m\]"
+   LIGHT_RED="\[\033[1;31m\]"
+       GREEN="\[\033[0;32m\]"
+ LIGHT_GREEN="\[\033[1;32m\]"
+      YELLOW="\[\033[1;33m\]"
+  LIGHT_BLUE="\[\033[0;34m\]"
+        BLUE="\[\033[1;34m\]"
+      PURPLE="\[\033[0;35m\]"
+LIGHT_PURPLE="\[\033[1;35m\]"
+        CYAN="\[\033[0;36m\]"
+  LIGHT_CYAN="\[\033[1;36m\]"
+  LIGHT_GRAY="\[\033[0;37m\]"
+       WHITE="\[\033[1;37m\]"
+  COLOR_NONE="\[\e[0m\]"
+
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -39,19 +56,25 @@ esac
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[00;33m\][\[\033[00m\]\[\033[00;31m\]\t\[\033[00m\]\[\033[00;33m\]]\[\033[00m\] \[\033[00;36m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\] » \[\033[00;33m\]\s\V\[\033[00m\] » \[\033[01;34m\]\w\[\033[00m\] \[\033[01;31m\]$\[\033[00m\] '
+    PS1_TIME="${YELLOW}[${COLOR_NONE}${LIGHT_RED}\t${COLOR_NONE}${YELLOW}]${COLOR_NONE}"
+    PS1_USER="${CYAN}\u${COLOR_NONE}"
+    PS1_LOCATION="${LIGHT_PURPLE}\h${COLOR_NONE}"
+    PS1_WORKING_DIR="${BLUE}\w${COLOR_NONE}"
+    PS1_PROMPT_SYMBOL="${LIGHT_RED}$ ${COLOR_NONE}"
+    PS1="$PS1_TIME $PS1_USER@$PS1_LOCATION » $PS1_WORKING_DIR $PS1_PROMPT_SYMBOL"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
