@@ -35,7 +35,7 @@ def sanitise(n):
     n = re.sub(r'/',   r'\\\\', n)
     return n
 
-vim_rc = subprocess.call(['vim', '-dfgR',
+vim_rc = subprocess.call(['vim', '-dfR',
     '--cmd', "au BufReadPost " + lf1 + " silent f " + sanitise(n1),
     '--cmd', "au BufReadPost " + lf2 + " silent f " + sanitise(n2),
     lf1, lf2])
