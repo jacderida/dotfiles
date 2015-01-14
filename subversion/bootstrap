@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-if [ ! -d "$HOME/.subversion" ]
-then
-	mkdir -p $HOME/.subversion
-	ln -f ./subversion/config ~/.subversion/config
-else
-    echo -e "${green}Already bootstrapped subversion config${nc}"
-fi
+svn_home="$HOME/.subversion"
+[[ -d "$svn_home" ]] && rm -rf $svn_home
+mkdir -p $svn_home
+ln -f ./subversion/config $svn_home/config
+ln -f ./subversion/svndiff_helper $HOME/bin/svndiff_helper

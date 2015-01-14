@@ -13,6 +13,12 @@ enable-auto-props = yes
 # Please do not use svn:mime-type=application/xml for xml files as that causes
 # SVN to treat them as binary - use text/xml or omit the setting entirely
 
+[tunnels]
+bthq = ssh ctc-jenkins-03
+
+[helpers]
+diff-cmd = svndiff_helper
+
 [auto-props]
 INSTALL = svn:eol-style=CRLF
 KEYS = svn:eol-style=CRLF
