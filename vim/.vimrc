@@ -110,6 +110,7 @@ set incsearch
 set hlsearch
 
 let NERDTreeWinSize=40
+let NERDTreeIgnore=['\.pyc$']
 
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>s vi{
