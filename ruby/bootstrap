@@ -10,6 +10,7 @@ then
     rvm install 1.9.3
     rvm install 2.0.0
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+    rvm --default use 1.9.3
     rvm use 2.0.0
     gem install rails --version 4.0.0 --no-ri --no-rdoc
 else
