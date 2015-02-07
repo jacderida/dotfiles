@@ -66,6 +66,7 @@ if [ "$operating_system" = "Darwin" ]; then
     }
 fi
 
+export NOSE_REDNOSE=1 # For python based unit testing with nosetests.
 export PAGER=/usr/local/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
