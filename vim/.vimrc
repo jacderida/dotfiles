@@ -113,6 +113,9 @@ set hlsearch
 let NERDTreeWinSize=40
 let NERDTreeIgnore=['\.pyc$']
 
+nnoremap <leader>df xP:Tabularize /<C-R>-<CR>
+vnoremap <leader>df xP:Tabularize /<C-R>-<CR>
+
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>s vi{
 nnoremap j gj
