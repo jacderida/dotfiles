@@ -41,6 +41,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 't9md/vim-choosewin'
 Plugin 'gorkunov/smartpairs.vim'
 Plugin 'OrangeT/vim-csharp'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 filetype plugin indent on
 
@@ -67,6 +69,7 @@ set tags=~/.tags/tags
 let mapleader=","
 let g:indent_guides_guide_size=1
 let g:rainbow_active=1
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
