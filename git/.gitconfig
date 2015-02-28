@@ -13,6 +13,11 @@
 	ui = true
 [github]
 	user = jacderida
+[merge]
+    tool = mymeld
+    conflictstyle = diff3
+[mergetool "mymeld"]
+    cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
 [alias]
     st = status
     ci = commit
