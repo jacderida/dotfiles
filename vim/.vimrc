@@ -85,6 +85,8 @@ set t_Co=256
 colorscheme badwolf
 let g:airline_powerline_fonts = 1
 
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
@@ -115,6 +117,8 @@ set hlsearch
 let NERDTreeWinSize=40
 let NERDTreeIgnore=['\.pyc$']
 
+nnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
+vnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
 nnoremap <Leader>h :set hlsearch!<CR>
 nnoremap <Leader>s vi{
 nnoremap j gj
