@@ -44,8 +44,8 @@ alias vdest="vagrant destroy -f"
 alias vssh="vagrant ssh"
 
 # SVN
-alias svnadd="svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add"
-alias svnrm="svn status | grep -v "^.[ \t]*\..*" | grep "^!" | awk '{print $2}' | xargs svn rm"
+alias svnadd="svn status | grep -v \"^.[ \t]*\..*\" | grep \"^?\" | awk '{print $2}' | xargs svn add"
+alias svnrm="svn status | grep -v \"^.[ \t]*\..*\" | grep \"^!\" | awk '{print $2}' | xargs svn rm"
 
 # Docker
 alias docker_stop_containers="sudo docker ps -a -q | xargs -n 1 -I {} sudo docker stop {}"
