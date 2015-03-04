@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Maven
 # thanks to:  http://blog.blindgaenger.net/colorize_maven_output.html
 # and: http://johannes.jakeapp.com/blog/category/fun-with-linux/200901/maven-colorized
 # Colorize Maven Output
@@ -33,16 +34,25 @@ function color_maven
         -e "s/\(\[INFO\].*\)/$LIGHT_GRAY\1$NO_COLOUR/g"
     return $PIPESTATUS
 }
-
 alias mvn=color_maven
-alias colourtest="perl $HOME/bin/colourtest -w"
+
+# Vagrant
 alias vup="vagrant up"
 alias vaws="vagrant up --provider=aws"
 alias vrs="vagrant up --provider=rackspace"
 alias vdest="vagrant destroy -f"
 alias vssh="vagrant ssh"
-alias cat="pygmentize -O style=monokai -f console256 -g"
-alias list_ec2_instances="aws ec2 describe-instances | jq '.[] | .[] | .Instances[] | { image_id: .InstanceId, name: .Tags[][\"Value\"], public_ip: .PublicDnsName }'"
+
+# SVN
+alias svnadd="svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add"
+alias svnrm="svn status | grep -v "^.[ \t]*\..*" | grep "^!" | awk '{print $2}' | xargs svn rm"
+
+# Docker
 alias docker_stop_containers="sudo docker ps -a -q | xargs -n 1 -I {} sudo docker stop {}"
 alias docker_remove_containers="sudo docker ps -a -q | xargs -n 1 -I {} sudo docker rm {}"
 alias docker_remove_images="sudo docker images -q | xargs -n 1 -I {} sudo docker rmi {}"
+
+# Misc
+alias cat="pygmentize -O style=monokai -f console256 -g"
+alias list_ec2_instances="aws ec2 describe-instances | jq '.[] | .[] | .Instances[] | { image_id: .InstanceId, name: .Tags[][\"Value\"], public_ip: .PublicDnsName }'"
+alias colourtest="perl $HOME/bin/colourtest -w"
