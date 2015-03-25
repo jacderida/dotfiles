@@ -174,6 +174,7 @@ endfunction
 vnoremap < <gv
 vnoremap > >gv
 
+autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
 if &diff
     colorscheme pyte
 endif
