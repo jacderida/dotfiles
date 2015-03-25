@@ -170,6 +170,10 @@ function! s:AckMotion(type) abort
     let @@ = reg_save
 endfunction
 
+" Reselect a block that has just been indented.
+vnoremap < <gv
+vnoremap > >gv
+
 if &diff
     colorscheme pyte
 endif
