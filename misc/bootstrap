@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm -f $HOME/.ls++.conf
+ln -f ./misc/.ls++.conf ~/.ls++.conf
