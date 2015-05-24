@@ -46,7 +46,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'markcornick/vim-vagrant'
-Plugin 'kshenoy/vim-signature'
 call vundle#end()
 filetype plugin indent on
 
