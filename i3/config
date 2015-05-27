@@ -73,7 +73,7 @@ bindsym $mod+backslash split h
 bindsym $mod+underscore split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
