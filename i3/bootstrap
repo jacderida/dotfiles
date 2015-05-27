@@ -2,4 +2,4 @@
 
 [[ ! -d "$HOME/.i3" ]] && mkdir $HOME/.i3
 rm -f $HOME/.i3/config
-ln -f ./i3/config $HOME/i3/config
+ln -f ./i3/config $HOME/.i3/config
