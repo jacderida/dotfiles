@@ -13,13 +13,16 @@ function update_font_cache() {
 }
 
 function install_patched_fonts() {
-    [[ ! -d "$HOME/.fonts" ]] && mkdir $HOME/.fonts
-    present_directory=$(pwd)
-    cd $HOME/dev
-    git clone https://github.com/Lokaltog/powerline-fonts.git
-    cd $HOME/dev/powerline-fonts
-    find . -name "*.otf" -exec cp {} $HOME/.fonts \; -o -name "*.ttf" -exec cp {} $HOME/.fonts \;
+    if [[ ! -d "$HOME/dev/powerline-fonts" ]]; then
+        present_directory=$(pwd)
+        cd $HOME/dev
+        git clone https://github.com/Lokaltog/powerline-fonts.git
+        cd $HOME/dev/powerline-fonts
+        find . -name "*.otf" -exec cp {} $HOME/.fonts \; -o -name "*.ttf" -exec cp {} $HOME/.fonts \;
+        cd $present_directory
+    fi
 }
+
 if [ ! -d "$USER_HOME/.fonts" ]; then
 	mkdir ~/.fonts
 fi
