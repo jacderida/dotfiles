@@ -21,7 +21,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sukima/xmledit'
 Plugin 'tomasr/molokai'
@@ -188,3 +187,8 @@ autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
 if &diff
     colorscheme pyte
 endif
+
+nnoremap <c-h> :call Focus('left', 'h')<CR>
+nnoremap <c-j> :call Focus('down', 'j')<CR>
+nnoremap <c-k> :call Focus('up', 'k')<CR>
+nnoremap <c-l> :call Focus('right', 'l')<CR>
