@@ -43,16 +43,10 @@ bindsym Super_L exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h exec "focus.py left"
+bindsym $mod+j exec "focus.py down"
+bindsym $mod+k exec "focus.py up"
+bindsym $mod+l exec "focus.py right"
 
 # move focused window
 bindsym $mod+Shift+h move left
