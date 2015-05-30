@@ -1,6 +1,6 @@
 func! Focus(command, vim_command)
     let oldw = winnr()
-    exe 'wincmd ' . a:vim_command
+    silent exe 'wincmd ' . a:vim_command
     let neww = winnr()
     if oldw == neww
         silent exe '!i3-msg focus ' . a:command
