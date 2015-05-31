@@ -2,6 +2,7 @@
 
 if [ ! -d "$HOME/.rvm" ]
 then
+    curl -sSL https://rvm.io/mpapis.asc | gpg --import -
     curl -sSL https://get.rvm.io | bash -s stable --ignore-dotfiles
     source $HOME/.rvm/scripts/rvm
     rvm requirements --autolibs=enable

@@ -2,6 +2,7 @@
 
 svn_home="$HOME/.subversion"
 [[ -d "$svn_home" ]] && rm -rf $svn_home
+[[ ! -d "$HOME/bin" ]] && mkdir $HOME/bin
 mkdir -p $svn_home
 ln -f ./subversion/config $svn_home/config
 ln -f ./subversion/svndiff_helper $HOME/bin/svndiff_helper

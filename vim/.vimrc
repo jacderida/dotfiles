@@ -21,7 +21,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sukima/xmledit'
 Plugin 'tomasr/molokai'
@@ -46,6 +45,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'markcornick/vim-vagrant'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 call vundle#end()
 filetype plugin indent on
 
@@ -57,7 +57,6 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set guifont=Monospace
 set number
 set lines=50
 set columns=120
@@ -72,6 +71,14 @@ set tags=~/.tags/tags
 let mapleader=","
 let g:indent_guides_guide_size=1
 let g:rainbow_active=1
+
+if has("gui_running")
+    set guifont=Sauce\ Code\ Powerline\ Semibold\ 11
+    set guioptions-=m " Remove menu bar
+    set guioptions-=T " Remove menu bar
+    set guioptions-=r " Remove right hand scrollbar
+    set guioptions-=L " Remove left hand scrollbar
+endif
 
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
