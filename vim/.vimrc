@@ -72,14 +72,6 @@ let mapleader=","
 let g:indent_guides_guide_size=1
 let g:rainbow_active=1
 
-if has("gui_running")
-    set guifont=Sauce\ Code\ Powerline\ Semibold\ 11
-    set guioptions-=m " Remove menu bar
-    set guioptions-=T " Remove menu bar
-    set guioptions-=r " Remove right hand scrollbar
-    set guioptions-=L " Remove left hand scrollbar
-endif
-
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2

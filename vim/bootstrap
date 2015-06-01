@@ -133,6 +133,9 @@ function install_files()
     echo -e "${green}Removing .vimrc and linking from dotfiles${nc}"
     rm -f ~/.vimrc
     ln -f ./vim/.vimrc ~/.vimrc
+    echo -e "${green}Removing .gvimrc and linking from dotfiles${nc}"
+    rm -f ~/.gvimrc
+    ln -f ./vim/.gvimrc ~/.gvimrc
     echo -e "${green}Installing vim colours from dotfiles${nc}"
     cp ./vim/colors/*.* ~/.vim/colors
     echo -e "${green}Installing pathogen from dotfiles${nc}"
