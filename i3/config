@@ -138,3 +138,5 @@ bar {
 }
 
 exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec gnome-settings-daemon
+exec gnome-keyring-daemon
