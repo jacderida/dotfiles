@@ -38,3 +38,8 @@ set pager_stop
 set menu_scroll
 set tilde
 unset markers
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
