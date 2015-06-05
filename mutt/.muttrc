@@ -31,3 +31,10 @@ set sidebar_width = 24
 set imap_check_subscribed
 
 auto_view text/html
+
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
