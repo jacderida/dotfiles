@@ -1,0 +1,33 @@
+set from = "chris.oneil@gmail.com"
+set realname = "Chris O'Neil"
+set imap_user = "chris.oneil@gmail.com"
+
+set editor = "vim"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+set smtp_url = "smtp://chris.oneil@gmail.com:587"
+
+set move = no
+set imap_keepalive = 900
+set sort = threads
+
+macro index gi "=INBOX" "Go to Inbox"
+macro index gs "=[Google Mail]/Sent Mail" "Go to Sent Mail"
+
+# Sidebar
+set sidebar_delim = ' |'
+set sidebar_visible = yes
+set sidebar_width = 24
+
+set imap_check_subscribed
+
+auto_view text/html
