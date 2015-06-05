@@ -21,14 +21,11 @@ bindsym $mod+underscore split v
 
 bindsym F11 fullscreen toggle
 
-bindsym $mod+s layout stacking
 bindsym $mod+y layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-
-bindsym $mod+a focus parent
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
