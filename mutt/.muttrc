@@ -43,3 +43,5 @@ bind pager j next-line
 bind pager gg top
 bind pager G bottom
 bind pager R group-reply
+source ~/.mutt-vombatidae
+set index_format = "%Z %{%b %d} %-35.35L (%?l?%4l&%4c?) %s"
