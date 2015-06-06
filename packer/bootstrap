@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+[[ ! -d "$HOME/.packer.d" ]] && mkdir $HOME/.packer.d
+[[ ! -d "$HOME/.packer.d/plugins" ]] && mkdir $HOME/.packer.d/plugins
+
+if [[ ! -f "$HOME/.packer.d/plugins/packer-builder-amazon-windows-ebs" ]]; then
+    # I appreciate this method isn't perfect, because it's checking for one of many files, but it'll do for now.
+    curl -L https://github.com/packer-community/packer-windows-plugins/releases/download/pre-release/linux_amd64.zip > /tmp/linux_amd64.zip
+    present_directory=$(pwd)
+    cd /tmp
+    unzip /tmp/linux_amd64.zip -d $HOME/.packer.d/plugins
+    rm -rf /tmp/linux_amd64.zip
+    cd $present_directory
+fi
