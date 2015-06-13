@@ -21,28 +21,6 @@ function install_vundle_plugin()
     fi
 }
 
-function download_libclang()
-{
-    local present_path=$(pwd)
-    local destination=$1
-    [[ -d $destination ]] && rm -rf $destination
-    mkdir -p $destination
-    cd "/tmp"
-    case $(uname -a) in
-        *Ubuntu*)
-            curl -O http://llvm.org/releases/3.4.1/clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
-            tar xvf clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
-            cp -r /tmp/clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04/** $destination
-            rm -f clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
-            rm -rf clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04
-            ;;
-        *)
-            echo "Setting up dependencies for YouCompleteMe: Unsupported OS encountered. Update get_libclang to support the current OS."
-            exit 1
-    esac
-    cd $present_path
-}
-
 function install_cmake()
 {
     case $(uname -a) in
@@ -60,15 +38,9 @@ function setup_you_complete_me()
 {
     if [ ! -e "$HOME/.vim/you_complete_me_is_setup" ]; then
         install_cmake
-        local libclang_path="/tmp/libclang"
         local you_complete_me_path=$HOME/.vim/bundle/YouCompleteMe
-        download_libclang $libclang_path
         local present_path=$(pwd)
-        local ycm_build_path="$HOME/dev/ycm_build"
-        mkdir -p $ycm_build_path
-        cd $ycm_build_path
-        cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=$libclang_path . $you_complete_me_path/third_party/ycmd/cpp
-        make ycm_support_libs
+        ./install.sh --clang-completer --omnisharp-completer --go-completer
         touch $HOME/.vim/you_complete_me_is_setup
         cd $present_path
     fi
@@ -93,26 +65,11 @@ function install_bundler_plugin()
     fi
 }
 
-function install_omnisharp_plugin()
-{
-    if [[ ! -d "$HOME/.vim/bundle/omnisharp-vim"  ]]; then
-        present_directory=$(pwd)
-        cd $HOME/.vim/bundle
-        git clone https://github.com/OmniSharp/omnisharp-vim.git
-        cd omnisharp-vim
-        git submodule update --init --recursive
-        cd server
-        xbuild
-        cd $present_directory
-    fi
-}
-
 function install_plugins()
 {
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
-    install_omnisharp_plugin
 }
 
 function install_files()

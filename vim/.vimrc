@@ -47,6 +47,7 @@ Plugin 'markcornick/vim-vagrant'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'tpope/vim-dispatch'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'OmniSharp/omnisharp-vim'
 call vundle#end()
 filetype plugin indent on
 
