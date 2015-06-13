@@ -40,7 +40,7 @@ function setup_you_complete_me()
         install_cmake
         local you_complete_me_path=$HOME/.vim/bundle/YouCompleteMe
         local present_path=$(pwd)
-        ./install.sh --clang-completer --omnisharp-completer --go-completer
+        ./install.sh --clang-completer --omnisharp-completer --gocode-completer
         touch $HOME/.vim/you_complete_me_is_setup
         cd $present_path
     fi
