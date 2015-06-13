@@ -121,11 +121,26 @@ function setup_command_t_plugin()
     fi
 }
 
+function install_omnisharp_plugin()
+{
+    if [[ ! -d "$HOME/.vim/bundle/omnisharp-vim"  ]]; then
+        present_directory=$(pwd)
+        cd $HOME/.vim/bundle
+        git clone https://github.com/OmniSharp/omnisharp-vim.git
+        cd omnisharp-vim
+        git submodule update --init --recursive
+        cd server
+        xbuild
+        cd $present_directory
+    fi
+}
+
 function install_plugins()
 {
     install_manual_plugins
     install_vundle_plugin
     install_bundler_plugin
+    install_omnisharp_plugin
 }
 
 function install_files()
