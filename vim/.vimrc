@@ -8,7 +8,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/ListToggle'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-rails'
-Plugin 'wincent/Command-T'
 Plugin 'scrooloose/NERDTree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
@@ -46,6 +45,9 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'markcornick/vim-vagrant'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'tpope/vim-dispatch'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'OmniSharp/omnisharp-vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -184,3 +186,5 @@ nnoremap <c-h> :call Focus('left', 'h')<CR>
 nnoremap <c-j> :call Focus('down', 'j')<CR>
 nnoremap <c-k> :call Focus('up', 'k')<CR>
 nnoremap <c-l> :call Focus('right', 'l')<CR>
+
+let g:ctrlp_map = '<leader>t'
