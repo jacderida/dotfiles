@@ -46,6 +46,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'markcornick/vim-vagrant'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'PProvost/vim-ps1'
 call vundle#end()
 filetype plugin indent on
 
