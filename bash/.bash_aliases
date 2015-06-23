@@ -36,6 +36,8 @@ function color_maven
 }
 alias mvn=color_maven
 
+alias nova="docker run --rm -it --name nova_client infr/nova_client"
+
 # Vagrant
 alias vup="vagrant up"
 alias vaws="vagrant up --provider=aws"

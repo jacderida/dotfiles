@@ -21,28 +21,6 @@ function install_vundle_plugin()
     fi
 }
 
-function download_libclang()
-{
-    local present_path=$(pwd)
-    local destination=$1
-    [[ -d $destination ]] && rm -rf $destination
-    mkdir -p $destination
-    cd "/tmp"
-    case $(uname -a) in
-        *Ubuntu*)
-            curl -O http://llvm.org/releases/3.4.1/clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
-            tar xvf clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
-            cp -r /tmp/clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04/** $destination
-            rm -f clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04.tar.xz
-            rm -rf clang+llvm-3.4.1-x86_64-unknown-ubuntu12.04
-            ;;
-        *)
-            echo "Setting up dependencies for YouCompleteMe: Unsupported OS encountered. Update get_libclang to support the current OS."
-            exit 1
-    esac
-    cd $present_path
-}
-
 function install_cmake()
 {
     case $(uname -a) in
@@ -60,15 +38,10 @@ function setup_you_complete_me()
 {
     if [ ! -e "$HOME/.vim/you_complete_me_is_setup" ]; then
         install_cmake
-        local libclang_path="/tmp/libclang"
         local you_complete_me_path=$HOME/.vim/bundle/YouCompleteMe
-        download_libclang $libclang_path
         local present_path=$(pwd)
-        local ycm_build_path="$HOME/dev/ycm_build"
-        mkdir -p $ycm_build_path
-        cd $ycm_build_path
-        cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=$libclang_path . $you_complete_me_path/third_party/ycmd/cpp
-        make ycm_support_libs
+        cd $you_complete_me_path
+        ./install.sh --clang-completer --omnisharp-completer --gocode-completer
         touch $HOME/.vim/you_complete_me_is_setup
         cd $present_path
     fi
@@ -90,34 +63,6 @@ function install_bundler_plugin()
         git clone https://github.com/tpope/vim-bundler.git ~/.vim/bundle/vim-bundler
     else
         echo -e "${green}Already installed vim-bundler${nc}"
-    fi
-}
-
-function setup_command_t_plugin()
-{
-    if [ ! -e  "$HOME/.vim/command_t_is_setup" ]; then
-        present_directory=`pwd`
-        cd ~/.vim/bundle/Command-T/ruby/command-t
-        if [[ $(uname -s) != CYGWIN_NT-* ]]
-        then
-            [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-            rvm use 1.8.7
-        else
-            rvm use 1.9.1
-        fi
-        ruby extconf.rb
-        if [[ $(uname -s) = CYGWIN_NT-* ]]; then
-            # On Cygwin, replace
-            # CFLAGS += -Wall -Wextra -Wno-unused-parameter
-            # with
-            # CFLAGS += -Wextra -Wno-unused-parameter
-            # This switches off all warnings as errors. For some reason, on Cygwin, there's a weird 64 bit integer
-            # warning that prevents successful compilation.
-            sed -i 's/^CFLAGS +=.*/CFLAGS += -Wextra -Wno-unused-parameter/g' Makefile
-        fi
-        make
-        touch $HOME/.vim/command_t_is_setup
-        cd $present_directory
     fi
 }
 
@@ -147,6 +92,5 @@ init_directories
 install_files
 install_vundle_plugin
 vim +PluginInstall +qall
-setup_command_t_plugin
 setup_you_complete_me
 install_plugins
