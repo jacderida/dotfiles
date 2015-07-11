@@ -65,6 +65,7 @@ set lines=50
 set columns=120
 set viminfo+=!
 set showcmd
+set shortmess+=A
 syntax on
 au FileType gitcommit set tw=72
 au FileType gitcommit colorscheme jellybeans
