@@ -1,0 +1,8 @@
+[encoder]
+encoding_setting=-V0
+
+[directories]
+base_directory=~/Music/sorted
+
+[masks]
+default=%l/[%c] %a - %A (%y)
