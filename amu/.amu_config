@@ -2,7 +2,7 @@
 encoding_setting=-V0
 
 [directories]
-base_directory=~/Music/sorted
+base_directory=/media/jacderida/SAMSUNG/music/sorted/mp3/releases
 
 [masks]
 default=%l/[%c] %a - %A (%y)
