@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ ! -d "$HOME/.mpd" ]]; then
+    mkdir -p $HOME/.mpd/playlists
+    touch $HOME/.mpd/{database,log,pid,state}
+fi
+
+rm -f $HOME/.mpd/mpd.conf
+ln -f ./mpd/mpd.conf $HOME/.mpd/mpd.conf
