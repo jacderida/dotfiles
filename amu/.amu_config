@@ -5,4 +5,4 @@ encoding_setting=-V0
 base_directory=/media/ext/music/sorted/mp3/releases
 
 [masks]
-default=%l/[%c] %a - %A (%Y)
+default=%l/[%c] %a - %A (%y)
