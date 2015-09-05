@@ -5,9 +5,12 @@ if [[ ! -d "$HOME/.mpd" ]]; then
     touch $HOME/.mpd/{database,log,pid,state}
 fi
 
-[[ ! -d "$HOME/.mpdsribble" ]] && mkdir $HOME/.mpdsribble
+[[ ! -d "$HOME/.mpdsribble" ]] && mkdir $HOME/.mpdscribble
+[[ ! -d "$HOME/.ncmpcpp" ]] && mkdir $HOME/.ncmpcpp
 
 rm -f $HOME/.mpd/mpd.conf
-rm -f $HOME/.mpdsribble/mpdsribble.conf
+rm -f $HOME/.mpdscribble/mpdscribble.conf
+rm -f $HOME/.ncmpcpp/config
 ln -f ./mpd/mpd.conf $HOME/.mpd/mpd.conf
-ln -f ./mpd/mpdsribble.conf $HOME/.mpdsribble/mpdsribble.conf
+ln -f ./mpd/mpdscribble.conf $HOME/.mpdscribble/mpdscribble.conf
+ln -f ./mpd/ncmpcpp $HOME/.ncmpcpp/config
