@@ -59,3 +59,4 @@ alias ls='ls++'
 alias cat="pygmentize -O style=monokai -f console256 -g"
 alias list_ec2_instances="aws ec2 describe-instances | jq '.[] | .[] | .Instances[] | { image_id: .InstanceId, name: .Tags[][\"Value\"], public_ip: .PublicDnsName }'"
 alias colourtest="perl $HOME/bin/colourtest -w"
+alias amu="python $HOME/dev/automated_music_utils/amu/clidriver.py"
