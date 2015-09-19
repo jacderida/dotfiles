@@ -188,3 +188,6 @@ nnoremap <c-h> :call Focus('left', 'h')<CR>
 nnoremap <c-j> :call Focus('down', 'j')<CR>
 nnoremap <c-k> :call Focus('up', 'k')<CR>
 nnoremap <c-l> :call Focus('right', 'l')<CR>
+
+nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
+nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
