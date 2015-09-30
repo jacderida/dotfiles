@@ -14,3 +14,4 @@ rm -f $HOME/.ncmpcpp/config
 ln -f ./mpd/mpd.conf $HOME/.mpd/mpd.conf
 ln -f ./mpd/mpdscribble.conf $HOME/.mpdscribble/mpdscribble.conf
 ln -f ./mpd/ncmpcpp $HOME/.ncmpcpp/config
+ln -f ./mpd/start_mpd.sh $HOME/bin/start_mpd.sh
