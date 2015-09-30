@@ -1,6 +1,7 @@
 [encoding]
 lame_encoding_setting=-V0
 flac_encoding_setting=-8
+flac_decode_setting=-d
 
 [directories]
 base_directory=/media/ext/music/sorted/mp3/releases
