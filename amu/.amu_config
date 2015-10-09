@@ -5,6 +5,7 @@ flac_decode_setting=-d
 
 [directories]
 releases_base_directory=/media/ext/music/sorted/mp3/releases
+mixes_base_directory=/media/ext/music/sorted/mp3/mixes
 
 [masks]
 default=%l/[%c] %a - %A (%y)
