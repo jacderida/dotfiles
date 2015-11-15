@@ -18,6 +18,8 @@ LIGHT_PURPLE="\[\033[1;35m\]"
 
 [ -z "$PS1" ] && return
 
+set -o vi
+
 HISTCONTROL=ignoreboth
 shopt -s histappend
 shopt -s checkwinsize
