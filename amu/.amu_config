@@ -9,4 +9,4 @@ release_directories=Ambient -- Drone -- Experimental,Early Electronic -- Tape Ma
 mixes_directory=/media/ext/music/sorted/mp3/mixes
 
 [masks]
-releases=%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%l, %y)
+releases=%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%l, %y)
