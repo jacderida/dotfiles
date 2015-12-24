@@ -5,8 +5,8 @@ flac_decode_setting=-d
 
 [directories]
 releases_base_directory=/media/ext/music/sorted/mp3/releases
-release_directories=Ambient -- Drone -- Experimental,Early Electronic -- Tape Manipulation,Electronic (By Artist),Electronic (By Label),Krautrock -- Psychedelic Rock -- Prog Rock,Hip Hop -- Old School Electro,Industrial,Jazz -- Exotica,Library -- Soundtracks,Rock
+release_directories=Ambient -- Drone -- Experimental,Early Electronic -- Tape Manipulation,Electronic (By Artist),Electronic (By Label),Krautrock -- Psychedelic Rock -- Prog Rock,Hip Hop -- Old School Electro,Industrial,Jazz -- Exotica,Library -- Soundtracks (By Artist),Library -- Soundtracks (By Label),Rock
 mixes_directory=/media/ext/music/sorted/mp3/mixes
 
 [masks]
-releases=%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%l, %y)
+releases=%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%l/[%c] %a - %A (%y)@%a - %A (%L, %y)
