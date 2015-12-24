@@ -4,3 +4,4 @@ rm -f $HOME/.amu_config
 rm -f $HOME/.rubyripper_settings_orig
 ln -f ./amu/.amu_config $HOME/.amu_config
 ln -f ./amu/.rubyripper_settings_orig $HOME/.rubyripper_settings_orig
+ln -f ./amu/encode_release_to_mp3.sh $HOME/bin/encode_release_to_mp3.sh
