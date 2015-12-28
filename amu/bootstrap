@@ -2,6 +2,11 @@
 
 rm -f $HOME/.amu_config
 rm -f $HOME/.rubyripper_settings_orig
+rm -f $HOME/bin/encode_release_to_mp3.sh
+rm -f $HOME/bin/encode_flac_bandcamp_release_to_mp3
+rm -f $HOME/bin/rename_bandcamp_release.py
 ln -f ./amu/.amu_config $HOME/.amu_config
 ln -f ./amu/.rubyripper_settings_orig $HOME/.rubyripper_settings_orig
 ln -f ./amu/encode_release_to_mp3.sh $HOME/bin/encode_release_to_mp3.sh
+ln -f ./amu/encode_flac_bandcamp_release_to_mp3 $HOME/bin/encode_flac_bandcamp_release_to_mp3
+ln -f ./amu/rename_bandcamp_release.py $HOME/bin/rename_bandcamp_release.py

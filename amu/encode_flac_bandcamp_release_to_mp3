@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+zip_file=$1
+destination=$2
+present_directory=$(pwd)
+
+if [[ -z "${zip_file// }" || -z "${destination// }" ]]; then
+    echo "A zip file and destination must be supplied."
+    exit 1
+fi
+
+destination="/media/ext/music/unsorted/wav/$2"
+
+[[ -d "$destination" ]] && rm -rf "$destination" && mkdir "$destination"
+
+unzip "$zip_file" -d "$destination"
+cd $destination
+python $HOME/bin/rename_bandcamp_release.py
+#ls *.flac | xargs flac -d
+#rm *.flac
+#cp cover.jpg cover_copy.jpg
+#python $HOME/dev/automated_music_utils/amu/clidriver.py encode wav mp3 --keep-source --discogs-id=$2
+#mv cover_copy.jpg cover.jpg
+#rm "$zip_file"
+#cd $present_directory
