@@ -8,6 +8,8 @@ def main():
         start = flac_file.rfind('-')
         start += 2
         destination_file = flac_file[start:].replace(' ', '_')
+        destination_file = destination_file.replace("'", '_')
+        destination_file = destination_file.replace('"', '_')
         os.rename(os.path.join(path, flac_file), os.path.join(path, destination_file))
 
 if __name__ == '__main__':

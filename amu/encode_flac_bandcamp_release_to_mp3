@@ -16,10 +16,10 @@ destination="/media/ext/music/unsorted/wav/$2"
 unzip "$zip_file" -d "$destination"
 cd $destination
 python $HOME/bin/rename_bandcamp_release.py
-#ls *.flac | xargs flac -d
-#rm *.flac
-#cp cover.jpg cover_copy.jpg
-#python $HOME/dev/automated_music_utils/amu/clidriver.py encode wav mp3 --keep-source --discogs-id=$2
-#mv cover_copy.jpg cover.jpg
-#rm "$zip_file"
-#cd $present_directory
+ls *.flac | xargs flac -d
+rm *.flac
+cp cover.jpg cover_copy.jpg
+python $HOME/dev/automated_music_utils/amu/clidriver.py encode wav mp3 --keep-source --discogs-id=$2
+mv cover_copy.jpg cover.jpg
+rm "$zip_file"
+cd $present_directory
