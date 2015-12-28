@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import re
 import sys
 import os
 
@@ -9,8 +10,8 @@ def main():
 
 def rename_flacs(current_directory):
     for flac_file in [f for f in os.listdir(current_directory) if f.endswith('.flac')]:
-        start = flac_file.rfind('-')
-        start += 2
+        match = re.search(r'(\-\s[0-9][0-9])', flac_file)
+        start = match.start(1) + 2
         rename_file(current_directory, flac_file, start)
 
 def rename_covers(current_directory):
