@@ -15,7 +15,7 @@ def rename_flacs(current_directory):
         rename_file(current_directory, flac_file, start)
 
 def rename_covers(current_directory):
-    for cover in [f for f in os.listdir(current_directory) if f.endswith(('.png', '.jpg'))]:
+    for cover in [f for f in os.listdir(current_directory) if f.endswith(('.png', '.jpg', '.gif'))]:
         start = cover.rfind('-')
         if start != -1:
             start += 2
