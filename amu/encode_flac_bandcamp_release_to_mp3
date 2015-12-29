@@ -1,25 +1,59 @@
 #!/usr/bin/env bash
 
 zip_file=$1
-destination=$2
+release_id=$2
 present_directory=$(pwd)
 
-if [[ -z "${zip_file// }" || -z "${destination// }" ]]; then
-    echo "A zip file and destination must be supplied."
+if [[ -z "${zip_file// }" || -z "${release_id// }" ]]; then
+    echo "A zip file and release ID must be supplied."
     exit 1
 fi
 
-destination="/media/ext/music/unsorted/wav/$2"
+destination="/media/ext/music/unsorted/wav/$release_id"
 
-[[ -d "$destination" ]] && rm -rf "$destination" && mkdir "$destination"
+function unpack_archive() {
+    [[ -d "$destination" ]] && rm -rf "$destination" && mkdir "$destination"
+    unzip "$zip_file" -d "$destination"
+}
 
-unzip "$zip_file" -d "$destination"
+function decode_release() {
+    python $HOME/bin/rename_bandcamp_release.py
+    ls *.flac | xargs flac -d
+    rm *.flac
+}
+
+function convert_gifs_to_jpg() {
+    for gif in $files
+    do
+        filename="${gif%.*}"
+        dest="$filename.jpg"
+        convert $gif $dest
+        rm $gif
+    done
+}
+
+function backup_images() {
+    convert_gifs_to_jpg
+    find -name *.jpg -exec cp {} {}.bak \; -or -name *.png -exec cp {} {}.bak \;
+}
+
+function encode_release_to_mp3() {
+    python $HOME/dev/automated_music_utils/amu/clidriver.py encode wav mp3 --keep-source --discogs-id=$release_id
+}
+
+function restore_backed_up_images() {
+    for bak in *.bak
+    do
+        filename="${bak%.*}"
+        mv $bak $filename
+    done
+}
+
+unpack_archive
 cd $destination
-python $HOME/bin/rename_bandcamp_release.py
-ls *.flac | xargs flac -d
-rm *.flac
-cp cover.jpg cover_copy.jpg
-python $HOME/dev/automated_music_utils/amu/clidriver.py encode wav mp3 --keep-source --discogs-id=$2
-mv cover_copy.jpg cover.jpg
+decode_release
+backup_images
+encode_release_to_mp3
+restore_backed_up_images
 rm "$zip_file"
 cd $present_directory
