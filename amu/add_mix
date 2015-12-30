@@ -84,6 +84,7 @@ function add_mix() {
         mp3_name="${selected_mp3%.*}"
         mv "$selected_tracklist_path" "$mixes_destination/$mp3_name.txt"
     fi
+    mpc update
 }
 
 select_mp3

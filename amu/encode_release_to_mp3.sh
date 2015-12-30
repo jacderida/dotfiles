@@ -40,3 +40,4 @@ get_image
 rip_cd
 get_image # The image is moved in the encoding process, so re-download it.
 cd $present_directory
+mpc update

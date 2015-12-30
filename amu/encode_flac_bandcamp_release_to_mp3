@@ -57,3 +57,4 @@ encode_release_to_mp3
 restore_backed_up_images
 rm "$zip_file"
 cd $present_directory
+mpc update
