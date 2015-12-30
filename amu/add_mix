@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+mix_source=$1
+
+if [[ -z "${mix_source// }" ]]; then
+    echo "A source must be supplied for the mix"
+    exit 1
+fi
+
+amu="python $HOME/dev/automated_music_utils/amu/clidriver.py"
+
+echo "Enter the artist for the mix:"
+read artist
+
+echo "Enter the title for the mix:"
+read title
+
+echo "Enter the year for the mix (leave blank if unknown):"
+read year
+
+$amu tag remove mp3 --source="$mix_source"
+$amu mix --artist="$artist" --album="$title" --title="$title" --year="$year" "$mix_source"
