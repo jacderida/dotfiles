@@ -4,6 +4,7 @@ release_id=$1
 consumer_key="ujteSPrEAXsVvqTWrRiU"
 consumer_secret="XSglsnOKXACMLbhaAiVbhYVwJJbANMAV"
 present_directory=$(pwd)
+amu="python $HOME/dev/automated_music_utils/amu/clidriver.py"
 
 if [[ -z "${release_id// }" ]]; then
     echo "A release ID must be supplied."
@@ -29,8 +30,8 @@ function get_image()
 
 function rip_cd()
 {
-    amu rip
-    amu encode wav mp3 --keep-source --discogs-id=$release_id
+    $amu rip
+    $amu encode wav mp3 --keep-source --discogs-id=$release_id
 }
 
 [[ -d "$release_id" ]] && rm -rf "$release_id"
