@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+import csv
+import sys
+
+class Release(object):
+    def __init__(self):
+        self.catno = ''
+        self.artist = ''
+        self.title = ''
+        self.year = ''
+        self.fmt = ''
+
+    def __repr__(self):
+        return "{0} {1} {2} {3} {4}".format(self.catno, self.artist, self.title, self.year, self.fmt)
+
+def main():
+    releases = []
+    reader = csv.reader(sys.stdin, skipinitialspace=True)
+    for row in reader:
+        release = Release()
+        release.catno = row[0].strip()
+        release.artist = row[1].strip()
+        release.title = row[2].strip()
+        release.year = row[3].strip()
+        release.fmt = row[4].strip()
+        releases.append(release)
+    for release in releases:
+        print release
+
+if __name__ == '__main__':
+    sys.exit(main())

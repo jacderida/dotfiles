@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 label_id=$1
+list_file="/tmp/$label_id"
 
 function get_number_of_pages() {
     last_page=$(curl https://api.discogs.com/labels/$label_id/releases?per_page=100 --user-agent "amu/0.1" -H "Authorization: Discogs key=ujteSPrEAXsVvqTWrRiU, secret=XSglsnOKXACMLbhaAiVbhYVwJJbANMAV" | jq '.pagination["pages"]')
-    echo $last_page
 }
 
 function get_all_releases() {
-    rm -rf /tmp/list.txt
+    rm -rf "$list_file"
     for ((i=1; i<=$last_page; i++))
     do
-        echo "Getting page $i"
+        echo "Getting page $i of $last_page"
         curl -s "https://api.discogs.com/labels/$label_id/releases?page=$i&per_page=100" --user-agent "amu/0.1" -H "Authorization: Discogs key=ujteSPrEAXsVvqTWrRiU, secret=XSglsnOKXACMLbhaAiVbhYVwJJbANMAV" \
         | jq '.releases[] | {catno: .catno, artist: .artist, title: .title, year: .year, format: .format}' \
         | paste -s \
@@ -21,9 +21,20 @@ function get_all_releases() {
         | sed -e '/\"format\":.*RE/d' \
         | sed -e '/\"format\":.*RP/d' \
         | sed -e 's/[[:space:]]\+/ /g' \
-        | uniq >> /tmp/list.txt
+        | sed -e 's/\"catno\": //g' \
+        | sed -e 's/\"artist\": //g' \
+        | sed -e 's/\"title\": //g' \
+        | sed -e 's/\"year\": //g' \
+        | sed -e 's/\"format\": //g' \
+        | uniq >> "$list_file"
     done
+    sed -i '/^$/d' "$list_file"
+}
+
+function print_filtered_releases() {
+    /bin/cat "$list_file" | filter_unique_releases
 }
 
 get_number_of_pages
 get_all_releases
+print_filtered_releases
