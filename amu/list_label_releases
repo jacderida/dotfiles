@@ -26,9 +26,11 @@ function get_all_releases() {
         | sed -e 's/\"title\": //g' \
         | sed -e 's/\"year\": //g' \
         | sed -e 's/\"format\": //g' \
+        | sed -e 's/\\"/'"'"'/g' \
         | uniq >> "$list_file"
     done
-    sed -i '/^$/d' "$list_file"
+    sed -i '/^$/d' "$list_file" # remove blank lines
+
 }
 
 function print_filtered_releases() {
