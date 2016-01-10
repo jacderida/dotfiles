@@ -3,29 +3,63 @@ import csv
 import sys
 
 class Release(object):
-    def __init__(self):
-        self.catno = ''
-        self.artist = ''
-        self.title = ''
-        self.year = ''
-        self.fmt = ''
+    def __init__(self, catno, artist, title, year, fmt):
+        self.catno = catno
+        self.artist = artist
+        self.title = title
+        self.year = year
+        self.fmt = self._get_format(fmt)
+        self.digital = True if "File" in fmt else False
 
     def __repr__(self):
-        return "{0} {1} {2} {3} {4}".format(self.catno, self.artist, self.title, self.year, self.fmt)
+        return '"{0}", "{1}", "{2}", "{3}", "{4}", "{5}"'.format(self.catno, self.artist, self.title, self.year, self.fmt, self.digital)
+
+    def __eq__(self, other):
+        return (isinstance(other, self.__class__)
+                and self.artist.lower() == other.artist.lower()
+                and self.title.lower() == other.title.lower())
+
+    def _get_format(self, fmt):
+        if 'Album' in fmt:
+            return 'Album'
+        if 'Comp' in fmt:
+            return 'Compilation'
+        if "7'" in fmt:
+            return '7inch'
+        if "10'" in fmt:
+            return '10inch'
+        if "12'" in fmt:
+            return '12inch'
+        if 'LP' in fmt:
+            return 'Album'
+        if 'EP' in fmt:
+            return 'EP'
+        if fmt == 'null':
+            return 'Unknown'
+        return fmt
 
 def main():
+    sorted_releases = get_list_sorted_by_year()
+    filtered_releases = []
+    for release in sorted_releases:
+        if release not in filtered_releases:
+            filtered_releases.append(release)
+    for release in filtered_releases:
+        print release
+
+def get_list_sorted_by_year():
     releases = []
     reader = csv.reader(sys.stdin, skipinitialspace=True)
     for row in reader:
-        release = Release()
-        release.catno = row[0].strip()
-        release.artist = row[1].strip()
-        release.title = row[2].strip()
-        release.year = row[3].strip()
-        release.fmt = row[4].strip()
+        release = Release(
+            row[0].strip(),
+            row[1].strip(),
+            row[2].strip(),
+            row[3].strip(),
+            row[4].strip())
         releases.append(release)
-    for release in releases:
-        print release
+    releases.sort(key=lambda x: (x.year, x.digital))
+    return releases
 
 if __name__ == '__main__':
     sys.exit(main())
