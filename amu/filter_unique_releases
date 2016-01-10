@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 import csv
+import re
 import sys
 
 class Release(object):
     def __init__(self, catno, artist, title, year, fmt):
         self.catno = catno
-        self.artist = artist
+        self.artist = self._remove_number_from_duplicate_entry(artist)
         self.title = title
         self.year = year
         self.fmt = self._get_format(fmt)
@@ -38,13 +39,19 @@ class Release(object):
             return 'Unknown'
         return fmt
 
+    def _remove_number_from_duplicate_entry(self, entry):
+        match = re.search('.*(\(\d+\))', entry)
+        if match:
+            entry = entry[0:match.start(1)].strip()
+        return entry
+
 def main():
     sorted_releases = get_list_sorted_by_year()
     filtered_releases = []
     for release in sorted_releases:
         if release not in filtered_releases:
             filtered_releases.append(release)
-    for release in filtered_releases:
+    for release in sorted_releases:
         print release
 
 def get_list_sorted_by_year():
