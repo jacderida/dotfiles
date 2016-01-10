@@ -30,7 +30,6 @@ function get_all_releases() {
         | uniq >> "$list_file"
     done
     sed -i '/^$/d' "$list_file" # remove blank lines
-
 }
 
 function print_filtered_releases() {
