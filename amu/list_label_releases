@@ -18,7 +18,6 @@ function get_all_releases() {
         | tr "{" " " \
         | tr "}" "\n" \
         | sed -e 's/^[ \t]*//' \
-        | sed -e '/\"format\":.*RE/d' \
         | sed -e '/\"format\":.*RP/d' \
         | sed -e 's/[[:space:]]\+/ /g' \
         | sed -e 's/\"catno\": //g' \
