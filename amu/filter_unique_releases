@@ -8,7 +8,7 @@ class Release(object):
         self.catno = catno
         self.artist = self._remove_number_from_duplicate_entry(artist)
         self.title = title
-        self.year = year
+        self.year = "Unknown" if "null" in year else year
         self.fmt = self._get_format(fmt)
         self.digital = True if "File" in fmt else False
 
@@ -21,10 +21,10 @@ class Release(object):
                 and self.title.lower() == other.title.lower())
 
     def _get_format(self, fmt):
-        if 'Album' in fmt:
-            return 'Album'
         if 'Comp' in fmt:
             return 'Compilation'
+        if 'Album' in fmt:
+            return 'Album'
         if "7'" in fmt:
             return '7inch'
         if "10'" in fmt:
@@ -35,8 +35,6 @@ class Release(object):
             return 'Album'
         if 'EP' in fmt:
             return 'EP'
-        if fmt == 'null':
-            return 'Unknown'
         return fmt
 
     def _remove_number_from_duplicate_entry(self, entry):
@@ -51,7 +49,7 @@ def main():
     for release in sorted_releases:
         if release not in filtered_releases:
             filtered_releases.append(release)
-    for release in sorted_releases:
+    for release in filtered_releases:
         print release
 
 def get_list_sorted_by_year():
