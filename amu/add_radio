@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+
+set -e
+shopt -s nullglob
+present_directory=$(pwd)
+amu="python $HOME/dev/automated_music_utils/amu/clidriver.py"
+mixes_destination="/media/ext/music/sorted/mp3/mixes"
+radio_destination="/media/ext/music/sorted/mp3/radio"
+mp3s=(*.mp3)
+covers=(*.jpg)
+tracklists=(*.txt)
+
+function select_mp3() {
+    len=${#mp3s[*]}
+    echo "Select from the following mp3s in the current directory:"
+    for ((i=0, j=1; i < $len; i++, j++))
+    do
+        mp3=${mp3s[$i]}
+        echo "$j. $mp3"
+    done
+
+    read i
+    i=$i-1
+    selected_mp3=${mp3s[$i]}
+    selected_mp3_path="$present_directory/$selected_mp3"
+}
+
+function select_cover() {
+    len=${#covers[*]}
+    echo "Select from the following covers in the current directory (leave blank to choose none):"
+    for ((i=0, j=1; i < $len; i++, j++))
+    do
+        cover=${covers[$i]}
+        echo "$j. $cover"
+    done
+
+    read i
+    if [[ ! -z "$i" ]]; then
+        i=$i-1
+        selected_cover=${covers[$i]}
+        selected_cover_path="$present_directory/$selected_cover"
+    fi
+}
+
+function select_tracklist() {
+    len=${#tracklists[*]}
+    echo "Select from the following tracklists in the current directory (leave blank to choose none):"
+    for ((i=0, j=1; i < $len; i++, j++))
+    do
+        tracklist=${tracklists[$i]}
+        echo "$j. $tracklist"
+    done
+
+    read i
+    if [[ ! -z "$i" ]]; then
+        i=$i-1
+        selected_tracklist=${tracklists[$i]}
+        selected_tracklist_path="$present_directory/$selected_tracklist"
+    fi
+}
+
+function get_artist() {
+    echo "Enter the artist for the mix:"
+    read artist
+}
+
+function get_title() {
+    echo "Enter the title for the mix:"
+    read title
+}
+
+function get_year() {
+    echo "Enter the year for the mix (leave blank for none):"
+    read year
+}
+
+function add_radio() {
+    $amu tag remove mp3 --source="$selected_mp3"
+    $amu mix --artist="$artist" --album="$title" --title="$title" --year="$year" "$selected_mp3_path"
+    if [[ ! -z "$selected_cover_path" ]]; then
+        $amu artwork add mp3 --source="$selected_cover_path" --destination="$mixes_destination/$selected_mp3"
+        rm "$selected_cover_path"
+    fi
+    if [[ ! -z "$selected_tracklist_path" ]]; then
+        mp3_name="${selected_mp3%.*}"
+        mv "$selected_tracklist_path" "$radio_destination/$mp3_name.txt"
+    fi
+    mv "$mixes_destination/$selected_mp3" "$radio_destination/$selected_mp3"
+    mpc update
+}
+
+select_mp3
+select_cover
+select_tracklist
+get_artist
+get_title
+get_year
+add_radio

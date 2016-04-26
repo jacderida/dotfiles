@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+present_directory=$(pwd)
+zip_name="$(basename "$present_directory").zip"
+
+zip -r "$zip_name" .
+mv "$zip_name" $HOME/Music
