@@ -21,9 +21,6 @@ bindsym $mod+underscore split v
 
 bindsym F11 fullscreen toggle
 
-bindsym $mod+y layout tabbed
-bindsym $mod+e layout toggle split
-
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
