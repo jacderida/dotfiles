@@ -80,6 +80,7 @@ let g:rainbow_active=1
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
+au FileType yaml setlocal shiftwidth=2 tabstop=2
 
 set foldmethod=indent
 set foldnestmax=10
