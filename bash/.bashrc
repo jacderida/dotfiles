@@ -124,4 +124,4 @@ function set_prompt() {
 PROMPT_COMMAND=set_prompt
 export RUBYRIPPER_CONFIG_PATH=$HOME/.rubyripper_settings_orig
 
-alias azure="docker run --name azure --rm -v ~/.azure:/root/.azure:ro -v ~/.ssh:/root/.ssh:ro -it microsoft/azure-cli"
+alias azure="docker run --name azure --rm -v ~/.azure:/home/user/.azure -v ~/.ssh:/home/user/.ssh:ro -u user -it jacderida/azure-cli"
