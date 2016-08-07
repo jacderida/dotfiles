@@ -13,4 +13,9 @@
 (load-theme 'tango-dark t)
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
-(evil-mode 1)
+(require 'evil-leader)
+(evil-mode t)
+
+(global-evil-leader-mode t)
+(setq evil-leader/in-all-states t)
+(evil-leader/set-leader ",")
