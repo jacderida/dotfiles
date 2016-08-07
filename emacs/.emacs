@@ -10,6 +10,7 @@
     (unless (assoc package package-archive-contents)
       (package-refresh-contents)
      package-install package)))
+(load-theme 'tango-dark t)
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
