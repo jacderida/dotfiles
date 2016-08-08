@@ -15,6 +15,7 @@
 (require 'evil)
 (require 'evil-leader)
 (require 'relative-line-numbers)
+(require 'helm-config)
 (evil-mode t)
 
 (global-evil-leader-mode t)
@@ -26,3 +27,5 @@
     "Another formatting function"
       (format "%03d " (abs offset)))
 (setq relative-line-numbers-format 'jp-rel-format)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
