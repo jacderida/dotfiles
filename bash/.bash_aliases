@@ -36,7 +36,17 @@ function color_maven
 }
 alias mvn=color_maven
 
-alias nova="docker run --rm -it --name nova_client infr/nova_client"
+# Tools
+alias azure="docker run --rm \
+    -v ~/.azure:/home/user/.azure \
+    -v ~/.ssh:/home/user/.ssh:ro \
+    -v ~/bin:/home/user/bin \
+    -v ~/.bashrc:/home/user/.bashrc \
+    -u user -it jacderida/azure-cli"
+alias ansible="docker run --rm \
+    -v ~/.ssh:/home/user/.ssh \
+    -v ~/.bashrc:/home/user/.bashrc \
+    -u user -it jacderida/ansible:2.1.0.0"
 
 # Vagrant
 alias vup="vagrant up"
