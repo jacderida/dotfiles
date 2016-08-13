@@ -43,10 +43,14 @@ alias azure="docker run --rm \
     -v ~/bin:/home/user/bin \
     -v ~/.bashrc:/home/user/.bashrc \
     -u user -it jacderida/azure-cli"
-alias ansible="docker run --rm \
+function run_ansible() {
+    docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
     -v ~/.bashrc:/home/user/.bashrc \
-    -u user -it jacderida/ansible:2.1.0.0"
+    -v $(pwd):/home/user/$(basename `pwd`) \
+    -u user -it jacderida/ansible:2.1.0.0
+}
+alias ansible="run_ansible"
 
 # Vagrant
 alias vup="vagrant up"
