@@ -48,6 +48,7 @@ function run_ansible() {
     -v ~/.ssh:/home/user/.ssh \
     -v ~/.bashrc:/home/user/.bashrc \
     -v $(pwd):/home/user/$(basename `pwd`) \
+    -h ansible-2-1-0-0 \
     -u user -it jacderida/ansible:2.1.0.0
 }
 alias ansible="run_ansible"
