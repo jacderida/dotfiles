@@ -49,14 +49,8 @@ alias vssh="vagrant ssh"
 alias svnadd="svn status | grep -v \"^.[ \t]*\..*\" | grep \"^?\" | awk '{print $2}' | xargs svn add"
 alias svnrm="svn status | grep -v \"^.[ \t]*\..*\" | grep \"^!\" | awk '{print $2}' | xargs svn rm"
 
-# Docker
-alias docker_stop_containers="sudo docker ps -a -q | xargs -n 1 -I {} sudo docker stop {}"
-alias docker_remove_containers="sudo docker ps -a -q | xargs -n 1 -I {} sudo docker rm {}"
-alias docker_remove_images="sudo docker images -q | xargs -n 1 -I {} sudo docker rmi {}"
-
 # Misc
 alias ls='ls++'
 alias cat="pygmentize -O style=monokai -f console256 -g"
-alias list_ec2_instances="aws ec2 describe-instances | jq '.[] | .[] | .Instances[] | { image_id: .InstanceId, name: .Tags[][\"Value\"], public_ip: .PublicDnsName }'"
 alias colourtest="perl $HOME/bin/colourtest -w"
 alias amu="python $HOME/dev/automated_music_utils/amu/clidriver.py"
