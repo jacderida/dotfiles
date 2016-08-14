@@ -44,6 +44,7 @@ function run_azure() {
     -v ~/bin:/home/user/bin \
     -v ~/.bashrc:/home/user/.bashrc \
     -v $(pwd):/home/user/$(basename `pwd`) \
+    -h azure-0-10-0 \
     -u user -it jacderida/azure-cli:0.10.0
 }
 alias azure="run_azure"
@@ -51,6 +52,7 @@ function run_ansible() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
     -v ~/.bashrc:/home/user/.bashrc \
+    -v ~/.ansible:/home/user/.ansible \
     -v $(pwd):/home/user/$(basename `pwd`) \
     -h ansible-2-1-0-0 \
     -u user -it jacderida/ansible:2.1.0.0
