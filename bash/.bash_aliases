@@ -37,12 +37,16 @@ function color_maven
 alias mvn=color_maven
 
 # Tools
-alias azure="docker run --rm \
+function run_azure() {
+    docker run --rm \
     -v ~/.azure:/home/user/.azure \
     -v ~/.ssh:/home/user/.ssh:ro \
     -v ~/bin:/home/user/bin \
     -v ~/.bashrc:/home/user/.bashrc \
-    -u user -it jacderida/azure-cli:0.10.0"
+    -v $(pwd):/home/user/$(basename `pwd`) \
+    -u user -it jacderida/azure-cli:0.10.0
+}
+alias azure="run_azure"
 function run_ansible() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
