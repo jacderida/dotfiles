@@ -42,7 +42,7 @@ alias azure="docker run --rm \
     -v ~/.ssh:/home/user/.ssh:ro \
     -v ~/bin:/home/user/bin \
     -v ~/.bashrc:/home/user/.bashrc \
-    -u user -it jacderida/azure-cli"
+    -u user -it jacderida/azure-cli:0.10.0"
 function run_ansible() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
