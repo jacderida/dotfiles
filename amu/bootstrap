@@ -10,6 +10,7 @@ rm -f $HOME/bin/add_radio
 rm -f $HOME/bin/list_label_releases
 rm -f $HOME/bin/filter_unique_releases
 rm -f $HOME/bin/zip_release
+rm -f $HOME/bin/encode-bleep-wav-release-to-mp3
 ln -f ./amu/.amu_config $HOME/.amu_config
 ln -f ./amu/.rubyripper_settings_orig $HOME/.rubyripper_settings_orig
 ln -f ./amu/encode_release_to_mp3 $HOME/bin/encode_release_to_mp3
@@ -20,3 +21,4 @@ ln -f ./amu/add_radio $HOME/bin/add_radio
 ln -f ./amu/list_label_releases $HOME/bin/list_label_releases
 ln -f ./amu/filter_unique_releases $HOME/bin/filter_unique_releases
 ln -f ./amu/zip_release $HOME/bin/zip_release
+ln -f ./amu/encode-bleep-wav-release-to-mp3 $HOME/bin/encode-bleep-wav-release-to-mp3
