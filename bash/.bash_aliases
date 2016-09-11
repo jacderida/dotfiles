@@ -59,6 +59,17 @@ function run_ansible() {
 }
 alias ansible="run_ansible"
 
+function run_oc() {
+    docker run --rm \
+    -v ~/.ssh:/home/user/.ssh \
+    -v ~/.bashrc:/home/user/.bashrc \
+    -v $(pwd):/home/user/$(basename `pwd`) \
+    -v ~/.docker:/home/user/.docker \
+    -h oc-3-1-1-6 \
+    -u user -it jacderida/openshift-enterprise-client-tools:3.1.1.6
+}
+alias oc-enterprise="run_oc"
+
 # Vagrant
 alias vup="vagrant up"
 alias vaws="vagrant up --provider=aws"
