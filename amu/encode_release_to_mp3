@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 release_id=$1
 consumer_key="ujteSPrEAXsVvqTWrRiU"

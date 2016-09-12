@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 zip_file=$1
 release_id=$2
@@ -13,7 +14,7 @@ destination="/media/ext/music/unsorted/wav/$release_id"
 
 function unpack_archive() {
     [[ -d "$destination" ]] && rm -rf "$destination" && mkdir "$destination"
-    unzip "$zip_file" -j -d "$destination" # Bleep puts the release in a folder.
+    unzip -j "$zip_file" -d "$destination" # Bleep puts the release in a folder.
 }
 
 function convert_gifs_to_jpg() {
@@ -46,7 +47,6 @@ function restore_backed_up_images() {
 
 unpack_archive
 cd $destination
-decode_release
 backup_images
 encode_release_to_mp3
 restore_backed_up_images
