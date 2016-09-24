@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo -e "${green}Removing .spacspacemacs and linking from dotfiles${nc}"
+rm -f ~/.spacemacs
+ln -f ./spacemacs/.spacemacs ~/.spacemacs
