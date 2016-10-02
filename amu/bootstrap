@@ -22,3 +22,4 @@ ln -f ./amu/list_label_releases $HOME/bin/list_label_releases
 ln -f ./amu/filter_unique_releases $HOME/bin/filter_unique_releases
 ln -f ./amu/zip_release $HOME/bin/zip_release
 ln -f ./amu/encode-bleep-wav-release-to-mp3 $HOME/bin/encode-bleep-wav-release-to-mp3
+ln -f ./amu/encode-greedbag-wav-release-to-mp3 $HOME/bin/encode-greedbag-wav-release-to-mp3
