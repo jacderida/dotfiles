@@ -13,6 +13,7 @@ rm -f $HOME/bin/zip_release
 rm -f $HOME/bin/import-bleep-wav-release
 rm -f $HOME/bin/import-greedbag-wav-release
 rm -f $HOME/bin/import-greedbag-mp3-release
+rm -f $HOME/bin/list-media-durations
 ln -f ./amu/.amu_config $HOME/.amu_config
 ln -f ./amu/.rubyripper_settings_orig $HOME/.rubyripper_settings_orig
 ln -f ./amu/import-cd $HOME/bin/import-cd
@@ -26,3 +27,4 @@ ln -f ./amu/zip_release $HOME/bin/zip_release
 ln -f ./amu/import-bleep-wav-release $HOME/bin/import-bleep-wav-release
 ln -f ./amu/import-greedbag-wav-release $HOME/bin/import-greedbag-wav-release
 ln -f ./amu/import-greedbag-mp3-release $HOME/bin/import-greedbag-mp3-release
+ln -f ./amu/list-media-durations $HOME/bin/list-media-durations
