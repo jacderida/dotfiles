@@ -80,6 +80,7 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 [[ -s "$HOME/.rackspace_details" ]] && source "$HOME/.rackspace_details"
 [[ -s "$HOME/.go_details" ]] && source "$HOME/.go_details"
 [[ -s "$HOME/.gitlab_credentials" ]] && source "$HOME/.gitlab_credentials"
+[[ -s "$HOME/.java_details" ]] && source "$HOME/.java_details"
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
 
