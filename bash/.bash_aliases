@@ -44,8 +44,8 @@ function run_azure() {
     -v ~/bin:/home/user/bin \
     -v ~/.bashrc:/home/user/.bashrc \
     -v $(pwd):/home/user/$(basename `pwd`) \
-    -h azure-0-10-0 \
-    -u user -it jacderida/azure-cli:0.10.0
+    -h azure-0-10-6 \
+    -u user -it jacderida/azure-cli:0.10.6
 }
 alias azure="run_azure"
 function run_ansible() {
