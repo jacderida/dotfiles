@@ -81,8 +81,10 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 [[ -s "$HOME/.go_details" ]] && source "$HOME/.go_details"
 [[ -s "$HOME/.gitlab_credentials" ]] && source "$HOME/.gitlab_credentials"
 [[ -s "$HOME/.java_details" ]] && source "$HOME/.java_details"
+[[ -s "$HOME/.groovy_details" ]] && source "$HOME/.groovy_details"
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$GROOVY_HOME/bin
 
 function is_git_repository() {
     git branch > /dev/null 2>&1
