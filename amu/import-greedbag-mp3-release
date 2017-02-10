@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+set -e
+
+zip_file=$1
+release_id=$2
+present_directory=$(pwd)
+
+if [[ -z "${zip_file// }" || -z "${release_id// }" ]]; then
+    echo "A zip file and release ID must be supplied."
+    exit 1
+fi
+
+destination="/media/ext/music/unsorted/mp3/$release_id"
+
+function unpack_archive() {
+    [[ -d "$destination" ]] && rm -rf "$destination" && mkdir "$destination"
+    unzip -j "$zip_file" -d "$destination"
+}
+
+function remove_playlists() {
+    rm -f *.m3u *.xspf
+}
+
+function convert_gifs_to_jpg() {
+    for gif in $files
+    do
+        filename="${gif%.*}"
+        dest="$filename.jpg"
+        convert $gif $dest
+        rm $gif
+    done
+}
+
+function backup_images() {
+    # This is because AMU moves images.
+    convert_gifs_to_jpg
+    find -name "*.jpg" -exec cp {} {}.bak \; -or -name *.png -exec cp {} {}.bak \; -or -name "*.jpeg" -exec cp {} {}.bak \;
+}
+
+function trim_images() {
+    # Greedbag releases come with the same artwork in multiple sizes.
+    # This function selects the biggest one, removes all the others, then renames it to cover.jpg.
+    for x in *.jpeg
+    do
+        mv -- "$x" "${x//jpeg/jpg}"
+    done
+    primary_image=$(/bin/ls *.jpg --sort=size | head -n 1)
+    find . -type f -name "*.jpg" ! -path "./$primary_image" -exec rm {} \;
+    mv *.jpg cover.jpg
+}
+
+function tag_release() {
+    python $HOME/dev/automated_music_utils/amu/clidriver.py tag remove mp3
+    python $HOME/dev/automated_music_utils/amu/clidriver.py tag add mp3 --discogs-id=$release_id
+}
+
+function restore_backed_up_images() {
+    for bak in *.bak
+    do
+        filename="${bak%.*}"
+        mv $bak $filename
+    done
+}
+
+unpack_archive
+remove_playlists
+cd $destination
+trim_images
+backup_images
+tag_release
+restore_backed_up_images
+cd $present_directory
+rm "$zip_file"
+mpc update

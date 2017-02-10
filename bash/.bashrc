@@ -128,3 +128,7 @@ function set_prompt() {
 
 PROMPT_COMMAND=set_prompt
 export RUBYRIPPER_CONFIG_PATH=$HOME/.rubyripper_settings_orig
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+source /usr/local/bin/virtualenvwrapper.sh
