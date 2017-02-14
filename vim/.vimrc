@@ -73,6 +73,7 @@ au FileType gitcommit set tw=72
 au FileType gitcommit colorscheme jellybeans
 set mouse=a
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
+au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 set tags=~/.tags/tags
 let mapleader=","
 let g:indent_guides_guide_size=1
