@@ -48,6 +48,20 @@ function run_azure() {
     -u user -it jacderida/azure-cli:0.10.6
 }
 alias azure="run_azure"
+
+function run_terragrunt() {
+    docker run --rm \
+    -v ~/.terraform:/home/user/.terraform \
+    -v ~/.azure:/home/user/.azure \
+    -v ~/.ssh:/home/user/.ssh:ro \
+    -v ~/bin:/home/user/bin \
+    -v ~/.bashrc:/home/user/.bashrc \
+    -v $(pwd):/home/user/$(basename `pwd`) \
+    -h terragrunt-0-11-0 \
+    -u user -it jacderida/terragrunt:0.11.0
+}
+alias terragrunt="run_terragrunt"
+
 function run_ansible() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \

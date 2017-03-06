@@ -82,6 +82,7 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 [[ -s "$HOME/.gitlab_credentials" ]] && source "$HOME/.gitlab_credentials"
 [[ -s "$HOME/.java_details" ]] && source "$HOME/.java_details"
 [[ -s "$HOME/.groovy_details" ]] && source "$HOME/.groovy_details"
+[[ -s "$HOME/.terraform" ]] && source "$HOME/.terraform"
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$GROOVY_HOME/bin
