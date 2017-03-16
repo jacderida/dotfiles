@@ -71,10 +71,12 @@ if [ "$operating_system" = "Darwin" ]; then
 fi
 
 export NOSE_REDNOSE=1 # For python based unit testing with nosetests.
-export PAGER=/usr/local/bin/vimpager
-alias less=$PAGER
-alias zless=$PAGER
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+if [ -f "/usr/local/bin/vimpager" ]; then
+    export PAGER=/usr/local/bin/vimpager
+    alias less=$PAGER
+    alias zless=$PAGER
+    export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+fi
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 [[ -s "$HOME/.aws_keys" ]] && source "$HOME/.aws_keys"
 [[ -s "$HOME/.rackspace_details" ]] && source "$HOME/.rackspace_details"
