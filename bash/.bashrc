@@ -114,7 +114,6 @@ function set_virtualenv () {
 }
 
 function set_prompt() {
-    PS1_TIME="${YELLOW}[${COLOR_NONE}${LIGHT_RED}\t${COLOR_NONE}${YELLOW}]${COLOR_NONE}"
     PS1_USER="${CYAN}\u${COLOR_NONE}"
     PS1_LOCATION="${PURPLE}\h${COLOR_NONE}"
     PS1_WORKING_DIR="${BLUE}\w${COLOR_NONE} "
@@ -126,7 +125,7 @@ function set_prompt() {
     else
         BRANCH=""
     fi
-    PS1="${PS1_TIME}${PYTHON_VIRTUALENV} ${PS1_USER}@${PS1_LOCATION} ${PS1_SEPARATOR} ${PS1_WORKING_DIR}${BRANCH}${PS1_PROMPT_SYMBOL}"
+    PS1="${PYTHON_VIRTUALENV}${PS1_USER}@${PS1_LOCATION} ${PS1_SEPARATOR} ${PS1_WORKING_DIR}${BRANCH}${PS1_PROMPT_SYMBOL}"
 }
 
 PROMPT_COMMAND=set_prompt
