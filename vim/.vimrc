@@ -53,7 +53,6 @@ Plugin 'PProvost/vim-ps1'
 call vundle#end()
 filetype plugin indent on
 
-call pathogen#infect()
 set nowrap
 set nobackup
 set ignorecase
