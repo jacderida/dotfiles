@@ -20,15 +20,13 @@ nc='\033[0m'
 
 set -e
 
-DOTFILES_ROOT="`pwd`"
-USER_HOME=`eval echo ~$USER`
+DOTFILES_ROOT=$(pwd)
+USER_HOME=$(eval echo ~$USER)
 
-# Unfortunately, we have to guarantee that the ruby bootstrap runs before the vim bootstrap.
-source ./ruby/bootstrap
-for bootstrap in `find $DOTFILES_ROOT -name "bootstrap" -not -path ./*.sh` 
+for bootstrap in $(find $DOTFILES_ROOT -name "bootstrap" -not -path ./*.sh)
 do
-	echo -e "${blue}=================================================================${nc}"
-	echo -e "${blue}Running $bootstrap${nc}"
-	echo -e "${blue}=================================================================${nc}"
-	source $bootstrap
+    echo -e "${blue}=================================================================${nc}"
+    echo -e "${blue}Running $bootstrap${nc}"
+    echo -e "${blue}=================================================================${nc}"
+    source $bootstrap
 done
