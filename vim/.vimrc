@@ -50,6 +50,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'PProvost/vim-ps1'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 filetype plugin indent on
 
