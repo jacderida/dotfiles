@@ -7,6 +7,7 @@ fi
 
 [[ ! -d "$HOME/.mpdsribble" ]] && mkdir $HOME/.mpdscribble
 [[ ! -d "$HOME/.ncmpcpp" ]] && mkdir $HOME/.ncmpcpp
+[[ ! -d "$HOME/bin" ]] && mkdir $HOME/bin
 
 rm -f $HOME/.mpd/mpd.conf
 rm -f $HOME/.mpdscribble/mpdscribble.conf
