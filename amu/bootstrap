@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+[[ ! -d "$HOME/bin" ]] && mkdir $HOME/bin
 rm -f $HOME/.amu_config
 rm -f $HOME/.rubyripper_settings_orig
 rm -f $HOME/bin/import-cd

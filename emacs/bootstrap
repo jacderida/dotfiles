@@ -3,10 +3,3 @@
 echo -e "${green}Removing .emacs and linking from dotfiles${nc}"
 rm -f ~/.emacs
 ln -f ./emacs/.emacs ~/.emacs
-
-if [[ ! -d "$HOME/.emacs.d/evil" ]]; then
-    curl -OL https://bitbucket.org/lyro/evil/get/default.zip
-    mkdir -p $HOME/.emacs.d/evil
-    unzip default.zip  -d ~/.emacs.d/evil
-    rm default.zip
-fi

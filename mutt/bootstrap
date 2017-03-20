@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-rm -f $HOME/.muttrc
-rm -f $HOME/.mailcap
-rm -f $HOME/.mutt-vombatidae
-ln -f mutt/.muttrc $HOME/.muttrc
-ln -f mutt/.mailcap $HOME/.mailcap
-ln -f mutt/.mutt-vombatidae $HOME/.mutt-vombatidae

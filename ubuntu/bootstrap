@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-operating_system=$(uname -s)
-if [[ $operating_system != "Darwin" && $operating_system != CYGWIN_NT-* ]]; then
-    gsettings set org.gnome.nautilus.preferences show-hidden-files true
-    gsettings set org.gnome.desktop.sound event-sounds false
-    sudo sed -i 's/^XKBOPTIONS=""/XKBOPTIONS="lv3:ralt_alt,compose:menu,ctrl:nocaps"/g' /etc/default/keyboard
-    sudo dpkg-reconfigure keyboard-configuration
-fi
+# This needs to better discriminate on whether Ubuntu is running.
+#operating_system=$(uname -s)
+#if [[ $operating_system != "Darwin" && $operating_system != CYGWIN_NT-* ]]; then
+    #gsettings set org.gnome.nautilus.preferences show-hidden-files true
+    #gsettings set org.gnome.desktop.sound event-sounds false
+    #sudo sed -i 's/^XKBOPTIONS=""/XKBOPTIONS="lv3:ralt_alt,compose:menu,ctrl:nocaps"/g' /etc/default/keyboard
+    #sudo dpkg-reconfigure keyboard-configuration
+#fi
