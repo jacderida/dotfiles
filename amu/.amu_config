@@ -1,3 +1,6 @@
+[tagging]
+use_genre = false
+
 [encoding]
 lame_encoding_setting=-V0
 flac_encoding_setting=-8
