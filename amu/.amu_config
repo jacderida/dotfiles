@@ -4,9 +4,12 @@ flac_encoding_setting=-8
 flac_decode_setting=-d
 
 [directories]
-mp3_releases_base_directory=/media/ext/music/sorted/mp3/releases
+mp3_releases_base_directory=/media/ext/music/sorted/releases
 mp3_release_directories=Ambient -- Drone -- Experimental,Early Electronic -- Tape Manipulation,Electronic (By Artist),Electronic (By Label),Krautrock -- Psychedelic Rock -- Prog Rock,Hip Hop -- Old School Electro,Industrial,Jazz -- Exotica,Library -- Soundtracks (By Artist),Library -- Soundtracks (By Label),Rock
+flac_releases_base_directory=/media/ext/music/sorted/archive
+flac_release_directories=.
 mixes_directory=/media/ext/music/sorted/mp3/mixes
 
 [masks]
 mp3_releases=%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%l, %y)@%l/[%c] %a - %A (%y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%a - %A (%L, %Y)@%l/[%c] %a - %A (%y)@%a - %A (%L, %y)
+flac_releases=%l/[%c] %a - %A (%y)
