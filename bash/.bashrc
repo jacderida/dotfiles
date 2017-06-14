@@ -28,7 +28,14 @@ HISTFILESIZE=2000
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-export TERM=xterm-256color
+case "$TERM" in
+    xterm*)
+	export TERM=xterm-256color
+	;;
+    cygwin)
+	export TERM=cygwin
+	;;
+esac
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -61,7 +68,7 @@ PATH=${PATH%?}
 
 alias tmux="TERM=screen-256color tmux -2 -u"
 alias mci="mvn clean install"
-stty -ixon -ixoff # See here: http://stackoverflow.com/questions/8616843/ctrl-s-is-not-working-as-a-horizontal-split-in-vim-when-using-commandt
+#stty -ixon -ixoff # See here: http://stackoverflow.com/questions/8616843/ctrl-s-is-not-working-as-a-horizontal-split-in-vim-when-using-commandt
 
 operating_system=`uname -s`
 if [ "$operating_system" = "Darwin" ]; then
