@@ -6,15 +6,14 @@ Plugin 'gmarik/Vundle.vim'
 call vundle#end()
 filetype plugin indent on
 
-"set nowrap
-"set nobackup
-"set ignorecase
-"set smartindent
-"set tabstop=4
-"set shiftwidth=4
-"set expandtab
-"set number
-"set relativenumber
+set nowrap
+set nobackup
+set ignorecase
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set number
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
