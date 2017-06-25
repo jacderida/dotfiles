@@ -14,3 +14,5 @@ if exist %USERPROFILE%\AppData\Roaming\ConEmu.xml del %USERPROFILE%\AppData\Roam
 mklink %USERPROFILE%\AppData\Roaming\ConEmu.xml %dotfiles%\conemu\ConEmu.xml
 if exist %USERPROFILE%\.vimrc del %USERPROFILE%\.vimrc
 mklink %USERPROFILE%\.vimrc %dotfiles%\vim\minimalist-dev\.vimrc
+if exist %USERPROFILE%\.gvimrc del %USERPROFILE%\.gvimrc
+mklink %USERPROFILE%\.gvimrc %dotfiles%\vim\.gvimrc
