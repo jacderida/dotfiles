@@ -16,6 +16,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+set incsearch
+set hlsearch
 syntax on
 if has("win32")
    set term=xterm
@@ -74,8 +76,6 @@ let mapleader=","
 "set ttyfast
 "set lazyredraw
 "
-"set incsearch
-"set hlsearch
 "
 "let NERDTreeWinSize=40
 "let NERDTreeIgnore=['\.pyc$']
