@@ -2,13 +2,14 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'scrooloose/NERDTree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/NERDTree'
-Plugin 'ryanoasis/vim-devicons'
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
