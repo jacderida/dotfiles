@@ -23,12 +23,18 @@ set backupdir=~/.vim/tmp//
 set cursorline
 set directory=~/.vim/backup
 set expandtab
+set foldlevel=1
+set foldmethod=indent
+set foldnestmax=10
 set hlsearch
 set ignorecase
 set incsearch
+set laststatus=2
 set nobackup
+set nofoldenable
 set nowrap
 set number
+set ruler
 set shiftwidth=4
 set smartindent
 set showcmd
@@ -46,6 +52,10 @@ if has("win32")
    let &t_AF="\e[38;5;%dm"
 endif
 colorscheme gruvbox
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <Leader>h :set hlsearch!<CR>
 
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
@@ -85,66 +95,3 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
-
-"au FileType gitcommit colorscheme jellybeans
-"set mouse=a
-"set tags=~/.tags/tags
-"
-"set foldmethod=indent
-"set foldnestmax=10
-"set nofoldenable
-"set foldlevel=1
-"
-"set encoding=utf-8
-"set ruler
-"set cursorline
-"set laststatus=2
-"set noshowmode
-"set ttyfast
-"set lazyredraw
-"
-"
-"
-"nnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
-"vnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
-"nnoremap <Leader>h :set hlsearch!<CR>
-"nnoremap <Leader>s vi{
-"nnoremap j gj
-"nnoremap k gk
-"noremap <space> ;
-"vnoremap L g_
-"
-"nnoremap <F1> :source $MYVIMRC<CR>
-"nnoremap <F5> :!mvn test<CR>
-"nnoremap <F8> :TagbarToggle<CR>
-"imap <C-c> <CR><Esc>O
-"
-"
-""let g:syntastic_always_populate_loc_list = 1
-"
-"nnoremap <silent> <leader>a :set opfunc=<SID>AckMotion<CR>g@
-"xnoremap <silent> <leader>a :<C-U>call <SID>AckMotion(visualmode())<CR>g@
-"
-"function! s:CopyMotionForType(type)
-"    if a:type ==# 'v'
-"        silent execute "normal! `<" . a:type . "`>y"
-"    elseif a:type ==# 'char'
-"        silent execute "normal! `[v`]y"
-"    endif
-"endfunction
-"
-"function! s:AckMotion(type) abort
-"    let reg_save = @@
-"    call s:CopyMotionForType(a:type)
-"    execute "normal! :Ack! --literal " . shellescape(@@) . "\<cr>"
-"    let @@ = reg_save
-"endfunction
-"
-"" Reselect a block that has just been indented.
-"vnoremap < <gv
-"vnoremap > >gv
-
-"autocmd FileType gitcommit DiffGitCached | wincmd L | wincmd p
-"if &diff
-"    colorscheme pyte
-"endif
