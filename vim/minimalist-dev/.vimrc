@@ -5,6 +5,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 filetype plugin indent on
 
@@ -28,6 +29,10 @@ endif
 colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 let mapleader=","
+" This is for surround.vim to work as expected. I never used the s command
+" anyway.
+vmap s S
+
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
@@ -88,9 +93,6 @@ let mapleader=","
 "nnoremap k gk
 "noremap <space> ;
 "vnoremap L g_
-"" This is for surround.vim to work as expected. I never used the s command
-"" anyway.
-"vmap s S
 "
 "nnoremap <F1> :source $MYVIMRC<CR>
 "nnoremap <F4> :NERDTreeToggle<CR>
