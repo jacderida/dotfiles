@@ -5,6 +5,7 @@ call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'oblitum/rainbow'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/NERDTree'
 Plugin 'tpope/vim-surround'
@@ -25,22 +26,25 @@ set incsearch
 set hlsearch
 syntax on
 if has("win32")
+   " These settings are to get ConEmu and Vim in Git Bash to play nice.
    set term=xterm
    set t_Co=256
    let &t_AB="\e[48;5;%dm"
    let &t_AF="\e[38;5;%dm"
 endif
 colorscheme gruvbox
-let g:airline_powerline_fonts = 1
 let mapleader=","
-" This is for surround.vim to work as expected. I never used the s command
-" anyway.
+
+" This is for surround.vim to work as expected.
 vmap s S
 
 let NERDTreeWinSize=40
 let NERDTreeIgnore=['\.pyc$']
 nnoremap <F4> :NERDTreeToggle<CR>
 
+let g:rainbow_active=1
+
+let g:airline_powerline_fonts = 1
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
@@ -52,7 +56,6 @@ nnoremap <F4> :NERDTreeToggle<CR>
 "au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 "set tags=~/.tags/tags
 "let g:indent_guides_guide_size=1
-"let g:rainbow_active=1
 "
 "au FileType puppet setlocal shiftwidth=2 tabstop=2
 "au FileType json setlocal shiftwidth=2 tabstop=2
