@@ -8,6 +8,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'oblitum/rainbow'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/NERDTree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
@@ -94,8 +95,6 @@ let g:airline_powerline_fonts = 1
 "set lazyredraw
 "
 "
-"let NERDTreeWinSize=40
-"let NERDTreeIgnore=['\.pyc$']
 "
 "nnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
 "vnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
@@ -107,7 +106,6 @@ let g:airline_powerline_fonts = 1
 "vnoremap L g_
 "
 "nnoremap <F1> :source $MYVIMRC<CR>
-"nnoremap <F4> :NERDTreeToggle<CR>
 "nnoremap <F5> :!mvn test<CR>
 "nnoremap <F8> :TagbarToggle<CR>
 "imap <C-c> <CR><Esc>O
@@ -122,11 +120,6 @@ let g:airline_powerline_fonts = 1
 "        au InsertLeave * set timeoutlen=1000
 "    augroup END
 "endif
-"
-"nnoremap <Leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_autoclose_preview_window_after_completion = 1
 "
 ""let g:syntastic_always_populate_loc_list = 1
 "
