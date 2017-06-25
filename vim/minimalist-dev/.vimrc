@@ -4,6 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
@@ -23,6 +24,7 @@ if has("win32")
    let &t_AF="\e[38;5;%dm"
 endif
 colorscheme gruvbox
+let g:airline_powerline_fonts = 1
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
@@ -50,7 +52,6 @@ colorscheme gruvbox
 "set term=screen-256color
 ""set t_Co=256
 "colorscheme badwolf
-"let g:airline_powerline_fonts = 1
 "
 "let g:indent_guides_auto_colors = 0
 "let g:indent_guides_enable_on_vim_startup = 1
