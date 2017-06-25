@@ -25,6 +25,7 @@ if has("win32")
 endif
 colorscheme gruvbox
 let g:airline_powerline_fonts = 1
+let mapleader=","
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
@@ -35,7 +36,6 @@ let g:airline_powerline_fonts = 1
 "au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 "au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 "set tags=~/.tags/tags
-"let mapleader=","
 "let g:indent_guides_guide_size=1
 "let g:rainbow_active=1
 "
