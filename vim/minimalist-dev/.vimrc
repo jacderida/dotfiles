@@ -6,6 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/NERDTree'
 Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
