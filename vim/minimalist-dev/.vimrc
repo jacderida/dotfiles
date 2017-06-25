@@ -7,6 +7,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/NERDTree'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 filetype plugin indent on
 
