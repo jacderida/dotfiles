@@ -3,6 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 filetype plugin indent on
 
@@ -21,6 +22,7 @@ if has("win32")
    let &t_AB="\e[48;5;%dm"
    let &t_AF="\e[38;5;%dm"
 endif
+colorscheme gruvbox
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
