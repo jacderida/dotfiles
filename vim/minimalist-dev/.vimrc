@@ -44,6 +44,18 @@ au FileType json setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
 au FileType yaml setlocal shiftwidth=2 tabstop=2
 
+" In terminal mode, prevent the delay in transitioning from insert mode to
+" normal mode. Not sure how much performance this gains, but doesn't seem
+" to do any harm, so I'll leave it in.
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
 " This is for surround.vim to work as expected.
 vmap s S
 
@@ -114,16 +126,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 "nnoremap <F8> :TagbarToggle<CR>
 "imap <C-c> <CR><Esc>O
 "
-"" In terminal mode, prevent the delay in transitioning from insert mode to
-"" normal mode.
-"if ! has('gui_running')
-"    set ttimeoutlen=10
-"    augroup FastEscape
-"        autocmd!
-"        au InsertEnter * set timeoutlen=0
-"        au InsertLeave * set timeoutlen=1000
-"    augroup END
-"endif
 "
 ""let g:syntastic_always_populate_loc_list = 1
 "
