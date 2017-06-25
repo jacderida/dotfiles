@@ -6,6 +6,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/NERDTree'
 call vundle#end()
 filetype plugin indent on
 
@@ -32,6 +33,10 @@ let mapleader=","
 " This is for surround.vim to work as expected. I never used the s command
 " anyway.
 vmap s S
+
+let NERDTreeWinSize=40
+let NERDTreeIgnore=['\.pyc$']
+nnoremap <F4> :NERDTreeToggle<CR>
 
 "set viminfo+=!
 "set showcmd
