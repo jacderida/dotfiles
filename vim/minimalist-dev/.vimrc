@@ -39,6 +39,11 @@ endif
 colorscheme gruvbox
 let mapleader=","
 
+au FileType puppet setlocal shiftwidth=2 tabstop=2
+au FileType json setlocal shiftwidth=2 tabstop=2
+au FileType ruby setlocal shiftwidth=2 tabstop=2
+au FileType yaml setlocal shiftwidth=2 tabstop=2
+
 " This is for surround.vim to work as expected.
 vmap s S
 
@@ -68,10 +73,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 "au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 "set tags=~/.tags/tags
 "
-"au FileType puppet setlocal shiftwidth=2 tabstop=2
-"au FileType json setlocal shiftwidth=2 tabstop=2
-"au FileType ruby setlocal shiftwidth=2 tabstop=2
-"au FileType yaml setlocal shiftwidth=2 tabstop=2
 "
 "set foldmethod=indent
 "set foldnestmax=10
