@@ -14,6 +14,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+syntax on
+if has("win32")
+   set term=xterm
+   set t_Co=256
+   let &t_AB="\e[48;5;%dm"
+   let &t_AF="\e[38;5;%dm"
+endif
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A

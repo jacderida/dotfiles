@@ -12,3 +12,5 @@ if exist %USERPROFILE%\.bashrc del %USERPROFILE%\.bashrc
 mklink %USERPROFILE%\.bashrc %dotfiles%\bash\.bashrc
 if exist %USERPROFILE%\AppData\Roaming\ConEmu.xml del %USERPROFILE%\AppData\Roaming\ConEmu.xml
 mklink %USERPROFILE%\AppData\Roaming\ConEmu.xml %dotfiles%\conemu\ConEmu.xml
+if exist %USERPROFILE%\.vimrc del %USERPROFILE%\.vimrc
+mklink %USERPROFILE%\.vimrc %dotfiles%\vim\minimalist-dev\.vimrc
