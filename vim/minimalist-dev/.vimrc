@@ -19,6 +19,7 @@ call vundle#end()
 filetype plugin indent on
 
 set backspace=indent,eol,start
+set cursorline
 set nowrap
 set nobackup
 set ignorecase
@@ -29,6 +30,13 @@ set expandtab
 set number
 set incsearch
 set hlsearch
+set viminfo+=!
+set showcmd
+set shortmess+=A
+set directory=~/.vim/backup
+set backupdir=~/.vim/tmp//
+let mapleader=","
+
 syntax on
 if has("win32")
    " These settings are to get ConEmu and Vim in Git Bash to play nice.
@@ -38,7 +46,6 @@ if has("win32")
    let &t_AF="\e[38;5;%dm"
 endif
 colorscheme gruvbox
-let mapleader=","
 
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
@@ -56,6 +63,10 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+au FileType gitcommit set tw=72
+au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
+au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
 " This is for surround.vim to work as expected.
 vmap s S
@@ -75,33 +86,14 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 
-"set viminfo+=!
-"set showcmd
-"set shortmess+=A
-"syntax on
-"au FileType gitcommit set tw=72
 "au FileType gitcommit colorscheme jellybeans
 "set mouse=a
-"au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
-"au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 "set tags=~/.tags/tags
-"
 "
 "set foldmethod=indent
 "set foldnestmax=10
 "set nofoldenable
 "set foldlevel=1
-"
-"set term=screen-256color
-""set t_Co=256
-"colorscheme badwolf
-"
-"
-"autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
-"set autoread "Reloads the file when a change has been made in another editor
-"
-"set directory=~/.vim/backup
-"set backupdir=~/.vim/tmp//
 "
 "set encoding=utf-8
 "set ruler
