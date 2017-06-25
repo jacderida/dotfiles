@@ -19,22 +19,22 @@ call vundle#end()
 filetype plugin indent on
 
 set backspace=indent,eol,start
+set backupdir=~/.vim/tmp//
 set cursorline
-set nowrap
-set nobackup
-set ignorecase
-set smartindent
-set tabstop=4
-set shiftwidth=4
+set directory=~/.vim/backup
 set expandtab
-set number
-set incsearch
 set hlsearch
-set viminfo+=!
+set ignorecase
+set incsearch
+set nobackup
+set nowrap
+set number
+set shiftwidth=4
+set smartindent
 set showcmd
 set shortmess+=A
-set directory=~/.vim/backup
-set backupdir=~/.vim/tmp//
+set tabstop=4
+set viminfo+=!
 let mapleader=","
 
 syntax on
