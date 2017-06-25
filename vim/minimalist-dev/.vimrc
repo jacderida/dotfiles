@@ -5,6 +5,7 @@ call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'oblitum/rainbow'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'ryanoasis/vim-devicons'
@@ -16,6 +17,7 @@ Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
+set backspace=indent,eol,start
 set nowrap
 set nobackup
 set ignorecase
@@ -47,6 +49,14 @@ nnoremap <F4> :NERDTreeToggle<CR>
 let g:rainbow_active=1
 
 let g:airline_powerline_fonts = 1
+
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
+
 "set viminfo+=!
 "set showcmd
 "set shortmess+=A
@@ -57,7 +67,6 @@ let g:airline_powerline_fonts = 1
 "au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 "au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 "set tags=~/.tags/tags
-"let g:indent_guides_guide_size=1
 "
 "au FileType puppet setlocal shiftwidth=2 tabstop=2
 "au FileType json setlocal shiftwidth=2 tabstop=2
@@ -73,11 +82,6 @@ let g:airline_powerline_fonts = 1
 ""set t_Co=256
 "colorscheme badwolf
 "
-"let g:indent_guides_auto_colors = 0
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 "
 "autocmd! bufwritepost .vimrc source % "Auto reload vimrc when the file is changed
 "set autoread "Reloads the file when a change has been made in another editor
@@ -88,7 +92,6 @@ let g:airline_powerline_fonts = 1
 "set encoding=utf-8
 "set ruler
 "set cursorline
-"set backspace=indent,eol,start
 "set laststatus=2
 "set noshowmode
 "set ttyfast
