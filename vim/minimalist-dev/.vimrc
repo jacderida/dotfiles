@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
+set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.vim/tmp//
 set cursorline
