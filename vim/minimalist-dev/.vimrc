@@ -5,6 +5,7 @@ call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'godlygeek/tabular'
 Plugin 'morhetz/gruvbox'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'oblitum/rainbow'
@@ -50,6 +51,8 @@ set viminfo+=!
 
 nnoremap j gj
 nnoremap k gk
+nnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
+vnoremap <Leader>df xP:Tabularize /<C-R>-<CR>
 nnoremap <Leader>h :set hlsearch!<CR>
 " This is for surround.vim to work as expected.
 vmap s S
