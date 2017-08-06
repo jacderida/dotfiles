@@ -21,9 +21,8 @@ nc='\033[0m'
 set -e
 
 DOTFILES_ROOT=$(pwd)
-USER_HOME=$(eval echo ~$USER)
 
-for bootstrap in $(find $DOTFILES_ROOT -name "bootstrap" -not -path ./*.sh)
+for bootstrap in $(find $DOTFILES_ROOT -name "bootstrap" -not -path './*.sh')
 do
     echo -e "${blue}=================================================================${nc}"
     echo -e "${blue}Running $bootstrap${nc}"
