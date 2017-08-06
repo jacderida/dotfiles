@@ -20,7 +20,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 call vundle#end()
 
-colorscheme gruvbox
+:silent! colorscheme gruvbox
 filetype plugin indent on
 let mapleader=","
 syntax on
