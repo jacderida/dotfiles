@@ -74,12 +74,11 @@ let g:rainbow_active=1
 
 let g:airline_powerline_fonts = 1
 
+let g:gruvbox_invert_indent_guides=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 
 if has("win32")
    " These settings are to get ConEmu and Vim in Git Bash to play nice.
