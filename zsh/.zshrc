@@ -1,4 +1,4 @@
-export ZSH=/home/vagrant/.oh-my-zsh
+export ZSH=/home/$USER/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 HIST_STAMPS="mm/dd/yyyy"
 HYPHEN_INSENSITIVE="true"
