@@ -1,4 +1,5 @@
 export ZSH=/home/$USER/.oh-my-zsh
+export TERM=xterm-256color
 ZSH_THEME="powerlevel9k/powerlevel9k"
 HIST_STAMPS="mm/dd/yyyy"
 HYPHEN_INSENSITIVE="true"
