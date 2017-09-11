@@ -5,8 +5,8 @@ rm -f ~/.bashrc
 ln -f ./bash/.bashrc ~/.bashrc
 rm -f ~/.bash_profile
 ln -f ./bash/.bash_profile ~/.bash_profile
-rm -f ~/.bash_aliases
-ln -f ./bash/.bash_aliases ~/.bash_aliases
+rm -f ~/.aliases
+ln -f ./bash/.bash_aliases ~/.aliases
 rm -f ~/.profile
 ln -f ./bash/.profile ~/.profile
 

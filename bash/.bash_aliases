@@ -109,7 +109,6 @@ alias svnadd="svn status | grep -v \"^.[ \t]*\..*\" | grep \"^?\" | awk '{print 
 alias svnrm="svn status | grep -v \"^.[ \t]*\..*\" | grep \"^!\" | awk '{print $2}' | xargs svn rm"
 
 # Misc
-alias ls='ls++'
 alias cat="pygmentize -O style=monokai -f console256 -g"
 alias colourtest="perl $HOME/bin/colourtest -w"
 alias amu="python $HOME/dev/automated_music_utils/amu/clidriver.py"
