@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm -f ~/.xprofile
+ln -f ./xinit/.xprofile ~/.xprofile
