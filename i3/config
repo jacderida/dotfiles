@@ -6,10 +6,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 bindsym Super_L exec rofi -show run
 
-bindsym $mod+h exec "focus.py left"
-bindsym $mod+j exec "focus.py down"
-bindsym $mod+k exec "focus.py up"
-bindsym $mod+l exec "focus.py right"
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
