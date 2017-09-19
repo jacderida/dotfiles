@@ -47,6 +47,7 @@ set shiftwidth=4
 set smartindent
 set showcmd
 set shortmess+=A
+set t_Co=256
 set tabstop=4
 set viminfo+=!
 
@@ -63,6 +64,7 @@ au FileType json setlocal shiftwidth=2 tabstop=2
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
 au FileType yaml setlocal shiftwidth=2 tabstop=2
+au FocusGained * :q!
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
@@ -88,14 +90,24 @@ if has("win32")
    let &t_AF="\e[38;5;%dm"
 endif
 
-" In terminal mode, prevent the delay in transitioning from insert mode to
-" normal mode. Not sure how much performance this gains, but doesn't seem
-" to do any harm, so I'll leave it in.
+" Terminal specific settings.
 if ! has('gui_running')
+    " Prevent delay in transitioning from insert mode to normal mode.
+    " Not sure how much performance this gains, but doesn't seem to do
+    " any harm, so I'll leave it in.
     set ttimeoutlen=10
     augroup FastEscape
         autocmd!
         au InsertEnter * set timeoutlen=0
         au InsertLeave * set timeoutlen=1000
     augroup END
+
+    " The gruvbox theme doesn't get displayed correctly in terminal mode, so this
+    " little script needs to be executed to compensate and correct.
+    " Unfortunately, terminal mode doesn't seem to work with the FocusGained
+    " event, and whenever the window running Vim is unfocused, the script
+    " needs to be executed again, so I'm binding it to space, which is a
+    " decent solution.
+    :silent exec "!source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+    nnoremap <Space> :silent exec "!source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"<CR> :redraw!<CR>
 endif
