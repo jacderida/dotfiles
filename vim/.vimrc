@@ -18,6 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
+Plugin 'w0rp/ale'
 call vundle#end()
 
 :silent! colorscheme gruvbox
@@ -75,6 +76,7 @@ nnoremap <F4> :NERDTreeToggle<CR>
 let g:rainbow_active=1
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
 
 let g:gruvbox_invert_indent_guides=1
 let g:indent_guides_guide_size=1
