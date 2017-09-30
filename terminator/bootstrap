@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+[[ ! -d "$HOME/.config/terminator" ]] && mkdir $HOME/.config/terminator
 rm -f $HOME/.config/terminator/config
 ln -f ./terminator/config $HOME/.config/terminator/config
