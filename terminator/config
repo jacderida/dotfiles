@@ -11,5 +11,9 @@
 [plugins]
 [profiles]
   [[default]]
+    background_darkness = 0.90
+    background_image = None
+    background_type = transparent
     font = RobotoMono Nerd Font 12
+    scrollbar_position = hidden
     use_system_font = False
