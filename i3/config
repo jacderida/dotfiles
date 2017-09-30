@@ -72,5 +72,6 @@ bar {
 }
 
 exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id nitrogen --restore
 exec gnome-settings-daemon
 exec gnome-keyring-daemon
