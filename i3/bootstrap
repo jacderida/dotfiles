@@ -1,11 +1,5 @@
-#.find('GVIM') > 0!/usr/bin/env bash
+#!/usr/bin/env bash
 
 [[ ! -d "$HOME/.i3" ]] && mkdir $HOME/.i3
-[[ ! -d "$HOME/.vim/plugin" ]] && mkdir -p $HOME/.vim/plugin
-[[ ! -d "$HOME/bin" ]] && mkdir $HOME/bin
 rm -f $HOME/.i3/config
-rm -f $HOME/.vim/plugin/focus.vim
-rm -f $HOME/bin/focus.py
 ln -f ./i3/config $HOME/.i3/config
-ln -f ./i3/focus.vim $HOME/.vim/plugin/focus.vim
-ln -f ./i3/focus.py $HOME/bin/focus.py
