@@ -68,6 +68,7 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 0
 
 bar {
+    status_command i3blocks
     i3bar_command i3bar -t
 }
 
