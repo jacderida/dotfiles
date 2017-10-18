@@ -2,12 +2,11 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'mhinz/vim-signify'
 Plugin 'morhetz/gruvbox'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'oblitum/rainbow'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'Raimondi/delimitMate'
@@ -19,6 +18,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'w0rp/ale'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()
 
 :silent! colorscheme gruvbox
