@@ -6,6 +6,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'mhinz/vim-signify'
+Plugin 'mileszs/ack.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'oblitum/rainbow'
@@ -72,6 +73,8 @@ au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 let NERDTreeWinSize=40
 let NERDTreeIgnore=['\.pyc$']
 nnoremap <F4> :NERDTreeToggle<CR>
+
+let g:ackprg = 'ag --vimgrep'
 
 let g:rainbow_active=1
 
