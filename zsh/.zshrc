@@ -15,3 +15,5 @@ source $ZSH/oh-my-zsh.sh
 
 export NOSE_REDNOSE=1 # For python based unit testing with nosetests.
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+
+unsetopt correct_all
