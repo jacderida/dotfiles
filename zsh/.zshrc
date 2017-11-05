@@ -6,7 +6,7 @@ HIST_STAMPS="mm/dd/yyyy"
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git zsh-syntax-highlighting)
+plugins=(docker git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
