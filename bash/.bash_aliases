@@ -42,7 +42,8 @@ function run_azure() {
     -v ~/.azure:/home/user/.azure \
     -v ~/.ssh:/home/user/.ssh:ro \
     -v ~/bin:/home/user/bin \
-    -v ~/.bashrc:/home/user/.bashrc \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
     -v $(pwd):/home/user/$(basename `pwd`) \
     -h azure-0-10-6 \
     -u user -it jacderida/azure-cli:0.10.6
@@ -55,7 +56,8 @@ function run_terragrunt() {
     -v ~/.azure:/home/user/.azure \
     -v ~/.ssh:/home/user/.ssh:ro \
     -v ~/bin:/home/user/bin \
-    -v ~/.bashrc:/home/user/.bashrc \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
     -v $(pwd):/home/user/$(basename `pwd`) \
     -h terragrunt-0-11-0 \
     -u user -it jacderida/terragrunt:0.11.0
@@ -68,7 +70,8 @@ function run_aws() {
     -v ~/.aws:/home/user/.aws \
     -v ~/.ssh:/home/user/.ssh:ro \
     -v ~/bin:/home/user/bin \
-    -v ~/.bashrc:/home/user/.bashrc \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
     -v $(pwd):/home/user/$(basename `pwd`) \
     -h aws-1-11-57 \
     -u user -it jacderida/awscli:1.11.57
@@ -78,24 +81,38 @@ alias aws="run_aws"
 function run_ansible() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
-    -v ~/.bashrc:/home/user/.bashrc \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
     -v ~/.ansible:/home/user/.ansible \
     -v $(pwd):/home/user/$(basename `pwd`) \
-    -h ansible-2-1-0-0 \
-    -u user -it jacderida/ansible:2.1.0.0
+    -h ansible-2-1-1-0 \
+    -u user -it jacderida/ansible:2.1.1.0
 }
 alias ansible="run_ansible"
 
 function run_oc() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
-    -v ~/.bashrc:/home/user/.bashrc \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
     -v $(pwd):/home/user/$(basename `pwd`) \
     -v ~/.docker:/home/user/.docker \
     -h oc-3-1-1-6 \
     -u user -it jacderida/openshift-enterprise-client-tools:3.1.1.6
 }
 alias oc-enterprise="run_oc"
+
+function run_oc_origin() {
+    docker run --rm \
+    -v ~/.ssh:/home/user/.ssh \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
+    -v $(pwd):/home/user/$(basename `pwd`) \
+    -v ~/.docker:/home/user/.docker \
+    -h oc-1-2-1 \
+    -u user -it jacderida/openshift-origin-client-tools:1.2.1
+}
+alias oc-origin="run_oc_origin"
 
 # Vagrant
 alias vup="vagrant up"
