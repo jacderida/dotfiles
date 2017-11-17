@@ -114,6 +114,19 @@ function run_oc_origin() {
 }
 alias oc-origin="run_oc_origin"
 
+function run_gcloud() {
+    docker run --rm \
+    -v ~/.ssh:/home/user/.ssh \
+    -v ~/.zshrc:/home/user/.zshrc \
+    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
+    -v $(pwd):/home/user/$(basename `pwd`) \
+    -v ~/.docker:/home/user/.docker \
+    -v ~/.config/gcloud:/home/user/.config/gcloud \
+    -h gcloud-178-0-0 \
+    -u user -it jacderida/gcloud:178.0.0
+}
+alias gcloud="run_gcloud"
+
 # Vagrant
 alias vup="vagrant up"
 alias vaws="vagrant up --provider=aws"
