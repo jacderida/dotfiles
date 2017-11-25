@@ -2,4 +2,4 @@
 
 echo -e "${green}Removing .emacs and linking from dotfiles${nc}"
 rm -f ~/.emacs
-ln -f ./emacs/.emacs ~/.emacs
+#ln -f ./emacs/.emacs ~/.emacs
