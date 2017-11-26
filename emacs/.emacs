@@ -56,6 +56,11 @@
   :config
   (yaml-mode))
 
+(use-package gruvbox-theme
+  :ensure t)
+
+(load-theme 'gruvbox-dark-hard t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
