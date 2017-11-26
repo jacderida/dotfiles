@@ -61,6 +61,11 @@
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+(use-package telephone-line
+  :ensure t
+  :config
+  (telephone-line-evil-config))
+
 (use-package gruvbox-theme
   :ensure t)
 
