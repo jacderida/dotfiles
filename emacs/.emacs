@@ -6,8 +6,6 @@
 
 (setq package-enable-at-startup nil)
 (package-initialize)
-(require 'evil)
-(evil-mode t)
 
 (global-linum-mode t)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
@@ -20,6 +18,13 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1)
+  (evil-define-key 'normal global-map (kbd "C-p") 'helm-projectile)
+  (evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project))
+
 (use-package helm
   :ensure t
   :config
@@ -29,7 +34,17 @@
   (define-key global-map [remap find-file] 'helm-find-files)
   (define-key global-map [remap occur] 'helm-occur)
   (helm-autoresize-mode 1)
-  (helm-mode 1))
+  (helm-mode 1)
+
+  (use-package helm-ag
+    :ensure t)
+  (use-package helm-projectile
+    :ensure t))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode 1))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
