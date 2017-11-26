@@ -23,7 +23,12 @@
   :config
   (evil-mode 1)
   (evil-define-key 'normal global-map (kbd "C-p") 'helm-projectile)
-  (evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project))
+  (evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project)
+
+  (use-package evil-surround
+    :ensure t
+    :config
+    (global-evil-surround-mode)))
 
 (use-package helm
   :ensure t
