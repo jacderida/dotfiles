@@ -1,31 +1,41 @@
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
+(require 'package)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+
+(setq package-enable-at-startup nil)
 (package-initialize)
-(defun require-package (package)
-  (setq-default highlight-tabs t)
-  "Install given PACKAGE."
-  (unless (package-installed-p package)
-    (unless (assoc package package-archive-contents)
-      (package-refresh-contents)
-     package-install package)))
-(load-theme 'tango-dark t)
-(add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
-(require 'evil-leader)
-(require 'relative-line-numbers)
-(require 'helm-config)
 (evil-mode t)
 
-(global-evil-leader-mode t)
-(setq evil-leader/in-all-states t)
-(evil-leader/set-leader ",")
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
 
-(global-relative-line-numbers-mode)
-(defun jp-rel-format (offset)
-    "Another formatting function"
-      (format "%03d " (abs offset)))
-(setq relative-line-numbers-format 'jp-rel-format)
 
-(global-set-key (kbd "M-x") 'helm-M-x)
+(use-package helm
+  :ensure t
+  :config
+  (require 'helm-config)
+  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (define-key global-map [remap find-file] 'helm-find-files)
+  (define-key global-map [remap occur] 'helm-occur)
+  (helm-autoresize-mode 1)
+  (helm-mode 1))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (evil-visual-mark-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
