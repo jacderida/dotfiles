@@ -56,6 +56,11 @@
   :config
   (yaml-mode))
 
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
 (use-package gruvbox-theme
   :ensure t)
 
