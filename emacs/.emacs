@@ -10,6 +10,9 @@
 (evil-mode t)
 
 (global-linum-mode t)
+(setq default-frame-alist '((vertical-scroll-bars . nil)
+                            (tool-bar-lines . 0)
+                            (menu-bar-lines . 0)))
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
