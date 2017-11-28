@@ -66,6 +66,11 @@
   :config
   (telephone-line-evil-config))
 
+(use-package company
+  :ensure t
+  :config
+  (company-mode 1))
+
 (use-package gruvbox-theme
   :ensure t)
 
