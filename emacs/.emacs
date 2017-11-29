@@ -12,6 +12,12 @@
                             (tool-bar-lines . 0)
                             (menu-bar-lines . 0)))
 
+(setq frame-title-format
+  (list (format "%s %%S: %%j " (system-name))
+    '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+(setq make-backup-files nil)
+(setq-default tab-width 4 indent-tabs-mode nil)
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -27,10 +33,15 @@
   (evil-define-key 'normal global-map (kbd "C-p") 'helm-projectile)
   (evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project)
 
+  (use-package smartparens
+    :ensure t)
+
   (use-package evil-surround
     :ensure t
     :config
-    (global-evil-surround-mode)))
+    (global-evil-surround-mode))
+
+  (add-hook 'smartparents-enabled-hook #'evil-smartparens-mode))
 
 (use-package helm
   :ensure t
