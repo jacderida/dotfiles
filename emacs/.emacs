@@ -45,6 +45,10 @@
 
 (use-package helm
   :ensure t
+  :init
+  (setq helm-input-idle-delay 0.1)
+  (setq helm-cycle-resume-delay 2)
+  (setq helm-follow-input-idle-delay 1)
   :config
   (require 'helm-config)
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
