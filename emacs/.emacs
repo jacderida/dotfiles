@@ -36,7 +36,9 @@
   (evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project)
 
   (use-package evil-surround
-    :ensure t)
+    :ensure t
+    :config
+    (global-evil-surround-mode 1))
 
   (use-package evil-smartparens
     :init
