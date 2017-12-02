@@ -45,7 +45,6 @@
     (add-hook 'smartparents-enabled-hook #'evil-smartparens-mode)
     :ensure t))
 
-
 (use-package helm
   :ensure t
   :init
@@ -114,6 +113,14 @@
       (define-key evil-normal-state-local-map (kbd "s") 'neotree-enter-vertical-split)
       (define-key evil-normal-state-local-map (kbd "i") 'neotree-enter-horizontal-split)
       (define-key evil-normal-state-local-map (kbd "o") 'neotree-enter))))
+
+(use-package json-mode
+  :ensure t
+  :init
+  (add-hook 'json-mode-hook
+    (lambda ()
+      (make-local-variable 'js-indent-level)
+      (setq js-indent-level 2))))
 
 (use-package gruvbox-theme
   :ensure t)
