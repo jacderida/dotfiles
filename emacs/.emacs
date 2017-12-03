@@ -122,6 +122,9 @@
       (make-local-variable 'js-indent-level)
       (setq js-indent-level 2))))
 
+(use-package powershell
+  :ensure t)
+
 (use-package gruvbox-theme
   :ensure t)
 
