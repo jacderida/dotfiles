@@ -87,13 +87,23 @@
 
 (use-package company
   :ensure t
-  :config
+  :init
   (global-company-mode)
+  :config
+  (add-to-list 'company-backends 'company-jedi)
+  (add-to-list 'company-backends '(company-shell company-shell-env))
   (setq company-idle-delay 0.2)
   (setq company-selection-wrap-around t)
   (define-key company-active-map [tab] 'company-complete)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
-  (define-key company-active-map (kbd "C-p") 'company-select-previous))
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+
+  (use-package company-jedi
+    :ensure t)
+  (use-package company-shell
+    :ensure t)
+  (use-package company-shell-env
+    :ensure t))
 
 (use-package markdown-mode
   :ensure t
