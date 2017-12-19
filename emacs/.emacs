@@ -32,6 +32,8 @@
   (setq evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (evil-define-key 'normal global-map (kbd "C-p") 'helm-projectile)
   (evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project)
 
