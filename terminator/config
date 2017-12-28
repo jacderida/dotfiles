@@ -11,9 +11,11 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.90
-    background_image = None
+    background_color = "#282828"
+    background_darkness = 0.9
     background_type = transparent
+    cursor_color = "#aaaaaa"
     font = RobotoMono Nerd Font 12
+    foreground_color = "#ebdbb2"
     scrollbar_position = hidden
     use_system_font = False
