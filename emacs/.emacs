@@ -142,6 +142,26 @@
 (use-package powershell
   :ensure t)
 
+(use-package org
+  :ensure t
+  :defer t
+  :commands (org-capture)
+  :bind (("C-c a" . org-agenda)
+         ("C-c l" . org-store-link))
+  :config
+  (setq org-log-done t)
+  (setq org-agenda-files '("~/org/work.org"
+                           "~/org/personal.org")))
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme))))
+
 (use-package gruvbox-theme
   :ensure t)
 
