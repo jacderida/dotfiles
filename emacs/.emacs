@@ -163,6 +163,12 @@
             (lambda ()
               (evil-org-set-key-theme))))
 
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-bullets-bullet-list '("✙" "♱" "♰" "☥" "✞" "✟" "✝" "†" "✠" "✚" "✜" "✛" "✢" "✣" "✤" "✥")))
+
 (use-package gruvbox-theme
   :ensure t)
 
