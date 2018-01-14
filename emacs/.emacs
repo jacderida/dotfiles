@@ -149,6 +149,7 @@
   :bind (("C-c a" . org-agenda)
          ("C-c l" . org-store-link))
   :config
+  (setq org-startup-with-inline-images t)
   (setq org-log-done t)
   (setq org-agenda-files '("~/org/work.org"
                            "~/org/personal.org")))
