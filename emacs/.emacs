@@ -169,6 +169,20 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (setq org-bullets-bullet-list '("✙" "♱" "♰" "☥" "✞" "✟" "✝" "†" "✠" "✚" "✜" "✛" "✢" "✣" "✤" "✥")))
 
+(use-package page-break-lines
+  :ensure t
+  :init
+  (global-page-break-lines-mode))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-items '((recents . 5)
+                          (bookmarks . 5)
+                          (projects . 5))))
+
 (use-package gruvbox-theme
   :ensure t)
 
