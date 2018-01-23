@@ -24,6 +24,8 @@
 (eval-when-compile
   (require 'use-package))
 
+(require 'diminish)
+
 (smartparens-global-mode t)
 
 (use-package evil
@@ -45,10 +47,12 @@
   (use-package evil-smartparens
     :init
     (add-hook 'smartparents-enabled-hook #'evil-smartparens-mode)
-    :ensure t))
+    :ensure t
+    :diminish smartparens-mode))
 
 (use-package helm
   :ensure t
+  :diminish helm-mode
   :init
   (setq helm-input-idle-delay 0.1)
   (setq helm-cycle-resume-delay 2)
@@ -74,11 +78,13 @@
 
 (use-package yaml-mode
   :ensure t
+  :diminish yaml-mode
   :config
   (yaml-mode))
 
 (use-package rainbow-delimiters
   :ensure t
+  :diminish rainbow-delimiters-mode
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
@@ -89,6 +95,7 @@
 
 (use-package company
   :ensure t
+  :diminish company-mode
   :init
   (global-company-mode)
   :config
@@ -160,6 +167,7 @@
 
 (use-package page-break-lines
   :ensure t
+  :diminish page-break-lines-mode
   :init
   (global-page-break-lines-mode))
 
@@ -174,8 +182,15 @@
 
 (use-package git-gutter
   :ensure t
+  :diminish git-gutter-mode
   :init
   (global-git-gutter-mode 1))
+
+(use-package undo-tree
+  :ensure t
+  :diminish undo-tree-mode
+  :config
+  (setq undo-tree-auto-save-history t))
 
 (use-package gruvbox-theme
   :ensure t)
