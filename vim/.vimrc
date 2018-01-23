@@ -107,13 +107,4 @@ if ! has('gui_running')
         au InsertEnter * set timeoutlen=0
         au InsertLeave * set timeoutlen=1000
     augroup END
-
-    " The gruvbox theme doesn't get displayed correctly in terminal mode, so this
-    " little script needs to be executed to compensate and correct.
-    " Unfortunately, terminal mode doesn't seem to work with the FocusGained
-    " event, and whenever the window running Vim is unfocused, the script
-    " needs to be executed again, so I'm binding it to space, which is a
-    " decent solution.
-    :silent exec "!source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-    nnoremap <Space> :silent exec "!source $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"<CR> :redraw!<CR>
 endif
