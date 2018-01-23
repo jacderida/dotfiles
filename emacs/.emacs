@@ -113,7 +113,9 @@
   :mode (("README\\.md\\'" . gfm-mode)
 	 ("\\.md\\'" . markdown-mode)
 	 ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+  :init (setq markdown-command "multimarkdown")
+  :config
+  (add-hook 'markdown-mode-hook 'flyspell-mode))
 
 (use-package neotree
   :ensure t
@@ -151,8 +153,11 @@
   :config
   (setq org-startup-with-inline-images t)
   (setq org-log-done t)
-  (setq org-agenda-files '("~/org/work.org"
-                           "~/org/personal.org")))
+  (setq org-agenda-files '("~/org/"))
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (when (not (eq major-mode 'org-agenda-mode))
+                (flyspell-mode)))))
 
 (use-package evil-org
   :ensure t
