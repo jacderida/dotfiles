@@ -117,22 +117,6 @@
   :config
   (add-hook 'markdown-mode-hook 'flyspell-mode))
 
-(use-package neotree
-  :ensure t
-  :config
-  (global-set-key [f4] 'neotree-toggle)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
-  (add-hook 'neotree-mode-hook
-    (lambda ()
-      (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-      (define-key evil-normal-state-local-map (kbd "r") 'neotree-refresh)
-      (define-key evil-normal-state-local-map (kbd "m") 'neotree-rename-node)
-      (define-key evil-normal-state-local-map (kbd "c") 'neotree-create-node)
-      (define-key evil-normal-state-local-map (kbd "d") 'neotree-delete-node)
-      (define-key evil-normal-state-local-map (kbd "s") 'neotree-enter-vertical-split)
-      (define-key evil-normal-state-local-map (kbd "i") 'neotree-enter-horizontal-split)
-      (define-key evil-normal-state-local-map (kbd "o") 'neotree-enter))))
-
 (use-package json-mode
   :ensure t
   :init
