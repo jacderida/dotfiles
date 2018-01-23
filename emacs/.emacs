@@ -172,6 +172,11 @@
                           (bookmarks . 5)
                           (projects . 5))))
 
+(use-package git-gutter
+  :ensure t
+  :init
+  (global-git-gutter-mode 1))
+
 (use-package gruvbox-theme
   :ensure t)
 
