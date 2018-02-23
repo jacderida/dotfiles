@@ -101,7 +101,7 @@
   :config
   (add-to-list 'company-backends 'company-jedi)
   (add-to-list 'company-backends '(company-shell company-shell-env))
-  (setq company-idle-delay 0.2)
+  (setq company-idle-delay 0.1)
   (setq company-selection-wrap-around t)
   (define-key company-active-map [tab] 'company-complete)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
@@ -112,6 +112,17 @@
   (use-package company-shell
     :ensure t)
   (use-package company-shell-env
+    :ensure t))
+
+(use-package yasnippet
+  :ensure t
+  :defer t
+  :init
+  (yas-global-mode t)
+  :config
+  (yas-reload-all)
+
+  (use-package yasnippet-snippets
     :ensure t))
 
 (use-package markdown-mode
