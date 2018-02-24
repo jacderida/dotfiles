@@ -16,6 +16,8 @@
   (list (format "%s %%S: %%j " (system-name))
     '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 (setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq backup-directory-alist '(("" . "~/.emacs.d/backups")))
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 (unless (package-installed-p 'use-package)
@@ -99,14 +101,18 @@
   :init
   (global-company-mode)
   :config
+  (add-to-list 'company-backends 'company-ansible)
   (add-to-list 'company-backends 'company-jedi)
   (add-to-list 'company-backends '(company-shell company-shell-env))
   (setq company-idle-delay 0.1)
+  (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
   (define-key company-active-map [tab] 'company-complete)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
 
+  (use-package company-ansible
+    :ensure t)
   (use-package company-jedi
     :ensure t)
   (use-package company-shell
