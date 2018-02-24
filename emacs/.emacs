@@ -18,6 +18,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq backup-directory-alist '(("" . "~/.emacs.d/backups")))
+(setq undo-tree-history-directory-alist '(("" . "~/.emacs.d/backups")))
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 (unless (package-installed-p 'use-package)
