@@ -216,6 +216,11 @@
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
   (setq highlight-indent-guides-method 'column))
 
+(use-package ansible
+  :ensure t
+  :config
+  (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
+
 (use-package gruvbox-theme
   :ensure t)
 
