@@ -1,6 +1,5 @@
 set $mod mod4
-font pango:monospace 8
-floating_modifier $mod
+font pango:monospace 8 floating_modifier $mod
 
 bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+q kill
@@ -65,9 +64,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 for_window [class="^.*"] border pixel 1
-for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
-for_window [class="(?i)VirtualBox"] floating enable
-for_window [class="(?i)VirtualBox"] border pixel 5
 
 bar {
     status_command i3blocks
