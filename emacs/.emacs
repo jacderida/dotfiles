@@ -51,7 +51,13 @@
     :init
     (add-hook 'smartparents-enabled-hook #'evil-smartparens-mode)
     :ensure t
-    :diminish smartparens-mode))
+    :diminish smartparens-mode)
+  
+  (use-package evil-leader
+    :ensure t
+    :config
+    (global-evil-leader-mode)
+    (evil-leader/set-leader ",")))
 
 (use-package helm
   :ensure t
@@ -221,6 +227,17 @@
   :config
   (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
 
+(use-package flycheck
+  :ensure t
+  :diminish flycheck-mode
+  :config
+  (add-hook 'after-init-hook 'global-flycheck-mode)
+  (add-hook 'flycheck-mode-hook
+            (lambda ()
+              (evil-define-key 'normal flycheck-mode-map (kbd "]e") 'flycheck-next-error)
+              (evil-define-key 'normal flycheck-mode-map (kbd "[e") 'flycheck-previous-error)
+              (evil-leader/set-key (kbd "e") 'flycheck-list-errors))))
+
 (use-package gruvbox-theme
   :ensure t)
 
@@ -231,7 +248,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil-visual-mark-mode))))
+ '(package-selected-packages (quote (flycheck company-shell-env evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
