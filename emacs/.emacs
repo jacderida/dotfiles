@@ -166,6 +166,7 @@
   :bind (("C-c a" . org-agenda)
          ("C-c l" . org-store-link))
   :config
+  (setq-default fill-column 100)
   (setq org-startup-with-inline-images t)
   (setq org-log-done t)
   (setq org-agenda-files '("~/org/"))
