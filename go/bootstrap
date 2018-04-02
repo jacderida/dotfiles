@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo -e "${green}Removing .go_settings and linking from dotfiles${nc}"
+rm -f $HOME/.go_settings
+ln -f ./go/.go_settings $HOME/.go_settings

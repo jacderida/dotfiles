@@ -10,6 +10,7 @@ plugins=(docker git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -s "$HOME/.go_settings" ]] && source "$HOME/.go_settings"
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 [[ -s "$HOME/.terraform" ]] && source "$HOME/.terraform"
 
