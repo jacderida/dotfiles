@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e "${green}Removing .emacs and linking from dotfiles${nc}"
-rm -f $HOME/.emacs
-ln -f ./emacs/.emacs $HOME/.emacs
-[[ ! -d $HOME/.emacs.d/backups ]] && mkdir -p $HOME/.emacs.d/backups
+#echo -e "${green}Removing .emacs and linking from dotfiles${nc}"
+#rm -f $HOME/.emacs
+#ln -f ./emacs/.emacs $HOME/.emacs
+#[[ ! -d $HOME/.emacs.d/backups ]] && mkdir -p $HOME/.emacs.d/backups
