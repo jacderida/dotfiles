@@ -29,8 +29,6 @@
 
 (require 'diminish)
 
-(smartparens-global-mode t)
-
 (use-package evil
   :ensure t
   :init
@@ -58,6 +56,8 @@
     :config
     (global-evil-leader-mode)
     (evil-leader/set-leader ",")))
+
+(smartparens-global-mode t)
 
 (use-package helm
   :ensure t
@@ -110,7 +110,6 @@
   :config
   (add-to-list 'company-backends 'company-ansible)
   (add-to-list 'company-backends 'company-jedi)
-  (add-to-list 'company-backends '(company-shell company-shell-env))
   (setq company-idle-delay 0.1)
   (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
@@ -123,8 +122,6 @@
   (use-package company-jedi
     :ensure t)
   (use-package company-shell
-    :ensure t)
-  (use-package company-shell-env
     :ensure t))
 
 (use-package yasnippet
@@ -238,6 +235,11 @@
               (evil-define-key 'normal flycheck-mode-map (kbd "]e") 'flycheck-next-error)
               (evil-define-key 'normal flycheck-mode-map (kbd "[e") 'flycheck-previous-error)
               (evil-leader/set-key (kbd "e") 'flycheck-list-errors))))
+
+(use-package virtualenvwrapper
+  :ensure t
+  :config
+  (setq venv-location (expand-file-name "~/.virtualenvs")))
 
 (use-package gruvbox-theme
   :ensure t)
