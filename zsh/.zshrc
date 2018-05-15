@@ -14,6 +14,13 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 [[ -s "$HOME/.terraform" ]] && source "$HOME/.terraform"
 
+if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
+   export WORKON_HOME=$HOME/.virtualenvs
+   export PROJECT_HOME=$HOME/dev
+   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+   source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 export NOSE_REDNOSE=1 # For python based unit testing with nosetests.
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
