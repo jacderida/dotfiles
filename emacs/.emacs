@@ -8,6 +8,7 @@
 (package-initialize)
 
 (global-linum-mode t)
+(setq sgml-quick-keys 'indent)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
                             (tool-bar-lines . 0)
                             (menu-bar-lines . 0)))
@@ -110,7 +111,8 @@
   :config
   (add-to-list 'company-backends 'company-ansible)
   (add-to-list 'company-backends 'company-jedi)
-  (setq company-idle-delay 0.1)
+  (add-to-list 'company-backends 'company-web-html)
+  (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
   (define-key company-active-map [tab] 'company-complete)
@@ -122,6 +124,8 @@
   (use-package company-jedi
     :ensure t)
   (use-package company-shell
+    :ensure t)
+  (use-package company-web
     :ensure t))
 
 (use-package yasnippet
