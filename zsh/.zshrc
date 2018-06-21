@@ -13,6 +13,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.go_settings" ]] && source "$HOME/.go_settings"
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 [[ -s "$HOME/.terraform" ]] && source "$HOME/.terraform"
+[[ -s "$HOME/.java_settings" ]] && source "$HOME/.java_settings"
 
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
    export WORKON_HOME=$HOME/.virtualenvs
