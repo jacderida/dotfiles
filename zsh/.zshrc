@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.proxy" ]] && source "$HOME/.proxy"
 [[ -s "$HOME/.terraform" ]] && source "$HOME/.terraform"
 [[ -s "$HOME/.java_settings" ]] && source "$HOME/.java_settings"
+[[ -s "$HOME/.gradle_settings" ]] && source "$HOME/.gradle_settings"
 
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
    export WORKON_HOME=$HOME/.virtualenvs
