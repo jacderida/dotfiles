@@ -1,5 +1,9 @@
 (require 'package)
 
+(setq url-proxy-services '(("no_proxy" . "slc.co.uk,127.0.0.1")
+                           ("http_proxy" . "10.0.2.2:3128")
+                           ("https_proxy" . "10.0.2.2:3128")))
+
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
@@ -20,6 +24,7 @@
 (setq auto-save-default nil)
 (setq backup-directory-alist '(("" . "~/.emacs.d/backups")))
 (setq undo-tree-history-directory-alist '(("" . "~/.emacs.d/backups")))
+(set-default 'truncate-lines t)
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 (unless (package-installed-p 'use-package)
@@ -228,6 +233,9 @@
   :ensure t
   :config
   (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
+
+(use-package groovy-mode
+  :ensure t)
 
 (use-package flycheck
   :ensure t
