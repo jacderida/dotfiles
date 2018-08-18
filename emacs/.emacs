@@ -1,9 +1,5 @@
 (require 'package)
 
-(setq url-proxy-services '(("no_proxy" . "slc.co.uk,127.0.0.1")
-                           ("http_proxy" . "10.0.2.2:3128")
-                           ("https_proxy" . "10.0.2.2:3128")))
-
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
@@ -103,10 +99,26 @@
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-(use-package telephone-line
+(use-package powerline
   :ensure t
   :config
-  (telephone-line-evil-config))
+  (powerline-vim-theme)
+  (setq powerline-utf-8-separator-left       #xe0b0
+        powerline-utf-8-separator-right      #xe0b2
+        airline-utf-glyph-separator-left     #xe0b0
+        airline-utf-glyph-separator-right    #xe0b2
+        airline-utf-glyph-subseparator-left  #xe0b1
+        airline-utf-glyph-subseparator-right #xe0b3
+        airline-utf-glyph-branch             #xe0a0
+        airline-utf-glyph-readonly           #xe0a2
+        airline-utf-glyph-linenumber         #xe0a1)
+  
+  (use-package powerline-evil
+    :ensure t)
+  (use-package airline-themes
+    :ensure t
+    :config
+    (load-theme 'airline-kalisi)))
 
 (use-package company
   :ensure t
