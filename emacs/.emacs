@@ -139,7 +139,9 @@
   (use-package company-ansible
     :ensure t)
   (use-package company-jedi
-    :ensure t)
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook 'jedi-mode))
   (use-package company-shell
     :ensure t)
   (use-package company-web
@@ -275,6 +277,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("cf284fac2a56d242ace50b6d2c438fcc6b4090137f1631e32bedf19495124600" default)))
  '(package-selected-packages (quote (flycheck company-shell-env evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
