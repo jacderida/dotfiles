@@ -67,7 +67,7 @@ for_window [class="^.*"] border pixel 1
 
 bar {
     status_command i3blocks
-    i3bar_command i3bar -t
+    font pango:DejaVu Sans Mono Nerd Font Complete 11
 }
 
 exec --no-startup-id setxkbmap -option ctrl:nocaps
