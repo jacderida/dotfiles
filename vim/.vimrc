@@ -1,33 +1,30 @@
 set nocompatible
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'mhinz/vim-signify'
-Plugin 'mileszs/ack.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'oblitum/rainbow'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'rhysd/committia.vim'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/NERDTree'
-Plugin 'sheerun/vim-polygot'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'w0rp/ale'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'gmarik/Vundle.vim'
+Plug 'godlygeek/tabular'
+Plug 'mhinz/vim-signify'
+Plug 'mileszs/ack.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'oblitum/rainbow'
+Plug 'pearofducks/ansible-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'rhysd/committia.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/NERDTree'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
+call plug#end()
 
 :silent! colorscheme gruvbox
-filetype plugin indent on
 let mapleader=","
 syntax on
 
