@@ -4,10 +4,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
-;; (setq url-proxy-services '(("no_proxy" . "localhost,slc.co.uk,vagrantup.internal")
-;;                            ("http" . "10.0.2.2:3128")
-;;                            ("https" . "10.0.2.2:3128")))
-
 (setq package-enable-at-startup nil)
 (package-initialize)
 
