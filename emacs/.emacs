@@ -7,7 +7,7 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
 (setq sgml-quick-keys 'indent)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
                             (tool-bar-lines . 0)
