@@ -268,6 +268,9 @@
   :config
   (setq venv-location (expand-file-name "~/.virtualenvs")))
 
+(use-package iedit
+  :ensure t)
+
 (use-package gruvbox-theme
   :ensure t)
 
@@ -281,7 +284,9 @@
  '(custom-safe-themes
    (quote
     ("cf284fac2a56d242ace50b6d2c438fcc6b4090137f1631e32bedf19495124600" default)))
- '(package-selected-packages (quote (flycheck company-shell-env evil-visual-mark-mode))))
+ '(package-selected-packages
+   (quote
+    (iedit flycheck company-shell-env evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
