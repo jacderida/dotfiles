@@ -132,6 +132,7 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
+  (setq company-tooltip-align-annotations t)
   (define-key company-active-map [tab] 'company-complete)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
@@ -146,6 +147,22 @@
     :ensure t)
   (use-package company-web
     :ensure t))
+
+(use-package rust-mode
+  :ensure t
+  :config
+  (use-package cargo
+    :ensure t)
+  (use-package racer
+    :ensure t
+    :config
+    (add-hook 'rust-mode-hook #'racer-mode)
+    (add-hook 'racer-mode-hook #'eldoc-mode))
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  (add-hook 'racer-mode-hook #'company-mode)
+  (add-hook 'rust-mode-hook
+            (lambda()
+              (local-set-key (kbd "C-c <tab>") #'rust-format-buffer))))
 
 (use-package yasnippet
   :ensure t
