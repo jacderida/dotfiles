@@ -153,6 +153,12 @@
   :config
   (use-package cargo
     :ensure t)
+  (use-package flycheck-rust
+    :ensure t
+    :init
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+    :config
+    (setq flycheck-rust-cargo-executable "~/.cargo/bin/cargo"))
   (use-package racer
     :ensure t
     :config
