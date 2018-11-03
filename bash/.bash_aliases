@@ -78,18 +78,6 @@ function run_aws() {
 }
 alias aws="run_aws"
 
-function run_ansible() {
-    docker run --rm \
-    -v ~/.ssh:/home/user/.ssh \
-    -v ~/.zshrc:/home/user/.zshrc \
-    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
-    -v ~/.ansible:/home/user/.ansible \
-    -v $(pwd):/home/user/$(basename `pwd`) \
-    -h ansible-2-1-1-0 \
-    -u user -it jacderida/ansible:2.1.1.0
-}
-alias ansible="run_ansible"
-
 function run_oc() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
