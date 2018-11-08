@@ -64,20 +64,6 @@ function run_terragrunt() {
 }
 alias terragrunt="run_terragrunt"
 
-function run_aws() {
-    docker run --rm \
-    -v ~/.aws_keys:/home/user/.aws_keys \
-    -v ~/.aws:/home/user/.aws \
-    -v ~/.ssh:/home/user/.ssh:ro \
-    -v ~/bin:/home/user/bin \
-    -v ~/.zshrc:/home/user/.zshrc \
-    -v ~/.oh-my-zsh:/home/user/.oh-my-zsh \
-    -v $(pwd):/home/user/$(basename `pwd`) \
-    -h aws-1-11-57 \
-    -u user -it jacderida/awscli:1.11.57
-}
-alias aws="run_aws"
-
 function run_oc() {
     docker run --rm \
     -v ~/.ssh:/home/user/.ssh \
