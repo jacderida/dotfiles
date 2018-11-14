@@ -17,6 +17,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.gradle_settings" ]] && source "$HOME/.gradle_settings"
 [[ -s "$HOME/.pip_settings" ]] && source "$HOME/.pip_settings"
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -s "$HOME/.aws" ]] && source "$HOME/.aws"
 [[ -s "$HOME/.config/terminator/gruvbox_256palette.sh" ]] && source "$HOME/.config/terminator/gruvbox_256palette.sh"
 
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
