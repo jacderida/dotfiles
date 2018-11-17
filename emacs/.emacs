@@ -4,14 +4,10 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
-;; (setq url-proxy-services '(("no_proxy" . "localhost,slc.co.uk,vagrantup.internal")
-;;                            ("http" . "10.0.2.2:3128")
-;;                            ("https" . "10.0.2.2:3128")))
-
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
 (setq sgml-quick-keys 'indent)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
                             (tool-bar-lines . 0)
@@ -136,6 +132,7 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
+  (setq company-tooltip-align-annotations t)
   (define-key company-active-map [tab] 'company-complete)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
@@ -150,6 +147,28 @@
     :ensure t)
   (use-package company-web
     :ensure t))
+
+(use-package rust-mode
+  :ensure t
+  :config
+  (use-package cargo
+    :ensure t)
+  (use-package flycheck-rust
+    :ensure t
+    :init
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+    :config
+    (setq flycheck-rust-cargo-executable "~/.cargo/bin/cargo"))
+  (use-package racer
+    :ensure t
+    :config
+    (add-hook 'rust-mode-hook #'racer-mode)
+    (add-hook 'racer-mode-hook #'eldoc-mode))
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  (add-hook 'racer-mode-hook #'company-mode)
+  (add-hook 'rust-mode-hook
+            (lambda()
+              (local-set-key (kbd "C-c <tab>") #'rust-format-buffer))))
 
 (use-package yasnippet
   :ensure t
@@ -272,6 +291,9 @@
   :config
   (setq venv-location (expand-file-name "~/.virtualenvs")))
 
+(use-package iedit
+  :ensure t)
+
 (use-package gruvbox-theme
   :ensure t)
 
@@ -285,7 +307,9 @@
  '(custom-safe-themes
    (quote
     ("cf284fac2a56d242ace50b6d2c438fcc6b4090137f1631e32bedf19495124600" default)))
- '(package-selected-packages (quote (flycheck company-shell-env evil-visual-mark-mode))))
+ '(package-selected-packages
+   (quote
+    (iedit flycheck company-shell-env evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
