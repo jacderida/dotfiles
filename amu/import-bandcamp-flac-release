@@ -10,11 +10,12 @@ if [[ -z "${zip_file// }" || -z "${release_id// }" ]]; then
     exit 1
 fi
 
-destination="/home/jacderida/Music/incoming/wav/$release_id"
+destination="/mnt/archive/music/incoming/wav/$release_id"
 
 function unpack_archive() {
     [[ -d "$destination" ]] && rm -rf "$destination" && mkdir "$destination"
     unzip "$zip_file" -d "$destination"
+    rm $destination/*.pdf
 }
 
 function decode_release() {
