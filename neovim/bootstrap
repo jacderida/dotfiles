@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm -f ~/.config/nvim/init.vim
+ln -f neovim/init.vim ~/.config/nvim/init.vim
