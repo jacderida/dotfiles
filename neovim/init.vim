@@ -59,3 +59,12 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
+
+au FileType gitcommit set tw=72
+au FileType json setlocal shiftwidth=2 tabstop=2
+au FileType puppet setlocal shiftwidth=2 tabstop=2
+au FileType ruby setlocal shiftwidth=2 tabstop=2
+au FileType yaml setlocal shiftwidth=2 tabstop=2
+au FocusGained * :q!
+au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
+au BufRead,BufNewFile Jenkinsfile set filetype=groovy
