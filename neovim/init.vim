@@ -1,6 +1,7 @@
 set nocompatible
 
 call plug#begin('~/.local/share/nvim/site/autoload/')
+Plug 'mhinz/vim-signify'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-endwise'
