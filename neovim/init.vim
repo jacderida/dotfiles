@@ -1,7 +1,9 @@
 set nocompatible
 
 call plug#begin('~/.local/share/nvim/site/autoload/')
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 let mapleader=","
