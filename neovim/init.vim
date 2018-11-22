@@ -1,11 +1,13 @@
 set nocompatible
 
 call plug#begin('~/.local/share/nvim/site/autoload/')
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 call plug#end()
 
+:silent! colorscheme gruvbox
 let mapleader=","
 syntax on
 
