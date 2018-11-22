@@ -8,6 +8,7 @@ Plug 'oblitum/rainbow'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 :silent! colorscheme gruvbox
@@ -53,3 +54,6 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
