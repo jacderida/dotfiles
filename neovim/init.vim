@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/site/autoload/')
 Plug 'mhinz/vim-signify'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'oblitum/rainbow'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -44,6 +45,8 @@ nnoremap k gk
 
 " This is for surround.vim to work as expected.
 vmap s S
+
+let g:rainbow_active=1
 
 let g:gruvbox_invert_indent_guides=1
 let g:indent_guides_guide_size=1
