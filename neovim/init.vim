@@ -1,12 +1,15 @@
 set nocompatible
 
 call plug#begin('~/.local/share/nvim/site/autoload/')
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'oblitum/rainbow'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
@@ -41,9 +44,12 @@ set shiftwidth=4
 set smartindent
 set showcmd
 set shortmess+=A
-set t_Co=256
 set tabstop=4
 set viminfo+=!
+
+let NERDTreeWinSize=40
+let NERDTreeIgnore=['\.pyc$']
+nnoremap <F4> :NERDTreeToggle<CR>
 
 nnoremap j gj
 nnoremap k gk
