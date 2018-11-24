@@ -5,3 +5,5 @@ function fish_user_key_bindings
         bind -M $mode \cf forward-char
     end
 end
+
+source ~/.cargo/env
