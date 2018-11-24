@@ -45,6 +45,7 @@ set smartindent
 set showcmd
 set shortmess+=A
 set tabstop=4
+set termguicolors
 set viminfo+=!
 
 let NERDTreeWinSize=40

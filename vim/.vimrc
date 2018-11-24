@@ -50,8 +50,8 @@ set shiftwidth=4
 set smartindent
 set showcmd
 set shortmess+=A
-set t_Co=256
 set tabstop=4
+set termguicolors
 set viminfo+=!
 
 nnoremap j gj
