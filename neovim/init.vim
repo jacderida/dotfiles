@@ -2,6 +2,7 @@ set nocompatible
 
 call plug#begin('~/.local/share/nvim/site/autoload/')
 Plug '~/.fzf'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
@@ -11,7 +12,9 @@ Plug 'oblitum/rainbow'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'sebastianmarkow/deoplete-rust'
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -27,12 +30,14 @@ set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.config/nvim/tmp//
 set clipboard=unnamedplus
+set completeopt-=preview
 set cursorline
 set directory=~/.config/nvim/backup
 set expandtab
 set foldlevel=1
 set foldmethod=indent
 set foldnestmax=10
+set hidden
 set hlsearch
 set ignorecase
 set incsearch
@@ -60,10 +65,18 @@ nnoremap k gk
 " This is for surround.vim to work as expected.
 vmap s S
 
-let g:rainbow_active=1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#rust#racer_binary = '~/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path = '/usr/local/src/rust/src'
+let g:deoplete#sources#rust#show_duplicates = 1
+let g:LanguageClient_serverCommands = { 'rust': ['~/.cargo/bin/rustup', 'run', '1.29.2', 'rls'] }
 
-let g:gruvbox_invert_indent_guides=1
-let g:indent_guides_guide_size=1
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+let g:rainbow_active = 1
+
+let g:gruvbox_invert_indent_guides = 1
+let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
