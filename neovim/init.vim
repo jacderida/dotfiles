@@ -2,6 +2,7 @@ set nocompatible
 
 call plug#begin('~/.local/share/nvim/site/autoload/')
 Plug '~/.fzf'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'morhetz/gruvbox'
