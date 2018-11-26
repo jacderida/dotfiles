@@ -26,6 +26,7 @@ syntax on
 set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.config/nvim/tmp//
+set clipboard=unnamedplus
 set cursorline
 set directory=~/.config/nvim/backup
 set expandtab
@@ -79,14 +80,14 @@ au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
 " Copy/paste to/from clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
+"vnoremap  <leader>y  "+y
+"nnoremap  <leader>Y  "+yg_
+"nnoremap  <leader>y  "+y
+"nnoremap  <leader>yy  "+yy
+"nnoremap <leader>p "+p
+"nnoremap <leader>P "+P
+"vnoremap <leader>p "+p
+"vnoremap <leader>P "+P
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
 
