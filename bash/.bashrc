@@ -143,3 +143,5 @@ if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
    export PROJECT_HOME=$HOME/dev
    source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
