@@ -92,17 +92,7 @@ au FileType yaml setlocal shiftwidth=2 tabstop=2
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
-" Copy/paste to/from clipboard
-"vnoremap  <leader>y  "+y
-"nnoremap  <leader>Y  "+yg_
-"nnoremap  <leader>y  "+y
-"nnoremap  <leader>yy  "+yy
-"nnoremap <leader>p "+p
-"nnoremap <leader>P "+P
-"vnoremap <leader>p "+p
-"vnoremap <leader>P "+P
-
-let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --files-with-matches --filename-pattern ""'
 
 function! Fzf_files_with_dev_icons(command)
     let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
