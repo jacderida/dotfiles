@@ -1,5 +1,4 @@
 set nocompatible
-
 call plug#begin('~/.local/share/nvim/site/autoload/')
 Plug '~/.fzf'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
@@ -30,7 +29,7 @@ set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.config/nvim/tmp//
 set clipboard=unnamedplus
-set completeopt-=preview
+set completeopt=menu,preview,noinsert
 set cursorline
 set directory=~/.config/nvim/backup
 set expandtab
@@ -65,11 +64,13 @@ nnoremap k gk
 " This is for surround.vim to work as expected.
 vmap s S
 
+autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#rust#racer_binary = '~/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path = '/usr/local/src/rust/src'
 let g:deoplete#sources#rust#show_duplicates = 1
 let g:LanguageClient_serverCommands = { 'rust': ['~/.cargo/bin/rustup', 'run', '1.29.2', 'rls'] }
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
@@ -91,6 +92,7 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 au FileType yaml setlocal shiftwidth=2 tabstop=2
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
+au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --files-with-matches --filename-pattern ""'
 
