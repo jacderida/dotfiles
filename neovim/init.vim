@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'sebastianmarkow/deoplete-rust'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -29,7 +30,7 @@ set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.config/nvim/tmp//
 set clipboard=unnamedplus
-set completeopt=menu,preview,noinsert
+set completeopt-=preview
 set cursorline
 set directory=~/.config/nvim/backup
 set expandtab
@@ -66,7 +67,7 @@ vmap s S
 
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#rust#racer_binary = '~/.cargo/bin/racer'
+let g:deoplete#sources#rust#racer_binary = '/home/jacderida/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path = '/usr/local/src/rust/src'
 let g:deoplete#sources#rust#show_duplicates = 1
 let g:LanguageClient_serverCommands = { 'rust': ['~/.cargo/bin/rustup', 'run', '1.29.2', 'rls'] }
@@ -93,6 +94,27 @@ au FileType yaml setlocal shiftwidth=2 tabstop=2
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
+
+autocmd VimEnter *
+\ command! -bang -nargs=* Ag
+\ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
+
+" Do an :Ag search for the highlighted word.
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+
+" Remove the item from the quickfix list with 'dd'.
+function! RemoveQFItem()
+  let curqfidx = line('.') - 1
+  let qfall = getqflist()
+  call remove(qfall, curqfidx)
+  call setqflist(qfall, 'r')
+  execute curqfidx + 1 . "cfirst"
+  :copen
+endfunction
+:command! RemoveQFItem :call RemoveQFItem()
+
+" Use map <buffer> to only map dd in the quickfix window. Requires +localmap
+autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --files-with-matches --filename-pattern ""'
 
