@@ -7,5 +7,11 @@ function fish_user_key_bindings
     fzf_key_bindings
 end
 
-source ~/.cargo/env
+eval (python -m virtualfish)
+if test -e ~/.cargo/env
+    source ~/.cargo/env
+end
+if test -e ~/.aws_settings
+    source ~/.aws_settings
+end
 umask 022
