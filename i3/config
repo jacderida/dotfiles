@@ -73,5 +73,6 @@ bar {
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id redshift -c /home/jacderida/.redshift.conf
+exec --no-startup-id xrandr --output DP-1 --auto --left-of eDP-1
 exec gnome-settings-daemon
 exec gnome-keyring-daemon
