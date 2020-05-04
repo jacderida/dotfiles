@@ -45,7 +45,7 @@ set laststatus=2
 set nobackup
 set nofoldenable
 set nowrap
-set number
+set number relativenumber
 set ruler
 set shiftwidth=4
 set smartindent
