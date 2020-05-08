@@ -2,16 +2,6 @@
   dbus = False
   geometry_hinting = True
 [keybindings]
-[profiles]
-  [[default]]
-    background_color = "#282828"
-    background_darkness = 0.9
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = RobotoMono Nerd Font Medium 16
-    foreground_color = "#ebdbb2"
-    scrollbar_position = hidden
-    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -21,3 +11,14 @@
       parent = ""
       type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = RobotoMono Nerd Font Medium 16
+    foreground_color = "#ebdbb2"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    use_system_font = False
