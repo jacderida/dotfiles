@@ -1,18 +1,16 @@
 [user]
-	name = "Chris O'Neil"
-	email = chris.oneil@gmail.com
-[diff]
-    external = git_diff_wrapper
+    name = "Chris O'Neil"
+    email = chris.oneil@gmail.com
 [pager]
     diff =
 [core]
-	editor = vim
+    editor = vim
 [web]
-	browser = google-chrome
+    browser = google-chrome
 [color]
-	ui = true
+    ui = true
 [github]
-	user = jacderida
+    user = jacderida
 [merge]
     tool = mymeld
     conflictstyle = diff3
@@ -34,7 +32,7 @@
     b = branch
     ds = diff --stat=160,120
     dh1 = diff HEAD~1
-    
+
     # Fancy logging
     # h = head
     # hp = head with patch
