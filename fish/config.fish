@@ -16,4 +16,7 @@ end
 if test -e ~/.todoist_settings
     source ~/.todoist_settings
 end
+
+set -x VAGRANT_DEFAULT_PROVIDER libvirt
+
 umask 022
