@@ -13,6 +13,9 @@ end
 if test -e ~/.aws_settings
     source ~/.aws_settings
 end
+if test -e ~/.digital_ocean_settings
+    source ~/.digital_ocean_settings
+end
 if test -e ~/.todoist_settings
     source ~/.todoist_settings
 end

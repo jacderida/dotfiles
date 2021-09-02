@@ -105,7 +105,8 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --files-with-matches --fil
 nmap <silent> <C-P> :Files<CR>
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+nmap <F2> <Plug>(coc-rename)
 nmap <leader>gd  <Plug>(coc-definition)
 nmap <leader>gr  <Plug>(coc-references)
-vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
