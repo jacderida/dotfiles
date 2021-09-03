@@ -6,7 +6,6 @@ syntax on
 set background=dark
 set backspace=indent,eol,start
 set backupdir=~/.vim/tmp//
-set cursorline
 set directory=~/.vim/backup
 set expandtab
 set foldlevel=1
@@ -19,14 +18,13 @@ set laststatus=2
 set nobackup
 set nofoldenable
 set nowrap
-set number
+set number relativenumber
 set ruler
 set shiftwidth=4
 set smartindent
 set showcmd
 set shortmess+=A
 set tabstop=4
-set termguicolors
 set viminfo+=!
 
 nnoremap j gj
