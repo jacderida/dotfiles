@@ -1,4 +1,7 @@
-dotfiles
-========
+# dotfiles
 
-Since beginning development on UNIX based platforms, I've discovered people maintain repositories for app specific settings, and immediately knew I had to get on the bandwagon. In particular, having it version controlled is very useful, because if you need to, you can follow your own train of thought as to why you applied some particular setting. My intention, as with everyone else, is to be able to get a fresh development machine (on OSX or Linux) up and running with all my custom settings, with as little as possible manual input; when I automate something once, I never again have to worry about remembering all the tedious little error prone steps for each set of application settings participating in the process.
+My dotfiles, now pruned down to stuff I'm actively using right now.
+
+For some reason, it took me until 2021 before discovering GNU Stow, which is what I'm now using for managing them. I thought I'd be able to run `stow . --target=/home/chris` and it would go into all the directories here, but that doesn't work. To have the effect I would expect, I need to run it on each folder individually. For that reason, there's a little Makefile.
+
+To make all the links, just run `make links`.
