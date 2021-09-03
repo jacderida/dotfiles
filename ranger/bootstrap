@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-[[ ! -d $HOME/.config/ranger ]] && mkdir -p $HOME/.config/ranger
-rm -f ~/.config/ranger/rc.conf
-ln -f ./ranger/rc.conf ~/.config/ranger/rc.conf

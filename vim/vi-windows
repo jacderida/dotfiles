@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec /c/Program\ Files\ \(x86\)/vim/vim80/vim.exe "$@"

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-echo -e "${green}Removing .vimrc and linking from dotfiles${nc}"
-rm -f ~/.vimrc
-ln -f ./vim/.vimrc ~/.vimrc
-echo -e "${green}Removing .gvimrc and linking from dotfiles${nc}"
-rm -f ~/.gvimrc
-ln -f ./vim/.gvimrc ~/.gvimrc

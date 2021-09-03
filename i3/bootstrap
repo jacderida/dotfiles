@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-[[ ! -d "$HOME/.i3" ]] && mkdir $HOME/.i3
-rm -f $HOME/.i3/config
-ln -f ./i3/config $HOME/.i3/config
-[[ ! -d "$HOME/.config/i3blocks" ]] && mkdir -p $HOME/.config/i3blocks
-rm -f $HOME/.config/i3blocks/config
-ln -f ./i3/i3blocks-config $HOME/.config/i3blocks/config

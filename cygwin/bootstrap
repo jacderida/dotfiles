@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-echo -e "${green}Installing solarized colour scheme for cygwin.{nc}"
-rm -f ~/.minttyrc
-ln -f ./cygwin/minttyrc ~/.minttyrc
-rm -f $HOME/.dircolors
-cp -f ./cygwin/dircolors.ansi-dark $HOME/.dircolors
