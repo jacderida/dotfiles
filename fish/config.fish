@@ -22,4 +22,6 @@ end
 
 set -x VAGRANT_DEFAULT_PROVIDER libvirt
 
+starship init fish | source
+
 umask 022
