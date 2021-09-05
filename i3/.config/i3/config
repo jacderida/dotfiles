@@ -43,8 +43,8 @@ bindsym $alt+Space floating toggle
 bindsym $super+Shift+c reload
 bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
 
-gaps inner 5
-gaps outer 3
+gaps inner 10
+gaps outer 2
 
 mode "resize" {
     bindsym l resize shrink width 10 px or 10 ppt
@@ -64,4 +64,5 @@ bar {
 }
 
 exec --no-startup-id setxkbmap -layout gb
+exec --no-startup-id xsetroot -solid "#536b91"
 exec --no-startup-id redshift -c /home/chris/.config/redshift.conf
