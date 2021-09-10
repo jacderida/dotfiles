@@ -30,4 +30,4 @@ set viminfo+=!
 nnoremap j gj
 nnoremap k gk
 
-au FileType gitcommit set tw=72
+au FileType gitcommit set tw=100
