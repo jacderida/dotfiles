@@ -5,6 +5,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-signify'
+Plug 'Mofiqul/dracula.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -20,7 +21,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 call plug#end()
 
-:silent! colorscheme gruvbox
+:silent! colorscheme dracula
 let mapleader=" "
 syntax on
 
@@ -63,14 +64,15 @@ vmap s S
 
 let g:rainbow_active = 1
 
-let g:gruvbox_invert_indent_guides = 1
+" The following 2 lines need to be enabled when using the gruvbox theme.
+"let g:gruvbox_invert_indent_guides = 1
+"let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline_powerline_fonts = 1
 
 au FileType gitcommit set tw=72
 au FileType json setlocal shiftwidth=2 tabstop=2
