@@ -1,5 +1,6 @@
 links:
 	stow alacritty --target=/home/chris
+	stow bat --target=/home/chris
 	stow fish --target=/home/chris
 	stow fontconfig --target=/home/chris
 	stow git --target=/home/chris
