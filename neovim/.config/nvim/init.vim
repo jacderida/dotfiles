@@ -21,7 +21,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 call plug#end()
 
-:silent! colorscheme dracula
+:silent! colorscheme gruvbox
 let mapleader=" "
 syntax on
 
