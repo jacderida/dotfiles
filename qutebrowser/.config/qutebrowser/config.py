@@ -1,0 +1,5 @@
+config.load_autoconfig()
+config.bind('<alt+left>', 'back', mode='normal')
+config.bind('<alt+right>', 'forward', mode='normal')
+config.bind('<ctrl+n>', 'completion-item-focus --history next', mode='command')
+config.bind('<ctrl+p>', 'completion-item-focus --history prev', mode='command')
