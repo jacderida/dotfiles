@@ -2,7 +2,7 @@
     name = "Chris O'Neil"
     email = chriso83@protonmail.com
 [core]
-    editor = vim
+    editor = nvim
 [web]
     browser = google-chrome
 [color]

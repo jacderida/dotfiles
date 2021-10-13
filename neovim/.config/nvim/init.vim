@@ -65,8 +65,8 @@ vmap s S
 let g:rainbow_active = 1
 
 " The following 2 lines need to be enabled when using the gruvbox theme.
-"let g:gruvbox_invert_indent_guides = 1
-"let g:indent_guides_auto_colors = 0
+let g:gruvbox_invert_indent_guides = 1
+let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
@@ -74,7 +74,8 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 
-au FileType gitcommit set tw=72
+au FileType gitcommit set tw=100
+au FileType gitcommit setlocal spell spelllang=en_gb
 au FileType json setlocal shiftwidth=2 tabstop=2
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
