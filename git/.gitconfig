@@ -19,3 +19,4 @@
     ci = commit
     aa = add --all
     pom = push origin master
+    prlog = log --format=format:\"- %h **%s**%n%n%w(0,2,2)%b\" --reverse origin/HEAD..HEAD
