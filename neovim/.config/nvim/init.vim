@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/site/autoload/')
 Plug '~/.fzf'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-signify'
 Plug 'Mofiqul/dracula.nvim'
@@ -117,3 +118,6 @@ nmap <leader>gd  <Plug>(coc-definition)
 nmap <leader>gr  <Plug>(coc-references)
 nmap <leader>f  <Plug>(coc-format-selected)
 vmap <leader>f  <Plug>(coc-format-selected)
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
