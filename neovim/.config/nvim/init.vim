@@ -75,6 +75,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 
+au FileType sh setlocal shiftwidth=2 tabstop=2
 au FileType gitcommit set tw=100
 au FileType gitcommit setlocal spell spelllang=en_gb
 au FileType markdown setlocal spell spelllang=en_gb
