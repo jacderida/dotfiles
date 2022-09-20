@@ -1,7 +1,6 @@
 fish_vi_key_bindings
 
 alias cat="bat"
-alias cd="z"
 alias ls="exa --icons"
 alias tree="exa --icons --tree"
 function fish_user_key_bindings
@@ -32,5 +31,7 @@ set -x BASE_DEV_PATH /home/chris/dev
 
 starship init fish | source
 zoxide init fish | source
+# This alias must be defined after zoxide is sourced.
+alias cd="z"
 
 umask 022
