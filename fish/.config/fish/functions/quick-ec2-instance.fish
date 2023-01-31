@@ -52,4 +52,5 @@ function quick-ec2-instance
     end
 
     echo "ssh to the instance with: ssh -i ~/.ssh/$keypair ubuntu@$public_ip"
+    echo "ssh -i ~/.ssh/$keypair ubuntu@$public_ip" | xclip -selection clipboard
 end
