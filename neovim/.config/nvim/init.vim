@@ -10,6 +10,7 @@ Plug 'Mofiqul/dracula.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'NoahTheDuke/vim-just'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
