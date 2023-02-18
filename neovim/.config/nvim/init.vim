@@ -76,15 +76,16 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 
-au FileType sh setlocal shiftwidth=2 tabstop=2
 au FileType gitcommit set tw=100
 au FileType gitcommit setlocal spell spelllang=en_gb
-au FileType markdown setlocal spell spelllang=en_gb
-au FileType markdown set wrap
 au FileType javascript setlocal shiftwidth=2 tabstop=2
 au FileType json setlocal shiftwidth=2 tabstop=2
+au FileType just setlocal shiftwidth=2 tabstop=2
+au FileType markdown setlocal spell spelllang=en_gb
+au FileType markdown set wrap
 au FileType puppet setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
+au FileType sh setlocal shiftwidth=2 tabstop=2
 au FileType typescript setlocal shiftwidth=2 tabstop=2
 au FileType yaml setlocal shiftwidth=2 tabstop=2
 au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
