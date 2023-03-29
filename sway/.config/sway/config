@@ -1,0 +1,61 @@
+set $super Mod4
+set $alt Mod1
+floating_modifier $super
+
+bindsym $super+Return exec kickoff
+
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+bindsym $super+0 workspace 10
+bindsym $super+BackSpace workspace 13
+
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+bindsym $super+Shift+0 move container to workspace 10
+
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+bindsym $super+shift+h move left
+bindsym $super+shift+j move down
+bindsym $super+shift+k move up
+bindsym $super+shift+l move right
+bindsym $alt+h split h
+bindsym $alt+v split v
+bindsym $alt+Space floating toggle
+
+bindsym $super+Shift+c reload
+
+mode "resize" {
+    bindsym l resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym h resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $super+r mode "resize"
+
+for_window [workspace="5"] floating enable
+bar swaybar_command waybar
+
+output eDP-1 pos 0 0 res 1920x1200
+output DP-6 pos 1920 0 res 1920x1080
+output DP-3 pos 3840 0 res 3840x2160
+output DP-9 pos 7680 0 res 1920x1080 transform 90

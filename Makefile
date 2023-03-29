@@ -8,5 +8,6 @@ links:
 	stow neovim --target=/home/chris
 	stow qutebrowser --target=/home/chris
 	stow redshift --target=/home/chris
+	stow sway --target=/home/chris
 	stow vim --target=/home/chris
 	stow xorg --target=/home/chris

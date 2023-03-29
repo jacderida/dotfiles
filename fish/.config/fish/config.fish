@@ -1,6 +1,14 @@
 fish_vi_key_bindings
 
+set -x BASE_DEV_PATH /home/chris/dev
+set -x EDITOR nvim
+set -x GHQ_ROOT ~/dev
+set -x PATH ~/.local/bin $PATH
+set -x VAGRANT_DEFAULT_PROVIDER libvirt
+set -x XKB_DEFAULT_LAYOUT gb
+
 alias cat="bat"
+alias cp="xcp"
 alias ls="exa --icons"
 alias tree="exa --icons --tree"
 function fish_user_key_bindings
@@ -25,9 +33,9 @@ end
 if test -e ~/.github_settings
     source ~/.github_settings
 end
-
-set -x VAGRANT_DEFAULT_PROVIDER libvirt
-set -x BASE_DEV_PATH /home/chris/dev
+if test -e ~/.yt-ch-archiver
+    source ~/.yt-ch-archiver
+end
 
 starship init fish | source
 zoxide init fish | source

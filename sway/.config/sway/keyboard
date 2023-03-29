@@ -1,0 +1,1 @@
+xkbcomp -I$HOME/.xkb /usr/share/X11/xkb/symbols/gb $DISPLAY
