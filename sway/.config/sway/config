@@ -59,3 +59,5 @@ output eDP-1 pos 0 0 res 1920x1200
 output DP-6 pos 1920 0 res 1920x1080
 output DP-3 pos 3840 0 res 3840x2160
 output DP-9 pos 7680 0 res 1920x1080 transform 90
+
+exec --no-startup-id swayidle -C /home/chris/.config/sway/idle.conf
