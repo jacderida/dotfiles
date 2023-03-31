@@ -36,7 +36,7 @@ function find-version-bump-workflow-runs
         echo "Continue? [y/n]"
         read -n 1 choice
         if test "$choice" = "n" -o "$choice" = "N"
-            break
+            set continue false
         end
         set page (math $page + 1)
     end
