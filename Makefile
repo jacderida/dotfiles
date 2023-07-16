@@ -9,5 +9,6 @@ links:
 	stow qutebrowser --target=/home/chris
 	stow redshift --target=/home/chris
 	stow sway --target=/home/chris
+	stow vifm --target=/home/chris
 	stow vim --target=/home/chris
 	stow xorg --target=/home/chris
