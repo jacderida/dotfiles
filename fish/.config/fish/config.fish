@@ -18,6 +18,9 @@ function fish_user_key_bindings
     fzf_key_bindings
 end
 
+if test -e ~/.books_db_settings
+    source ~/.books_db_settings
+end
 if test -e ~/.cargo/env2
     source ~/.cargo/env2
 end

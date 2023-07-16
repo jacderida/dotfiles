@@ -61,7 +61,7 @@ function rust-ec2-instance
         --block-device-mappings "[{\"DeviceName\": \"/dev/xvda\",\"Ebs\":{\"VolumeSize\":50,\"VolumeType\":\"gp2\", \"DeleteOnTermination\": true}}]" \
         --query "Instances[0].InstanceId" \
         --output text)
-    echo $launched_instance_id >> ~/.aws/quick-instance-id
+    echo $launched_instance_id > ~/.aws/quick-instance-id
 
     while true
         set state (aws ec2 describe-instances \
@@ -89,7 +89,7 @@ function rust-ec2-instance
 
     printf "%s\n" \
         "sudo yum update -y" \
-        "sudo yum install -y gcc git" \
+        "sudo yum install -y gcc git nc tree" \
         "curl -L -O https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init" \
         "chmod +x rustup-init" \
         "./rustup-init --default-toolchain stable --no-modify-path -y" \
