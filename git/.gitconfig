@@ -11,10 +11,12 @@
 [github]
     user = jacderida
 [merge]
-    tool = mymeld
+    tool = vimdiff
     conflictstyle = diff3
-[mergetool "mymeld"]
-    cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
+[mergetool "vimdiff"]
+    cmd = vim -d $LOCAL $REMOTE $BASE $MERGED
+    keepBackup = false
+    trustExitCode = false
 [alias]
     st = status
     ci = commit
